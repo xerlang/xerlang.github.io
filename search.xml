@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[测试5]]></title>
+    <url>%2F2017%2F12%2F03%2F%E6%B5%8B%E8%AF%955%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>测试</category>
+        <category>测试5</category>
+      </categories>
+      <tags>
+        <tag>IT</tag>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[测试4]]></title>
+    <url>%2F2017%2F12%2F03%2F%E6%B5%8B%E8%AF%954%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[测试3]]></title>
+    <url>%2F2017%2F12%2F03%2F2017-12-03-%E6%B5%8B%E8%AF%953%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[测试2]]></title>
+    <url>%2F2017%2F12%2F03%2F%E6%B5%8B%E8%AF%952%2F</url>
+    <content type="text"><![CDATA[搜索 测试2222]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[测试]]></title>
+    <url>%2F2017%2F12%2F03%2F%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[另外。。。。。。。。。。。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F12%2F03%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
