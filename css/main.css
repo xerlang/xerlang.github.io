@@ -1860,7 +1860,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #033e37;
+  background: #f67918;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2574,6 +2574,7 @@ hr {
 .menu .menu-item .badge {
   display: inline-block;
   padding: 1px 4px;
+  margin-left: 5px;
   font-weight: 700;
   line-height: 1;
   color: #555;
