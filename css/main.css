@@ -650,13 +650,6 @@ pre .javascript .function {
   width: auto;
   margin: 20px auto 25px;
 }
-@media (min-width: 992px) {
-  .full-image.full-image.full-image.full-image {
-    max-width: none;
-    width: 110%;
-    margin: 25px -5%;
-  }
-}
 .blockquote-center,
 .page-home .post-type-quote blockquote,
 .page-post-detail .post-type-quote blockquote {
@@ -1860,7 +1853,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f67918;
+  background: #9811ff;
 }
 .links-of-blogroll {
   font-size: 13px;
