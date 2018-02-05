@@ -1708,11 +1708,13 @@ pre .javascript .function {
   background: #222;
   -webkit-transform: translateZ(0);
 }
-.sidebar a {
+.sidebar a,
+.sidebar .exturl {
   color: #999;
   border-bottom-color: #555;
 }
-.sidebar a:hover {
+.sidebar a:hover,
+.sidebar .exturl:hover {
   color: #eee;
 }
 .sidebar-inner {
@@ -1837,7 +1839,8 @@ pre .javascript .function {
 .links-of-author {
   margin-top: 20px;
 }
-.links-of-author a {
+.links-of-author a,
+.links-of-author .exturl {
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
@@ -1845,7 +1848,8 @@ pre .javascript .function {
   border-bottom-color: #555;
   font-size: 13px;
 }
-.links-of-author a:before {
+.links-of-author a:before,
+.links-of-author .exturl:before {
   display: inline-block;
   vertical-align: middle;
   margin-right: 3px;
@@ -1853,7 +1857,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #36cb69;
+  background: #ffffa8;
 }
 .links-of-blogroll {
   font-size: 13px;
