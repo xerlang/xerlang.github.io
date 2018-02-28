@@ -218,6 +218,7 @@ h6 {
   line-height: 1.5;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+h1,
 h2,
 h3,
 h4,
@@ -1857,7 +1858,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #30455b;
+  background: #08d9af;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2444,17 +2445,6 @@ ul.breadcrumb li+li:before {
 }
 ul.breadcrumb li+li:last-child {
   font-weight: bold;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 20px 0 10px;
-}
-p {
-  margin: 0 0 25px 0;
 }
 a {
   border-bottom-color: #ccc;
