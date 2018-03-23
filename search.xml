@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[影视资源]]></title>
-    <url>%2F2018%2F03%2F22%2F%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%2F</url>
+    <title><![CDATA[影视资源推荐]]></title>
+    <url>%2F2018%2F03%2F22%2F%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90%2F</url>
     <content type="text"><![CDATA[]]></content>
       <categories>
-        <category>2 影视</category>
+        <category>影视</category>
       </categories>
   </entry>
   <entry>
@@ -13,15 +13,15 @@
     <url>%2F2018%2F03%2F22%2F%E4%BC%98%E7%A7%80%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90%2F</url>
     <content type="text"><![CDATA[]]></content>
       <categories>
-        <category>0 专题</category>
+        <category>数码</category>
       </categories>
   </entry>
   <entry>
     <title><![CDATA[Windows与Office各版本及官方授权方式详解]]></title>
     <url>%2F2018%2F03%2F22%2FWindows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <content type="text"><![CDATA[前言从Win8开始，微软将核心版与专业版集成在同一个镜像中，而单独发布了大客户专业版镜像，所以很多刚折腾系统的童鞋将大客户专业版与专业版混淆在一起了，而且激活方式很多人都不能进行区分，所以在这个帖子里进行区分一下，主要包括Windows各版本与激活的区别、Office各版本与激活的区别，不会提供激活的具体方式与工具。 Win7的版本分布虽然多，但是不像Win8以上系统这么乱，所以从Win8开始进行区分，Office从2013开始区分，之后有新系统新office再进行添加。 因为某些内容通用，所以只写于Windows 8.x与Office 2013中，所以建议无论阅读哪个系统或软件，都请先阅读以下Windows 8.x与Office 2013。 本文最初于2015年1月6日发布于卡饭论坛，2015年12月16日更新Windows 10与Office 2016，2018年3月23日发布于博客时进行部分修改。 文中全部内容均来自个人对网上资料的搜集整理与个人亲身经验，学识浅薄，难免有疏漏之处，敬请见谅。 一、Windows 8.xWindows8.x系统（8、8.1、8.1 Update）的版本与激活方式都完全一致，所以一起说明。 （一）Windows 8.x各版本区别Windows系统大范围的话分为两种系统：零售版与企业版。 对于Windows 8.x系列，除去各国版本与bing版本，较常用的版本有三种，核心版（Core）、专业版（Professiona）、企业版（Enterprise），而微软发布的镜像也有三种，但不是与上述三种版本对应的，包括集成版镜像（Multiple Editions）、大客户专业版镜像（Pro VL）、企业版镜像（Enterprise）。 下面详细来说一下这三个镜像的区别。 Multiple Editions版：集成版镜像，也会被称作标准版，这是零售版安装镜像，镜像中有两个独立镜像（核心版与专业版），安装时，根据安装密钥的不同区分安装的系统的版本，即输入专业版安装密钥即安装专业版，核心版安装密钥即安装核心版系统。可以跨系统版本升级。 这种镜像的文件名一般只有“windows”，如Windows 8.1 Update集成版镜像名为“cn_windows_8.1_with_update_x64_dvd_6051473.ios”。 Pro VL版：大客户专业版安装镜像，这是企业版的一种，与Pro版相比，不能添加WMC，但是安装时不需要输入安装密钥，但安装完成后依旧需要进行激活，其他与pro版完全相同。不可以跨系统版本升级。 这种镜像的文件名中一般带有“pro vl”的字样，如Windows 8.1 Update大客户专业版镜像名为“cn_windows_8.1_pro_vl_with_update_x86_dvd_6050910.iso”。 Enterprise版，即企业版，功能最为齐全，无法添加WMC，不可以跨系统版本升级。 这种镜像的文件名中带有“Enterprise”字样，如Windows 8.1 Update企业版镜像名为“cn_windows_8.1_enterprise_with_update_x64_dvd_6050374.iso”。 下面以大家常用的MSDN itell you网站来说明一下怎么区分各版本镜像。 自上往下分别是企业版镜像（Enterprise）、大客户专业版镜像（Pro VL）、集成版镜像（multiple editions）。 （二）Windows 8.x各版本激活方式区别Windows8之后，微软官方的激活方式只有两种方式：密钥激活与KMS激活，而如果细分的话，密钥激活又 包括Retail密钥激活与MAK密钥激活，而电话激活是基于密钥激活的，所以在此不做讨论。 Retail密钥：零售密钥，个人用户购买的就是这种密钥，一人一号，跨版本升级后激活有效。 MAK密钥：企业密钥，是给企业或者大客户出售的一种密钥，一个密钥可以激活多台机器，跨版本升级后激活无效。 KMS激活：这是微软为了防止企业盗版而给出的一种激活方式，只能激活180天，过期后需重新激活，跨版本升级后激活无效。 以上激活方式不分版本。 Multiple editions版激活方式：Retail、MAK、KMS。 ProVL版激活方式：Retail、MAK、KMS。 Enterprise版激活方式：MAK、KMS。 所以大家可以发现，Windows 8.x的零售版与VL版的激活方式没有任何区别。 二、Office 2013（一）Office 2013各版本区别Office2013版本从大的方面来说分为零售版与企业版（或大客户版）。 零售版：即个人用户购买的版本，激活方式上与Windows不同。 这种版本的镜像名称一般只含有“office”字样，如Office Pro Plus镜像名为“cn_office_professional_plus_2013_x86_dvd_1134005.iso”。 企业版（或大客户版）：即VL版（也成VOL版），是企业用户购买的版本，镜像不在MSDN上进行提供。 这种版本的镜像名称中含有“SWDVD5”字样，如Office Pro Plus VL版镜像名为“SW_DVD5_Office_Professional_Plus_2013_W32_ChnSimp_MLF_X18-55126.ISO”非常容易区分。 （二）Office 2013各版本激活方式的区别也是只有Retail、MAK、KMS激活方式。 零售版：只能用Retail密钥进行激活，不能使用MAK与KMS（导入VOL的许可证后可以使用这两种方式激活）。 大客户版：与零售版激活方式正相反，可以使用MAK与KMS激活，但是不能使用Retail密钥进行激活（导入Retail的许可证后可以使用Retail密钥激活）。 三、Windows 10Windows10的版本与激活方式与Windows 8.x区别不算太大。 （一）Windows10各版本及区别Windows10版本比较多，除去移动版（Mobile）、物联版和各国语言版之外，还有以下几个版本：家庭版（Home）、专业版（Professional）、企业版（Enterprise）、教育版（Education），其中企业版还包括企业版长期使用分支（LTSB）。具体区别可以在微软官网查看。 相比于Windows 8.x，微软去除了大客户专业版（Pro VL）。 与Windows 8.x一样，Windows 10家庭版与专业版也集成在一个镜像（Multiple Editions）中。这几个镜像的区别及如何区分可以参见Windows 8.x。 （二）Windows 10各版本激活方式Windows10激活方式依旧延续了Windows 8.x，密钥（Retail密钥、MAK密钥）与KMS激活。与Windows8.x不同的是，虽然同为MAK密钥，但是各版本的MAK密钥之间也不通用。 MultipleEditions：Retail、Pro-MAK、KMS。 Enterprise：Ent-MAK、KMS。 LTSB：LTSB-MAK、KMS。 附录官方各版本功能区别 四、Office 2016Office2016与2013的版本与激活方式没有较大的区别。唯一的区别是Office 2016加入的新的安装方式。 （一）Office 2016版本区别Office 2016版本从大的方面来说分为零售版与企业版（或大客户版），区分方法参见Office 2013。这里讲一下安装方式的不同。 零售版：Office 2016零售版开始使用新的安装方式——Click to Run，这种安装方式是微软为了Office 365更新而开发的，之前也在Office 365上进行了使用，但是从来没有在Office上使用，这次在Office 2016上进行了使用。这就导致了以下两个问题 （1）在正常安装方式下，无法选择安装组件。 （2）在正常安装方式下，无法选在安装路径。 当然这两个问题可以使用第三方工具和修改注册表进行解决。还有一个比较大的问题要在下面说。 大客户版：大客户版依旧使用着之前的安装方式——MSI安装，可以选择安装组件与安装路径。 这里说一下上面提到的那个比较大的问题。 众所周知，虽然Office、Project、Visio单独出售、单独安装，但是这三个软件会调用一部分公用文件。因为Office 2016的零售版与大客户版的安装方式不同，所以这三个软件的2016版必须使用相同的安装方式，否则会导致无法安装。即三个软件都得是C2R模式或者MSI模式才能正常安装，不能混搭。 为了方面大家选择安装版本，防止出现问题，特将各版本的安装方式列下。 C2R：Office 365、Office 2016 Retail、Visio 2016 Retail、Project 2016 Retail。 MSI：Office 2013及之前所有版本、Project 2013及之前所有版本、Visio 2013及之前所有版本、Office 2016 VOL、Visio 2016 VOL、Project 2016 VOL。 （二）Office2016激活方式区别依旧是使用Retail密钥、MAK密钥与KMS激活。 零售版：只能用Retail密钥进行激活，不能使用MAK与KMS（导入VOL的许可证后可以使用这两种方式激活）。 大客户版：与零售版激活方式正相反，可以使用MAK与KMS激活，但是不能使用Retail密钥进行激活（导入Retail的许可证后可以使用Retail密钥激活）。]]></content>
       <categories>
-        <category>1.1 系统</category>
+        <category>数码</category>
       </categories>
   </entry>
   <entry>
@@ -29,63 +29,7 @@
     <url>%2F2017%2F12%2F26%2F%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[前言在国内，因为种种原因，大家看电影、电视剧等影视作品（特别是国外的作品）的时候，都喜欢下载下来看，一是因为很久很久之前，网速不行，在线看视频卡，到现在养成的习惯没法改，二是有些资源不在视频网站上上架或者上架很晚（国内美剧审查），所以…… 提到下载，大家最关注的就是清晰度，网上一个资源的盗版有的是，好的会写清晰度片源啦，懒得就直接写“高清”、“超清”等等，导致枪版都敢自称为“超清”，不忍直视。想像一下，名字写的高清无码，下下来才发现全是马赛克是什么感觉。 所以，写点东西来讨论一下怎么区分资源质量的好坏。 一、根据资源名称区分资源名称是个好东西，但是很多资源发布者为了方面，直接就写个超清，根本无法分辨这个资源质量的好坏，但是稍微正规的网站、字幕组发布的资源名称都不会这么简单，其中包含着很多有用的信息。 以我收藏的一个资源为例。 忽略这些歪歪扭扭的数。一般稍正规的字幕组发布的资源都会包含这些信息，只是顺序可能不同，没什么影响。 资源名就不说了，只说有用的。 年份：影片上映的年份。 版本：导演剪辑版啦、加长版啦等等。 分辨率：比较常见的就是1080p和720p。 片源：这个要说的比较多，片源包括BluRay（蓝光）、WEB-DL、HDTV、TS等等。详细的后面说。 视频编码 音频编码 音轨 一般资源名称就包括这些内容，更为详细的信息会包括在随资源一起的nfo文件中。 其实从解释上来看，3和4决定着资源质量的好坏，所以详细来说说这个。 片源包括很多种：BluRay、HDDVDRip、WEB-DL、HDRip(HDTV)、HR-HDTV、DVDRip、TC、TS、CAM等等，这里说几个常见的，其他的可以自行百度。 BluRay：蓝光，这是目前资源质量最好的片源，来源就是厂商发布的蓝光碟。其中又可以分为原盘、转制等等，也是收藏的首选。 WEB-DL：顾名思义，从网页上下载的资源，来源是各大正规视频网站播放后转制的。相比于蓝光，清晰度略逊一筹，可是资源大小却很有优势。而且WEB-DL出现的时间也会早蓝光一到两个月，是尝鲜的首选。 HDTV：电视片源转制的，很早之前网络不发达，电影上映之后会放到电视上播，转录后就是HDTV，现在电影一般没有HDTV了，但是电视剧很多的，好的HDTV资源的清晰度比WEB-DL差不了多少。 TS：枪版，来源是影院盗录，画质相当不好，发黑、晃动。 所以，从以上来看，大家下载资源的时候，最好是下载信息齐全的资源，质量有保证，所以，抛弃所谓的“超清”、“高清”吧，写着“超清”、“高清”的可能是枪版，而且质量（清晰度、字幕质量等等）肯定没有正规网站或字幕组发布的好。 二、根据资源大小区分但是，很多情况下，同时蓝光版，但是资源大小区别很大，从几G到几十G不等，这又是为什么呢？ 因为蓝光版又分蓝光原盘、转制版等等，大小不一定，但是也有一定的规律，可以进行参考。 以2小时的资源为例： 原盘大小在30G以上。 转制1080p蓝光在10G以上，再压制会在4-8G之间。 转制720p蓝光在5G以上，再压制会在3-5G之间。 WEB-DL在2-3G之间。 枪版大小不定。 如果一个资源号称蓝光，但只有1G左右，连下都不用下，假的。 三、根据发布时间区分资源根据片源的不同，发布时间会有不同，根据时间，可以加以区分。 蓝光：好莱坞电影，在影院下映后一般三个月左右会发售蓝光碟；国内电影发不发售蓝光碟都是个问题。 WEB-DL：好莱坞电影，影院下映后一个月左右会上架国外视频网站，上架国内视频网站的时间不一定；国内电影影院下映后一到两个月会上架国内视频网站。 所以，好莱坞电影，影院下映之后一个月左右出WEB-DL资源，三个月左右出蓝光资源。资源出来后，字幕组翻译压制快得两三天慢的十来天就行了。国内电影，下映后一到两个月会出WEB-DL资源，蓝光时间不定。 所以，在这些时间之前出来的资源，不是泄漏的话，那绝对是枪版，没别的。（这里的泄漏是个宽泛的概念，之后详细解释）。所以，今天一个帖子里说的现在《大圣归来》有高清、超清了，我不用下载就敢说，那些都是枪版，绝无例外。 四、根据字幕组选择根据以上三个办法，不必下载，就可以大致判断一个资源质量的好坏了。当然，对国外电影来说，还有一种办法，那就是根据字幕组或资源组，优秀的字幕组或资源组发布的资源有品质保证。 附录（一）资源泄露经过上边讲的，高质量资源的发布时间一般是一定的，但是有些特殊情况下，资源在影片还未上映或上映之初就已经流出，并且明显不是枪版，那就涉及到资源泄漏。 资源泄露一般包括以下几种情况： 厂商被黑，资源泄露。比如《敢死队3》、《金刚狼2》，因为厂商被黑，导致资源在上映之初流出。 各大市场上映时间错开，导致资源流出。比如一部电影在内地上映的时间比北美上映晚两个月，那么影片北美上映之后一个月左右上架视频网站，资源就会流到内地，那么内地观众在影片上映之前就会看到高质量资源。虽然一般发行方都会尽力避免这种情况出现，但是也有，比如最近的韩版资源，在内地上映之前，韩版资源就会流出。比如《小黄人大眼萌》，内地上映之前韩版资源早已流出。 影院泄露。这里指的不是盗录的枪版，而是影院内外勾结拿到高质量资源。这种情况以前我没听说过，今年第一次听说，就是《港囧》。 总结以上是我这么多年寻找资源的一些心得，下载盗版资源有的时候是不得已，因为有些资源国内根本没有正版。不过还是希望大家多多支持正版。我的原则是喜欢的，能上映的上映时去影院支持，有资源了下载下来收藏。 收藏一般是国外电影收藏蓝光，国内有蓝光收藏蓝光，没有就WEB-DL。一概不看枪版，对眼对影片都是一种不尊重。 内容难免有疏漏错误之处，请大家指正。]]></content>
       <categories>
-        <category>2 影视</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[推荐]]></title>
-    <url>%2F2017%2F12%2F26%2F%E6%8E%A8%E8%8D%90%2F</url>
-    <content type="text"><![CDATA[说明此页用于收录推荐的精华内容。 目录]]></content>
-      <categories>
-        <category>0 专题</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[分类（阅读）占位]]></title>
-    <url>%2F2017%2F12%2F26%2F%E5%88%86%E7%B1%BB%EF%BC%88%E9%98%85%E8%AF%BB%EF%BC%89%E5%8D%A0%E4%BD%8D%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>3 阅读</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[分类（影视）占位]]></title>
-    <url>%2F2017%2F12%2F26%2F%E5%88%86%E7%B1%BB%EF%BC%88%E5%BD%B1%E8%A7%86%EF%BC%89%E5%8D%A0%E4%BD%8D%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>2 影视</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[分类（硬件）占位]]></title>
-    <url>%2F2017%2F12%2F26%2F%E5%88%86%E7%B1%BB%EF%BC%88%E7%A1%AC%E4%BB%B6%EF%BC%89%E5%8D%A0%E4%BD%8D%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>1.3 硬件</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[分类（应用）占位]]></title>
-    <url>%2F2017%2F12%2F26%2F%E5%88%86%E7%B1%BB%EF%BC%88%E5%BA%94%E7%94%A8%EF%BC%89%E5%8D%A0%E4%BD%8D%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>1.2 应用</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[分类（系统）占位]]></title>
-    <url>%2F2017%2F12%2F26%2F%E5%88%86%E7%B1%BB%EF%BC%88%E7%B3%BB%E7%BB%9F%EF%BC%89%E5%8D%A0%E4%BD%8D%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>1.1 系统</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[分类（专题）占位]]></title>
-    <url>%2F2017%2F12%2F26%2F%E5%88%86%E7%B1%BB%EF%BC%88%E4%B8%93%E9%A2%98%EF%BC%89%E5%8D%A0%E4%BD%8D%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>0 专题</category>
+        <category>影视</category>
       </categories>
   </entry>
 </search>
