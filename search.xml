@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[测试]]></title>
+    <url>%2F2018%2F08%2F17%2F%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Symantec Ghost 历史版本 官方原版]]></title>
     <url>%2F2018%2F07%2F24%2FSymantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88%2F</url>
     <content type="text"><![CDATA[前言Ghost一直是用着最趁手备份工具，由于Ghost本身官方并不提供下载，只集成在其他软件中，且官方下载相对困难。故将绝大部分版本的Ghost提取出来，以供下载。 此过程的难点在于搜集Symantec Ghost Solution Suite、Symantec Ghost Standard Tools与Ghost版本的对应关系及历史版本的官方原版程序的下载，提取起来很简单。 本文首发于卡饭论坛（https://bbs.kafan.cn/thread-2128366-1-1.html）及本博客，转载请注明出处。 说明 本文所提供Symantec Ghost Solution Suite、Symantec Ghost Standard Tools均为官方原版，均下载自Symantec官方服务器，除个别外，均带Symantec数字签名 本文所提供Ghost均为官方原版，均提取自官方Symantec Ghost Solution Suite、Symantec Ghost Standard Tools，除CLI程序（gdisk.exe、ghost.exe）外，GUI程序均带Symantec数字签名 本文所提供Ghost包含gdisk（gdisk.exe、gdisk32.exe、gdisk64.exe）与ghost（ghost.exe、ghost32.exe、ghost64.exe、ghostexp.exe、ghostexp64.exe、ghostsrv.exe等）相关程序。 本文所提供Ghost包含8.x、11.x及12.x版本（12.0.0.7x版本前因找不到官方GSS或GST，未提供下载） 自11.0.5.2113版本开始，官方开始提供gdisk、ghost的64位程序（gdisk64.exe、ghost64.exe） 自12版本开始，官方不再提供CLI程序（gdisk.exe、ghost.exe） 自12版本开始，官方开始提供ghostexp的64位程序（ghostexp64.exe） 自12.0.0.8050版本开始，官方开始提供ghostexp、ghostsrv简体中文文件（ghostexp_zh.dll、ghostsrv_zh.dll） 因官方不再提供CLI程序，故本文所提供Ghost历史版本中的CLI程序（gdisk.exe、ghost.exe）均为未注册版，功能受限，GUI程序功能完整 下载百度网盘：https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag 密码：4aa9 网盘中提供成品Ghost程序，可直接下载使用，也提供了GSS与GST，有兴趣的话可自行提取。 版本对应8.x Ghost 8.3.0.1331（GSS 1.1） 11.x Ghost 11.0.0.1502（GSS 2.0） Ghost 11.0.1.1533（GSS 2.0.1） Ghost 11.0.2.1573（GSS 2.0.2） Ghost 11.5.0.2113（GSS 2.5） Ghost 11.5.1.2266（GSS 2.5.1） 12.x Ghost 12.0.0.8006（GST 3.0） Ghost 12.0.0.8010（GST 3.0 HF2） Ghost 12.0.0.8019（GST 3.0 HF4） Ghost 12.0.0.8023（GST 3.1） Ghost 12.0.0.8027（GST 3.1 MP1） Ghost 12.0.0.8031（GST 3.1 MP2） Ghost 12.0.0.8050（GST 3.1 MP3） Ghost 12.0.0.8051（GST 3.1 MP3 V2） Ghost 12.0.0.8065（GST 3.1 MP5） Ghost 12.0.0.10514（GST 3.2） Ghost 12.0.0.10517（GST 3.1 MP6） Ghost 12.0.0.10520（GST 3.2 RU1） Ghost 12.0.0.10531（GST 3.2 RU2） Ghost 12.0.0.10549（GST 3.2 RU3） Ghost 12.0.0.10561（GST 3.2 RU4） Ghost 12.0.0.10580（GST 3.2 RU6） Ghost 12.0.0.10589（GST 3.2 RU7） 更新日志 2018.07.24：发布]]></content>
