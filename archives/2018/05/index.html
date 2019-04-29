@@ -42,11 +42,9 @@
 
 
 
-
-
   
   
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 
@@ -56,19 +54,19 @@
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png?v=7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png?v=7.1.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png?v=7.0.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png?v=7.1.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png?v=7.0.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png?v=7.1.0">
 
 
-  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg?v=7.0.0" color="#222">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg?v=7.1.0" color="#222">
 
 
 
@@ -81,8 +79,10 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '7.0.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
     fancybox: true,
     fastclick: false,
     lazyload: false,
@@ -119,7 +119,8 @@
 
 
 
-
+  
+  
   <link rel="canonical" href="https://xerlang.github.io/archives/2018/05/">
 
 
@@ -471,9 +472,6 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
-      <div id="sidebar-dimmer"></div>
-    
     <div class="sidebar-inner">
 
       
@@ -487,7 +485,7 @@
               <img class="site-author-image" itemprop="image" src="https://user-images.githubusercontent.com/34172455/33764778-f1a5201e-dc50-11e7-916f-90a4c7bdc21e.jpg" alt="不怕太阳晒的小儿郎">
             
               <p class="site-author-name" itemprop="name">不怕太阳晒的小儿郎</p>
-              <p class="site-description motion-element" itemprop="description">数码 影视 阅读</p>
+              <div class="site-description motion-element" itemprop="description">数码 影视 阅读</div>
           </div>
 
           
@@ -507,7 +505,11 @@
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
                     
                     
                       
@@ -522,6 +524,8 @@
 
               
             </nav>
+          
+
           
 
           
@@ -568,6 +572,7 @@
           
              <div class="cc-license motion-element" itemprop="license">
               
+              
                 
               
               
@@ -607,6 +612,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -635,7 +641,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.0.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
 
 
 
@@ -714,35 +720,40 @@
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
 
 
   
 
 
-  <script src="/js/src/utils.js?v=7.0.0"></script>
+  <script src="/js/utils.js?v=7.1.0"></script>
 
-  <script src="/js/src/motion.js?v=7.0.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/src/schemes/muse.js?v=7.0.0"></script>
-
+  <script src="/js/motion.js?v=7.1.0"></script>
 
 
 
   
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
 
   
 
 
-  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+  <script src="/js/next-boot.js?v=7.1.0"></script>
 
 
+  
+
+  
+
+  
 
   
 
@@ -1086,6 +1097,8 @@
   
 
   
+
+  
   
   
   <script src="/lib/needsharebutton/needsharebutton.js"></script>
@@ -1099,7 +1112,7 @@
       
         pbOptions.position = "bottomCenter";
       
-        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,GooglePlus,Evernote";
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
