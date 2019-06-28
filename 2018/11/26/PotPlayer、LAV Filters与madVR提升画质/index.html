@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://user-images.githubusercontent.com/34172455/49001351-6ca66500-f197-11e8-971b-9ec0529a1e86.jpg">
 <meta property="og:image" content="https://user-images.githubusercontent.com/34172455/49001342-6adca180-f197-11e8-8500-8f2add01227e.jpg">
 <meta property="og:image" content="https://user-images.githubusercontent.com/34172455/49001354-6d3efb80-f197-11e8-9925-139c4e85d6d6.jpg">
-<meta property="og:updated_time" content="2018-11-26T08:50:43.584Z">
+<meta property="og:updated_time" content="2019-06-28T10:03:50.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PotPlayer、LAV Filters与madVR提升画质">
 <meta name="twitter:description" content="前言PotPlayer一直有使用LAV Filters与madVR提升画质的方法，写一下折腾的过程。 LAV Filters为解码器，包括LAV Video Decoder（视频解码器）、LAV Audio Decoder（音频解码器）、LAV Splitter或LAV Splitter Source（分离器）。 madVR为视频渲染器，对显卡要求比较高。 本文首发于卡饭论坛及本博客，转载请注明出">
@@ -425,12 +425,24 @@
                 
               
 
-              <time title="创建时间：2018-11-26 16:22:35 / 修改时间：16:50:43" itemprop="dateCreated datePublished" datetime="2018-11-26T16:22:35+08:00">2018-11-26</time>
+              <time title="创建时间：2018-11-26 16:22:35" itemprop="dateCreated datePublished" datetime="2018-11-26T16:22:35+08:00">2018-11-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-28 18:03:50" itemprop="dateModified" datetime="2019-06-28T18:03:50+08:00">2019-06-28</time>
               
             
           </span>
@@ -499,18 +511,13 @@
 <h4 id="（1）使用窗口化图层"><a href="#（1）使用窗口化图层" class="headerlink" title="（1）使用窗口化图层"></a>（1）使用窗口化图层</h4><p><img src="https://user-images.githubusercontent.com/34172455/49001345-6c0dce80-f197-11e8-8221-9fc8b1557683.jpg" alt="2"></p>
 <p>选择“使用窗口化图层”后，会导致“最小化时暂停/还原时播放”失效。</p>
 <h4 id="（2）不使用"><a href="#（2）不使用" class="headerlink" title="（2）不使用"></a>（2）不使用</h4><p>选择“不使用”后，可以在“皮肤/配色”中打开“视频下自动隐藏”替代。</p>
-<h1 id="二、LAV-Filters"><a href="#二、LAV-Filters" class="headerlink" title="二、LAV Filters"></a>二、LAV Filters</h1><h2 id="（一）安装-1"><a href="#（一）安装-1" class="headerlink" title="（一）安装"></a>（一）安装</h2><ol>
-<li><p>下载LAV Filters便携版，解压到固定位置，可安装可不安装。</p>
-</li>
-<li><p>打开“设置-滤镜-源滤镜/分离器-滤镜/解码器管理”，未安装，则打开“添加外部滤镜”，已安装，则打开“添加系统滤镜”，根据需求添加LAV Video Decoder、LAV Audio Decoder、LAV Splitter、LAV Splitter Source滤镜。</p>
+<h1 id="二、LAV-Filters"><a href="#二、LAV-Filters" class="headerlink" title="二、LAV Filters"></a>二、LAV Filters</h1><h2 id="（一）安装-1"><a href="#（一）安装-1" class="headerlink" title="（一）安装"></a>（一）安装</h2><p>1.下载LAV Filters便携版，解压到固定位置，可安装可不安装。</p>
+<p>2.打开“设置-滤镜-源滤镜/分离器-滤镜/解码器管理”，未安装，则打开“添加外部滤镜”，已安装，则打开“添加系统滤镜”，根据需求添加LAV Video Decoder、LAV Audio Decoder、LAV Splitter、LAV Splitter Source滤镜。</p>
 <p><img src="https://user-images.githubusercontent.com/34172455/49001346-6c0dce80-f197-11e8-9fde-b71e586a6ff7.jpg" alt="3"></p>
 <p>添加完成后选择各滤镜支持的格式，然后确定。</p>
-</li>
-<li><p>分别打开“源滤镜/分离器”、“视频解码器”、“音频解码器”，将滤镜全部选择为LAV。</p>
+<p>3.分别打开“源滤镜/分离器”、“视频解码器”、“音频解码器”，将滤镜全部选择为LAV。</p>
 <p><img src="https://user-images.githubusercontent.com/34172455/49001348-6ca66500-f197-11e8-8719-31a1a803dc6f.jpg" alt="4"></p>
 <p><img src="https://user-images.githubusercontent.com/34172455/49001351-6ca66500-f197-11e8-971b-9ec0529a1e86.jpg" alt="5"></p>
-</li>
-</ol>
 <h2 id="（二）设置-1"><a href="#（二）设置-1" class="headerlink" title="（二）设置"></a>（二）设置</h2><p>点开滤镜后的“…”图标即可进入设置，以下列出“硬件解码”的设置，其他设置可自行探索。</p>
 <h3 id="1-硬件解码"><a href="#1-硬件解码" class="headerlink" title="1.硬件解码"></a>1.硬件解码</h3><h4 id="（1）开启与关闭"><a href="#（1）开启与关闭" class="headerlink" title="（1）开启与关闭"></a>（1）开启与关闭</h4><p><img src="https://user-images.githubusercontent.com/34172455/49001342-6adca180-f197-11e8-8500-8f2add01227e.jpg" alt="7"></p>
 <p>选择相应的硬解模式即可。各模式的区别见下。</p>
