@@ -7,7 +7,6 @@
 <html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
@@ -30,6 +29,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.3.0',
+    exturl: false,
     sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     save_scroll: false,
@@ -39,7 +39,7 @@
     lazyload: false,
     pangu: true,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
@@ -47,7 +47,6 @@
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
@@ -82,6 +81,7 @@
 </script>
 
   <title>小学堂</title>
+  <meta name="generator" content="Hexo 3.9.0">
   
 
 
@@ -216,28 +216,28 @@
 
     
 
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="search-input">
+    </div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
+  <div id="search-result"></div>
 </div>
 
 
-    </div>
-</nav>
+  </div>
 </div>
     </header>
 
@@ -252,7 +252,7 @@
   <section id="posts" class="posts-expand">
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -269,14 +269,11 @@
       <meta itemprop="name" content="小学堂">
     </span>
       <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/2018/07/24/Symantec Ghost 历史版本 官方原版/" class="post-title-link" itemprop="url">Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】</a>
+        <h2 class="post-title" itemprop="name headline">
             
-          </h2>
-        
+            <a href="/2018/07/24/Symantec Ghost 历史版本 官方原版/" class="post-title-link" itemprop="url">Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】</a>
+          
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -348,10 +345,10 @@
     
     
     
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
@@ -361,7 +358,7 @@
     
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -378,14 +375,11 @@
       <meta itemprop="name" content="小学堂">
     </span>
       <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/2018/11/26/PotPlayer、LAV Filters与madVR提升画质/" class="post-title-link" itemprop="url">PotPlayer、LAV Filters与madVR提升画质</a>
+        <h2 class="post-title" itemprop="name headline">
             
-          </h2>
-        
+            <a href="/2018/11/26/PotPlayer、LAV Filters与madVR提升画质/" class="post-title-link" itemprop="url">PotPlayer、LAV Filters与madVR提升画质</a>
+          
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -458,10 +452,10 @@
     
     
     
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
@@ -471,7 +465,7 @@
     
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -488,14 +482,11 @@
       <meta itemprop="name" content="小学堂">
     </span>
       <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/2018/07/20/Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程/" class="post-title-link" itemprop="url">Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程</a>
+        <h2 class="post-title" itemprop="name headline">
             
-          </h2>
-        
+            <a href="/2018/07/20/Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程/" class="post-title-link" itemprop="url">Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程</a>
+          
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -567,10 +558,10 @@
     
     
     
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
@@ -580,7 +571,7 @@
     
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -597,14 +588,11 @@
       <meta itemprop="name" content="小学堂">
     </span>
       <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/2018/08/21/Office Click-to-Run升级或降级至任意版本教程/" class="post-title-link" itemprop="url">Office Click-to-Run升级或降级至任意版本教程</a>
+        <h2 class="post-title" itemprop="name headline">
             
-          </h2>
-        
+            <a href="/2018/08/21/Office Click-to-Run升级或降级至任意版本教程/" class="post-title-link" itemprop="url">Office Click-to-Run升级或降级至任意版本教程</a>
+          
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -667,10 +655,10 @@
     
     
     
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
@@ -680,7 +668,7 @@
     
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -697,14 +685,11 @@
       <meta itemprop="name" content="小学堂">
     </span>
       <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/2018/05/17/5G标准表决会议记录中关于联想投票的部分/" class="post-title-link" itemprop="url">5G标准表决会议记录中关于联想投票的部分</a>
+        <h2 class="post-title" itemprop="name headline">
             
-          </h2>
-        
+            <a href="/2018/05/17/5G标准表决会议记录中关于联想投票的部分/" class="post-title-link" itemprop="url">5G标准表决会议记录中关于联想投票的部分</a>
+          
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -775,10 +760,10 @@
     
     
     
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
@@ -788,7 +773,7 @@
     
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -805,14 +790,11 @@
       <meta itemprop="name" content="小学堂">
     </span>
       <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/2018/03/22/Windows与Office各版本及官方授权方式详解/" class="post-title-link" itemprop="url">Windows与Office各版本及官方授权方式详解</a>
+        <h2 class="post-title" itemprop="name headline">
             
-          </h2>
-        
+            <a href="/2018/03/22/Windows与Office各版本及官方授权方式详解/" class="post-title-link" itemprop="url">Windows与Office各版本及官方授权方式详解</a>
+          
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -882,10 +864,10 @@
     
     
     
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
@@ -895,7 +877,7 @@
     
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -912,14 +894,11 @@
       <meta itemprop="name" content="小学堂">
     </span>
       <header class="post-header">
-
-        
-          <h2 class="post-title" itemprop="name headline">
-              
-              <a href="/2017/12/26/区分影视资源（电影、电视剧）质量好坏的办法/" class="post-title-link" itemprop="url">区分影视资源（电影、电视剧）质量好坏的办法</a>
+        <h2 class="post-title" itemprop="name headline">
             
-          </h2>
-        
+            <a href="/2017/12/26/区分影视资源（电影、电视剧）质量好坏的办法/" class="post-title-link" itemprop="url">区分影视资源（电影、电视剧）质量好坏的办法</a>
+          
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -989,10 +968,10 @@
     
     
     
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
@@ -1117,6 +1096,7 @@
     </ul>
   </div>
 
+
         </div>
       </div>
 
@@ -1154,8 +1134,7 @@
     </footer>
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-          <span id="scrollpercent"><span>0</span>%</span>
-        
+        <span>0%</span>
       </div>
 
     
@@ -1179,22 +1158,18 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-<script src="/js/utils.js?v=7.3.0"></script>
-  <script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 
-
-  <script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
 
 
 
 <script src="/js/next-boot.js?v=7.3.0"></script>
-
-
 
 
 
