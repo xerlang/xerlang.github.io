@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-
-
-
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
 <script id="hexo-configurations">
@@ -28,12 +22,12 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '7.3.0',
+    version: '7.5.0',
     exturl: false,
     sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    save_scroll: false,
     copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: true,
     mediumzoom: false,
     lazyload: false,
@@ -52,21 +46,21 @@
       copy_button: '复制',
       copy_success: '复制成功',
       copy_failure: '复制失败'
-    }
+    },
+    sidebarPadding: 40
   };
 </script>
 
   <meta name="description" content="数码 影视 阅读">
 <meta property="og:type" content="website">
 <meta property="og:title" content="小学堂">
-<meta property="og:url" content="https://xerlang.github.io/archives/2017/12/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;xerlang.github.io&#x2F;archives&#x2F;2017&#x2F;12&#x2F;index.html">
 <meta property="og:site_name" content="小学堂">
 <meta property="og:description" content="数码 影视 阅读">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小学堂">
-<meta name="twitter:description" content="数码 影视 阅读">
-  <link rel="canonical" href="https://xerlang.github.io/archives/2017/12/">
+
+<link rel="canonical" href="https://xerlang.github.io/archives/2017/12/">
 
 
 <script id="page-configurations">
@@ -81,10 +75,7 @@
 </script>
 
   <title>归档 | 小学堂</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -93,7 +84,6 @@
 
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -102,9 +92,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -118,16 +107,15 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  <div class="container sidebar-position-right">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">小学堂</span>
@@ -139,11 +127,11 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -151,179 +139,110 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-推荐">
-      
-    
 
-    <a href="/推荐/" rel="section"><i class="menu-item-icon fa fa-fw fa-thumbs-up"></i> <br>推荐</a>
+    <a href="/%E6%8E%A8%E8%8D%90/" rel="section"><i class="fa fa-fw fa-thumbs-up"></i>推荐</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
       </li>
-    
   </ul>
-
-    
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
 
 </nav>
   <div class="site-search">
-    
-  <div class="popup search-popup">
-  <div class="search-header">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="search-input">
-    </div>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
   </div>
-  <div id="search-result"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
 </div>
+<div id="search-result"></div>
 
+</div>
+<div class="search-pop-overlay"></div>
 
   </div>
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-archive">
+          
+
+          <div class="content">
             
 
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
-      
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <span class="collection-header">嗯..! 目前共计 7 篇日志。 继续努力。</span>
+      </div>
 
       
-
-  
-  
-  
-
-  
-    
-    <div class="collection-title">
-      <h2 class="archive-year" id="archive-year-2017">2017</h2>
+    <div class="collection-year">
+      <h2 class="collection-header">2017</h2>
     </div>
-  
-  
 
-  <article class="post" itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2017/12/26/区分影视资源（电影、电视剧）质量好坏的办法/" itemprop="url">
-            <span itemprop="name">区分影视资源（电影、电视剧）质量好坏的办法</span>
-          </a>
-        
-      </h3>
-
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
+        <time itemprop="dateCreated"
               datetime="2017-12-26T15:17:50+08:00"
               content="2017-12-26">
           12-26
         </time>
       </div>
 
+      <h3 class="post-title">
+          <a class="post-title-link" href="/2017/12/26/%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95/" itemprop="url">
+            <span itemprop="name">区分影视资源（电影、电视剧）质量好坏的办法</span>
+          </a>
+      </h3>
+
     </header>
   </article>
-
-
 
 
     </div>
@@ -342,114 +261,81 @@
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="https://user-images.githubusercontent.com/34172455/33764778-f1a5201e-dc50-11e7-916f-90a4c7bdc21e.jpg"
-      alt="不怕太阳晒的小儿郎">
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="不怕太阳晒的小儿郎"
+      src="https://user-images.githubusercontent.com/34172455/33764778-f1a5201e-dc50-11e7-916f-90a4c7bdc21e.jpg">
   <p class="site-author-name" itemprop="name">不怕太阳晒的小儿郎</p>
-  <div class="site-description motion-element" itemprop="description">数码 影视 阅读</div>
+  <div class="site-description" itemprop="description">数码 影视 阅读</div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
           <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
   </nav>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://weibo.com/u/5884973098" title="微博 &rarr; https://weibo.com/u/5884973098" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
+        <a href="https://weibo.com/u/5884973098" title="微博 → https://weibo.com/u/5884973098" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://www.zhihu.com/people/xerlang" title="知乎 &rarr; https://www.zhihu.com/people/xerlang" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>知乎</a>
+        <a href="https://www.zhihu.com/people/xerlang" title="知乎 → https://www.zhihu.com/people/xerlang" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/xerlang" title="GitHub &rarr; https://github.com/xerlang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/xerlang" title="GitHub → https://github.com/xerlang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
-    
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    
-  
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
-  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+  <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa  fa-fw fa-link"></i>
+      <i class="fa fa-fw fa-link"></i>
       友情链接
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
           <a href="https://bbs.kafan.cn/" title="https://bbs.kafan.cn/" rel="noopener" target="_blank">卡饭论坛</a>
         </li>
-      
     </ul>
   </div>
 
-
-        </div>
       </div>
 
     </div>
@@ -460,19 +346,30 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">不怕太阳晒的小儿郎</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  </div>
 
         
+
+
+
+
 
 
 
@@ -484,45 +381,18 @@
         
       </div>
     </footer>
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        <span>0%</span>
-      </div>
-
-    
-  
-<script src="/lib/needsharebutton/needsharebutton.js"></script>
-<script>
-    pbOptions = {};
-      pbOptions.iconStyle = "box";
-    
-      pbOptions.boxForm = "horizontal";
-    
-      pbOptions.position = "bottomCenter";
-    
-      pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-    
-    new needShareButton('#needsharebutton-postbottom', pbOptions);
-</script>
-
-
   </div>
 
   
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
-
-<script src="/js/schemes/muse.js?v=7.3.0"></script>
-
-
-
-<script src="/js/next-boot.js?v=7.3.0"></script>
-
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -531,19 +401,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <script src="/js/local-search.js?v=7.3.0"></script>
-
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -561,9 +419,5 @@
 
   
 
-  
-
-
-  
 </body>
 </html>

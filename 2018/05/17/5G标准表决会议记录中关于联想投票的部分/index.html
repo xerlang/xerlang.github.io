@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-
-
-
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
 <script id="hexo-configurations">
@@ -28,12 +22,12 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '7.3.0',
+    version: '7.5.0',
     exturl: false,
     sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    save_scroll: false,
     copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: true,
     mediumzoom: false,
     lazyload: false,
@@ -52,28 +46,28 @@
       copy_button: '复制',
       copy_success: '复制成功',
       copy_failure: '复制失败'
-    }
+    },
+    sidebarPadding: 40
   };
 </script>
 
   <meta name="description" content="前言最近关于联想在5G标准表决会议的投票讨论的沸沸扬扬，各种说法都有，有因为联想的2票弃权或投高通而使华为的标准以1票之差输了的，也有联想的投票对最终结果没有影响的。究其原因，因为绝大部分人没有亲自看5G表决会议的会议记录，只是看到了二手甚至多手资料，这些资料在多次转载的过程中已经失真了。所以如果想知道联想在表决会议中投票的真实情况，最好的办法是看会议记录。3GPP每次会议的会议记录都会公开放出并">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5G标准表决会议记录中关于联想投票的部分">
-<meta property="og:url" content="https://xerlang.github.io/2018/05/17/5G标准表决会议记录中关于联想投票的部分/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;xerlang.github.io&#x2F;2018&#x2F;05&#x2F;17&#x2F;5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86&#x2F;index.html">
 <meta property="og:site_name" content="小学堂">
 <meta property="og:description" content="前言最近关于联想在5G标准表决会议的投票讨论的沸沸扬扬，各种说法都有，有因为联想的2票弃权或投高通而使华为的标准以1票之差输了的，也有联想的投票对最终结果没有影响的。究其原因，因为绝大部分人没有亲自看5G表决会议的会议记录，只是看到了二手甚至多手资料，这些资料在多次转载的过程中已经失真了。所以如果想知道联想在表决会议中投票的真实情况，最好的办法是看会议记录。3GPP每次会议的会议记录都会公开放出并">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg">
-<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170428-020af474-59fb-11e8-8c67-9dabffec124e.jpg">
-<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170432-04ea9ad2-59fb-11e8-8729-130d58d4fb76.jpg">
-<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170430-030c0566-59fb-11e8-9b32-5bbe40d18e96.jpg">
-<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170433-05377c12-59fb-11e8-840c-64450d291298.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170428-020af474-59fb-11e8-8c67-9dabffec124e.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170432-04ea9ad2-59fb-11e8-8729-130d58d4fb76.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170430-030c0566-59fb-11e8-9b32-5bbe40d18e96.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170433-05377c12-59fb-11e8-840c-64450d291298.jpg">
 <meta property="og:updated_time" content="2018-05-18T09:05:21.280Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="5G标准表决会议记录中关于联想投票的部分">
-<meta name="twitter:description" content="前言最近关于联想在5G标准表决会议的投票讨论的沸沸扬扬，各种说法都有，有因为联想的2票弃权或投高通而使华为的标准以1票之差输了的，也有联想的投票对最终结果没有影响的。究其原因，因为绝大部分人没有亲自看5G表决会议的会议记录，只是看到了二手甚至多手资料，这些资料在多次转载的过程中已经失真了。所以如果想知道联想在表决会议中投票的真实情况，最好的办法是看会议记录。3GPP每次会议的会议记录都会公开放出并">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/34172455/40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg">
-  <link rel="canonical" href="https://xerlang.github.io/2018/05/17/5G标准表决会议记录中关于联想投票的部分/">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg">
+
+<link rel="canonical" href="https://xerlang.github.io/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/">
 
 
 <script id="page-configurations">
@@ -88,10 +82,7 @@
 </script>
 
   <title>5G标准表决会议记录中关于联想投票的部分 | 小学堂</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -100,7 +91,6 @@
 
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -109,9 +99,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -125,16 +114,15 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  <div class="container sidebar-position-right">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">小学堂</span>
@@ -146,11 +134,11 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -158,128 +146,96 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-推荐">
-      
-    
 
-    <a href="/推荐/" rel="section"><i class="menu-item-icon fa fa-fw fa-thumbs-up"></i> <br>推荐</a>
+    <a href="/%E6%8E%A8%E8%8D%90/" rel="section"><i class="fa fa-fw fa-thumbs-up"></i>推荐</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
       </li>
-    
   </ul>
-
-    
 
 </nav>
   <div class="site-search">
-    
-  <div class="popup search-popup">
-  <div class="search-header">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="search-input">
-    </div>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
   </div>
-  <div id="search-result"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
 </div>
+<div id="search-result"></div>
 
+</div>
+<div class="search-pop-overlay"></div>
 
   </div>
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-post-detail">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  <article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xerlang.github.io/2018/05/17/5G标准表决会议记录中关于联想投票的部分/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xerlang.github.io/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://user-images.githubusercontent.com/34172455/33764778-f1a5201e-dc50-11e7-916f-90a4c7bdc21e.jpg">
       <meta itemprop="name" content="不怕太阳晒的小儿郎">
       <meta itemprop="description" content="数码 影视 阅读">
-      <meta itemprop="image" content="https://user-images.githubusercontent.com/34172455/33764778-f1a5201e-dc50-11e7-916f-90a4c7bdc21e.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小学堂">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">5G标准表决会议记录中关于联想投票的部分
-
-          
+        <h2 class="post-title" itemprop="name headline">
+          5G标准表决会议记录中关于联想投票的部分
         </h2>
 
         <div class="post-meta">
@@ -289,16 +245,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2018-05-17 17:32:58" itemprop="dateCreated datePublished" datetime="2018-05-17T17:32:58+08:00">2018-05-17</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -306,21 +254,17 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2018-05-18 17:05:21" itemprop="dateModified" datetime="2018-05-18T17:05:21+08:00">2018-05-18</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数码/" itemprop="url" rel="index"><span itemprop="name">数码</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E7%A0%81/" itemprop="url" rel="index">
+                    <span itemprop="name">数码</span>
+                  </a>
+                </span>
             </span>
-          
 
           
 
@@ -395,68 +339,48 @@
     
     
         
-      
-        
 
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>不怕太阳晒的小儿郎</li>
+    <strong>本文作者： </strong>不怕太阳晒的小儿郎
+  </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xerlang.github.io/2018/05/17/5G标准表决会议记录中关于联想投票的部分/" title="5G标准表决会议记录中关于联想投票的部分">https://xerlang.github.io/2018/05/17/5G标准表决会议记录中关于联想投票的部分/</a>
+    <a href="https://xerlang.github.io/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/" title="5G标准表决会议记录中关于联想投票的部分">https://xerlang.github.io/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
 </div>
 
-      
 
       <footer class="post-footer">
 
         
-  <div class="post-widgets">
-    <div class="social-share">
-      
-      
-        <div id="needsharebutton-postbottom">
-          <span class="btn">
-            <i class="fa fa-share-alt" aria-hidden="true"></i>
-          </span>
-        </div>
-      
-    </div>
-  
-  </div>
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-              
-                <a href="/2018/03/22/Windows与Office各版本及官方授权方式详解/" rel="next" title="Windows与Office各版本及官方授权方式详解">
+                <a href="/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/" rel="next" title="Windows与Office各版本及官方授权方式详解">
                   <i class="fa fa-chevron-left"></i> Windows与Office各版本及官方授权方式详解
                 </a>
-              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2018/07/20/Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程/" rel="prev" title="Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程">
+                <a href="/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/" rel="prev" title="Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程">
                   Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程 <i class="fa fa-chevron-right"></i>
                 </a>
-              
             </div>
           </div>
-        
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
   </div>
 
@@ -467,141 +391,83 @@
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#说明"><span class="nav-text">说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、86次会议（2016年8月）"><span class="nav-text">一、86次会议（2016年8月）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）投票环节"><span class="nav-text">（一）投票环节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）会议结果"><span class="nav-text">（二）会议结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、86bis次会议（2016年10月）"><span class="nav-text">二、86bis次会议（2016年10月）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）提问环节"><span class="nav-text">（一）提问环节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）投票环节"><span class="nav-text">（二）投票环节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（三）会议结果"><span class="nav-text">（三）会议结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、87次会议（2016年11月）"><span class="nav-text">三、87次会议（2016年11月）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）数据信道短码投票"><span class="nav-text">（一）数据信道短码投票</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）控制信道投票"><span class="nav-text">（二）控制信道投票</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（三）会议结果-1"><span class="nav-text">（三）会议结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）联想的选择"><span class="nav-text">（一）联想的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）联想的选择对最终结果的影响"><span class="nav-text">（二）联想的选择对最终结果的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（三）联想的选择中有问题的地方"><span class="nav-text">（三）联想的选择中有问题的地方</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考内容"><span class="nav-text">参考内容</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="https://user-images.githubusercontent.com/34172455/33764778-f1a5201e-dc50-11e7-916f-90a4c7bdc21e.jpg"
-      alt="不怕太阳晒的小儿郎">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="不怕太阳晒的小儿郎"
+      src="https://user-images.githubusercontent.com/34172455/33764778-f1a5201e-dc50-11e7-916f-90a4c7bdc21e.jpg">
   <p class="site-author-name" itemprop="name">不怕太阳晒的小儿郎</p>
-  <div class="site-description motion-element" itemprop="description">数码 影视 阅读</div>
+  <div class="site-description" itemprop="description">数码 影视 阅读</div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
           <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
   </nav>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://weibo.com/u/5884973098" title="微博 &rarr; https://weibo.com/u/5884973098" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
+        <a href="https://weibo.com/u/5884973098" title="微博 → https://weibo.com/u/5884973098" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://www.zhihu.com/people/xerlang" title="知乎 &rarr; https://www.zhihu.com/people/xerlang" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>知乎</a>
+        <a href="https://www.zhihu.com/people/xerlang" title="知乎 → https://www.zhihu.com/people/xerlang" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/xerlang" title="GitHub &rarr; https://github.com/xerlang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/xerlang" title="GitHub → https://github.com/xerlang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
-    
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    
-  
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
-  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+  <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa  fa-fw fa-link"></i>
+      <i class="fa fa-fw fa-link"></i>
       友情链接
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
           <a href="https://bbs.kafan.cn/" title="https://bbs.kafan.cn/" rel="noopener" target="_blank">卡饭论坛</a>
         </li>
-      
     </ul>
   </div>
 
-
-        </div>
       </div>
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#说明"><span class="nav-text">说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、86次会议（2016年8月）"><span class="nav-text">一、86次会议（2016年8月）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）投票环节"><span class="nav-text">（一）投票环节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）会议结果"><span class="nav-text">（二）会议结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、86bis次会议（2016年10月）"><span class="nav-text">二、86bis次会议（2016年10月）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）提问环节"><span class="nav-text">（一）提问环节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）投票环节"><span class="nav-text">（二）投票环节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（三）会议结果"><span class="nav-text">（三）会议结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、87次会议（2016年11月）"><span class="nav-text">三、87次会议（2016年11月）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）数据信道短码投票"><span class="nav-text">（一）数据信道短码投票</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）控制信道投票"><span class="nav-text">（二）控制信道投票</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（三）会议结果-1"><span class="nav-text">（三）会议结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（一）联想的选择"><span class="nav-text">（一）联想的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（二）联想的选择对最终结果的影响"><span class="nav-text">（二）联想的选择对最终结果的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（三）联想的选择中有问题的地方"><span class="nav-text">（三）联想的选择中有问题的地方</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考内容"><span class="nav-text">参考内容</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
     </div>
   </aside>
@@ -611,19 +477,30 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">不怕太阳晒的小儿郎</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  </div>
 
         
+
+
+
+
 
 
 
@@ -635,45 +512,18 @@
         
       </div>
     </footer>
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        <span>0%</span>
-      </div>
-
-    
-  
-<script src="/lib/needsharebutton/needsharebutton.js"></script>
-<script>
-    pbOptions = {};
-      pbOptions.iconStyle = "box";
-    
-      pbOptions.boxForm = "horizontal";
-    
-      pbOptions.position = "bottomCenter";
-    
-      pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-    
-    new needShareButton('#needsharebutton-postbottom', pbOptions);
-</script>
-
-
   </div>
 
   
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
-
-<script src="/js/schemes/muse.js?v=7.3.0"></script>
-
-
-
-<script src="/js/next-boot.js?v=7.3.0"></script>
-
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -682,19 +532,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <script src="/js/local-search.js?v=7.3.0"></script>
-
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -711,13 +549,6 @@
   
 
   
-
-  
-
-
-  
-  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
-
 
 </body>
 </html>

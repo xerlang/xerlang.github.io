@@ -16,10 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById('search-input');
   const resultContent = document.getElementById('search-result');
 
-  const removeElement = element => {
-    let el = document.querySelector(element);
-    if (el) el.remove();
-  };
   // Ref: https://github.com/ForbesLindesay/unescape-html
   const unescapeHtml = html => {
     return String(html)
@@ -37,9 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const getIndexByWord = (word, text, caseSensitive) => {
     let wordLen = word.length;
-    if (wordLen === 0) {
-      return [];
-    }
+    if (wordLen === 0) return [];
     let startPosition = 0;
     let position = [];
     let index = [];
@@ -58,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   // Merge hits into slices
-  const mergeIntoSlice = (text, start, end, index, searchText) => {
+  const mergeIntoSlice = (start, end, index, searchText) => {
     let item = index[index.length - 1];
     let position = item.position;
     let word = item.word;
@@ -120,9 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // Perform local searching
       datas.forEach(data => {
         // Only match articles with not empty titles
-        if (!data.title) {
-          return;
-        }
+        if (!data.title) return;
         let searchTextCount = 0;
         let title = data.title.trim();
         let titleInLowerCase = title.toLowerCase();
@@ -154,7 +146,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
           let slicesOfTitle = [];
           if (indexOfTitle.length !== 0) {
-            let tmp = mergeIntoSlice(title, 0, title.length, indexOfTitle, searchText);
+            let tmp = mergeIntoSlice(0, title.length, indexOfTitle, searchText);
             searchTextCount += tmp.searchTextCountInSlice;
             slicesOfTitle.push(tmp);
           }
@@ -176,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if (end > content.length) {
               end = content.length;
             }
-            let tmp = mergeIntoSlice(content, start, end, indexOfContent, searchText);
+            let tmp = mergeIntoSlice(start, end, indexOfContent, searchText);
             searchTextCount += tmp.searchTextCountInSlice;
             slicesOfContent.push(tmp);
           }
@@ -238,6 +230,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
       searchResultList += '</ul>';
       resultContent.innerHTML = searchResultList;
+      window.pjax && window.pjax.refresh(resultContent);
     }
   };
 
@@ -247,16 +240,16 @@ window.addEventListener('DOMContentLoaded', () => {
       .then(res => {
         // Get the contents from search data
         isfetched = true;
-        datas = isXml ? $('entry', res).map((i, e) => {
+        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
           return {
-            title  : $('title', e).text(),
-            content: $('content', e).text(),
-            url    : $('url', e).text()
+            title  : element.querySelector('title').innerHTML,
+            content: element.querySelector('content').innerHTML,
+            url    : element.querySelector('url').innerHTML
           };
-        }).get() : JSON.parse(res);
+        }) : JSON.parse(res);
 
         // Remove loading animation
-        removeElement('.search-pop-overlay');
+        document.querySelector('.search-pop-overlay').innerHTML = '';
         document.body.style.overflow = '';
 
         if (callback) {
@@ -269,36 +262,17 @@ window.addEventListener('DOMContentLoaded', () => {
     fetchData();
   }
 
-  // Monitor main search box
-  const onPopupClose = () => {
-    document.querySelector('.popup').style.display = 'none';
-    document.querySelector('#search-input').value = '';
-    removeElement('.search-result-list');
-    removeElement('#no-result');
-    removeElement('.search-pop-overlay');
-    document.body.style.overflow = '';
-  };
-
   const proceedSearch = () => {
-    document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
     document.body.style.overflow = 'hidden';
-    document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
-    let el = document.querySelector('.popup');
-    if (el.isVisible()) {
-      el.style.display = 'none';
-    } else {
-      el.style.display = 'block';
-    }
+    document.querySelector('.search-pop-overlay').style.display = 'block';
+    document.querySelector('.popup').style.display = 'block';
     document.getElementById('search-input').focus();
   };
 
   // Search function
   const searchFunc = () => {
-    document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"><div id="search-loading-icon"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div></div>');
-    document.querySelector('#search-loading-icon').css({
-      margin      : '20% auto 0 auto',
-      'text-align': 'center'
-    });
+    document.querySelector('.search-pop-overlay').style.display = '';
+    document.querySelector('.search-pop-overlay').innerHTML = '<div class="search-loading-icon"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div>';
     fetchData(proceedSearch);
   };
 
@@ -314,8 +288,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Handle and trigger popup window
-  document.querySelector('.popup-trigger').addEventListener('click', event => {
-    event.stopPropagation();
+  document.querySelector('.popup-trigger').addEventListener('click', () => {
     if (isfetched === false) {
       searchFunc();
     } else {
@@ -323,13 +296,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.body.style.overflow = '';
+    document.querySelector('.search-pop-overlay').style.display = 'none';
+    document.querySelector('.popup').style.display = 'none';
+  };
+
+  document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
-  document.querySelector('.popup').addEventListener('click', event => {
-    event.stopPropagation();
-  });
+  window.addEventListener('pjax:success', onPopupClose);
   window.addEventListener('keyup', event => {
-    let shouldDismissSearchPopup = event.which === 27 && document.querySelector('.popup').isVisible();
-    if (shouldDismissSearchPopup) {
+    if (event.which === 27) {
       onPopupClose();
     }
   });
