@@ -1,57 +1,583 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[PotPlayer、LAV Filters与madVR提升画质]]></title>
-    <url>%2F2018%2F11%2F26%2FPotPlayer%E3%80%81LAV%20Filters%E4%B8%8EmadVR%E6%8F%90%E5%8D%87%E7%94%BB%E8%B4%A8%2F</url>
-    <content type="text"><![CDATA[前言PotPlayer一直有使用LAV Filters与madVR提升画质的方法，写一下折腾的过程。 LAV Filters为解码器，包括LAV Video Decoder（视频解码器）、LAV Audio Decoder（音频解码器）、LAV Splitter或LAV Splitter Source（分离器）。 madVR为视频渲染器，对显卡要求比较高。 本文首发于卡饭论坛及本博客，转载请注明出处。 一、PotPlayer（一）安装常规方法安装即可。 （二）设置安装LAV Filters、madVR之前，需要对PotPlayer进行部分设置。 1.内置滤镜 （1）内置图像处理滤镜设置此项设置控制“视频”子选项卡的设置，即若关闭此项设置，则“视频”子选项卡的设置无效。 安装madVR时，此选项应关闭，否则PotPlyer会将视频先压缩再传递给madVR。 （2）内置声音处理滤镜设置此项设置控制“声音”子选项卡的设置，即若关闭此项设置，则“声音”子选项卡的设置无效。 此项开启关闭目前并未测试到有任何影响，故开启关闭即可。因关闭后会导致“声音”子选项卡中的设置无效，故关闭后声音可能会变得很小（“规格化”被关闭），故如需使用“规格化”，需开启此设置。 不使用LAV Audio Decoder的话不需要设置。 2.皮肤安装madVR后，“在画面上输出皮肤”的方式只能选择“不使用”或“使用窗口化图层”，否则会无法显示。 （1）使用窗口化图层 选择“使用窗口化图层”后，会导致“最小化时暂停/还原时播放”失效。 （2）不使用选择“不使用”后，可以在“皮肤/配色”中打开“视频下自动隐藏”替代。 二、LAV Filters（一）安装1.下载LAV Filters便携版，解压到固定位置，可安装可不安装。 2.打开“设置-滤镜-源滤镜/分离器-滤镜/解码器管理”，未安装，则打开“添加外部滤镜”，已安装，则打开“添加系统滤镜”，根据需求添加LAV Video Decoder、LAV Audio Decoder、LAV Splitter、LAV Splitter Source滤镜。 添加完成后选择各滤镜支持的格式，然后确定。 3.分别打开“源滤镜/分离器”、“视频解码器”、“音频解码器”，将滤镜全部选择为LAV。 （二）设置点开滤镜后的“…”图标即可进入设置，以下列出“硬件解码”的设置，其他设置可自行探索。 1.硬件解码（1）开启与关闭 选择相应的硬解模式即可。各模式的区别见下。 （2）模式 None：不开启硬解 NVIDA CUVID：NVIDA显卡专用，适用于XP以上系统 Intel QuickSync：Intel显卡专用 DXVA2(copy-back)：通用，因从GPU解码后转移到CPU，故占用更多的GPU与CPU，但兼容性相对于native较好 DXVA2(native)：通用，效率较高，但某些情况会有画质损失 D3D11：上述DXVA2使用的是D3D9，而此为D3D11，效率最高，画质跟软解完全相同，适用于Windows 8及以上系统。 同样分为native与copy-back，native目前只支持madVR渲染器，其他渲染器均使用copy-back。“Hardware Device to use”中选择“Automatic(Native)”，则为native，选择任意显卡则为copy-back。 （3）对比1）效率D3D11 native &gt;= DXVA2(native) &gt; D3D11 copy-back &gt;= DXVA2(copy-back) 2）范围只有D3D11 native与DXVA2(native)可硬解HEVC 10bit。 （4）验证方法一“Tab”键查看。 方法二右键选择“滤镜-LAV Video Decoder”，看“Active Decoder”后代码，含义如下： avcodec：未开启硬解 cuvid：NVIDIA CUVID qs：Intel QuickSync dxvacb：DXVA2(copy-back) dxva2n：DXVA2(native) d3d11 native：D3D11 （三）验证使用“Tab”键查看信息或右键“滤镜”查看。 三、madVR（一）安装1.下载madVR便携版，解压到固定位置，安装。 2.打开“设置-视频”，“视频渲染器”选择“Madshi视频渲染”，确定。 （二）设置点开滤镜后的“…”图标即可进入设置。 （三）验证使用“Tab”键查看信息或右键“滤镜”查看。 四、其他（一）全局滤镜优先权LAV Filters、madVR也可在“全局滤镜优先权”中安装，但此种方法更容易导致PotPlayer崩溃，所以不采用。 （二）为何不使用PotPlayer内置解码器与madVR搭配PotPlayer内置解码器与madVR搭配时，部分x264（H.264、AVC）10bit视频画面偏白。 更新说明2018.11.26 发布 2019.06.28 修正排版]]></content>
+    <title>Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】</title>
+    <url>/2018/07/24/Symantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Ghost一直是用着最趁手备份工具，由于Ghost本身官方并不提供下载，只集成在其他软件中，且官方下载相对困难。故将绝大部分版本的Ghost提取出来，以供下载。</p>
+<p>此过程的难点在于搜集Symantec Ghost Solution Suite、Symantec Ghost Standard Tools与Ghost版本的对应关系及历史版本的官方原版程序的下载，提取起来很简单。</p>
+<p>本文首发于卡饭论坛（<a href="https://bbs.kafan.cn/thread-2128366-1-1.html" target="_blank" rel="noopener">https://bbs.kafan.cn/thread-2128366-1-1.html</a>）及本博客，转载请注明出处。</p>
+<a id="more"></a>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
+<li>本文所提供Symantec Ghost Solution Suite、Symantec Ghost Standard Tools均为官方原版，均下载自Symantec官方服务器，除个别外，均带Symantec数字签名</li>
+<li>本文所提供Ghost均为官方原版，均提取自官方Symantec Ghost Solution Suite、Symantec Ghost Standard Tools，除CLI程序（gdisk.exe、ghost.exe）外，GUI程序均带Symantec数字签名</li>
+<li>本文所提供Ghost包含gdisk（gdisk.exe、gdisk32.exe、gdisk64.exe）与ghost（ghost.exe、ghost32.exe、ghost64.exe、ghostexp.exe、ghostexp64.exe、ghostsrv.exe等）相关程序</li>
+<li>本文所提供Ghost包含8.x、11.x及12.x版本（12.0.0.7x版本前因找不到官方GSS或GST，未提供下载）</li>
+<li>因官方不再提供CLI程序，故本文所提供Ghost历史版本中的CLI程序（gdisk.exe、ghost.exe）均为未注册版，功能受限，GUI程序功能完整</li>
+</ul>
+<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><ul>
+<li>自11.0.5.2113版本开始，官方开始提供gdisk、ghost的64位程序（gdisk64.exe、ghost64.exe）</li>
+<li>自12版本开始，官方不再提供CLI程序（gdisk.exe、ghost.exe）</li>
+<li>自12版本开始，官方开始提供ghostexp的64位程序（ghostexp64.exe）</li>
+<li>自12.0.0.8050版本开始，官方开始提供ghostexp、ghostsrv简体中文文件（ghostexp_zh.dll、ghostsrv_zh.dll）</li>
+<li>自12.0.0.8065版本开始，Ghost开始分卷压缩</li>
+<li>自12.0.0.10618版本开始，官方开始提供ghostsrv的64位程序（ghostsrv64.exe）</li>
+</ul>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>百度网盘：<a href="https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag" target="_blank" rel="noopener">https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag</a>（密码：4aa9）</p>
+<p>蓝奏云：<a href="https://www.lanzous.com/b377169/" target="_blank" rel="noopener">https://www.lanzous.com/b377169/</a>（密码：6h6y）</p>
+<p>网盘中提供成品Ghost程序，可直接下载使用，也提供了GSS与GST，有兴趣的话可自行提取。</p>
+<h1 id="版本对应"><a href="#版本对应" class="headerlink" title="版本对应"></a>版本对应</h1><h2 id="8-x"><a href="#8-x" class="headerlink" title="8.x"></a>8.x</h2><ul>
+<li>Ghost 8.3.0.1331（GSS 1.1）</li>
+</ul>
+<h2 id="11-x"><a href="#11-x" class="headerlink" title="11.x"></a>11.x</h2><ul>
+<li>Ghost 11.0.0.1502（GSS 2.0）</li>
+<li>Ghost 11.0.1.1533（GSS 2.0.1）</li>
+<li>Ghost 11.0.2.1573（GSS 2.0.2）</li>
+<li>Ghost 11.5.0.2113（GSS 2.5）</li>
+<li>Ghost 11.5.1.2266（GSS 2.5.1）</li>
+</ul>
+<h2 id="12-x"><a href="#12-x" class="headerlink" title="12.x"></a>12.x</h2><ul>
+<li>Ghost 12.0.0.8006（GST 3.0）</li>
+<li>Ghost 12.0.0.8010（GST 3.0 HF2）</li>
+<li>Ghost 12.0.0.8019（GST 3.0 HF4）</li>
+<li>Ghost 12.0.0.8023（GST 3.1）</li>
+<li>Ghost 12.0.0.8027（GST 3.1 MP1）</li>
+<li>Ghost 12.0.0.8031（GST 3.1 MP2）</li>
+<li>Ghost 12.0.0.8050（GST 3.1 MP3）</li>
+<li>Ghost 12.0.0.8051（GST 3.1 MP3 V2）</li>
+<li>Ghost 12.0.0.8065（GST 3.1 MP5）</li>
+<li>Ghost 12.0.0.10514（GST 3.2）</li>
+<li>Ghost 12.0.0.10517（GST 3.1 MP6）</li>
+<li>Ghost 12.0.0.10520（GST 3.2 RU1）</li>
+<li>Ghost 12.0.0.10531（GST 3.2 RU2）</li>
+<li>Ghost 12.0.0.10549（GST 3.2 RU3）</li>
+<li>Ghost 12.0.0.10561（GST 3.2 RU4）</li>
+<li>Ghost 12.0.0.10580（GST 3.2 RU6）</li>
+<li>Ghost 12.0.0.10589（GST 3.2 RU7）</li>
+<li>Ghost 12.0.0.10618（GST 3.3）</li>
+<li>Ghost 12.0.0.10630（GST 3.3 RU1）</li>
+<li>Ghost 12.0.0.10644（GST 3.3 RU2）</li>
+<li>Ghost 12.0.0.10658（GST 3.3 RU3）</li>
+</ul>
+<h1 id="编辑日志"><a href="#编辑日志" class="headerlink" title="编辑日志"></a>编辑日志</h1><ul>
+<li>2018.07.24：发布</li>
+<li>2018.10.15：更新Ghost 12.0.0.10618</li>
+<li>2019.02.18：更新Ghost 12.0.0.10630、调整文章结构</li>
+<li>2019.04.30：更新Ghost 12.0.0.10644</li>
+<li>2019.08.07：更新Ghost 12.0.0.10658</li>
+</ul>
+]]></content>
       <categories>
         <category>数码</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Office Click-to-Run升级或降级至任意版本教程]]></title>
-    <url>%2F2018%2F08%2F21%2FOffice%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[说明起因本地安装的Office版本是2016 Retail版，此版本使用的是Click-to-Run安装及更新方式。Office各版本区别及安装方式可参见《Windows与Office各版本及官方授权方式详解》。 某天发现Word导航窗格宽度调整后，重新打开会恢复到默认宽度，即此项设置无法保存，查找原因时发现除了此前自动更新到了1807版，经过测试为此版本Bug。所以在等待官方修复期间，产生了回退旧版本的需求。 难点阅读上述外链文章会发现，Office 2016有两种安装模式，MSI与Click-to-Run（以下简称C2R）。 MSI回退旧版本的方法十分简单，去“已安装更新”卸载掉补丁即可。 C2R相对复杂，无法直接卸载更新，也没有提供各版本的安装文件，搜索也并没有找到相应的解决办法，故查询了Office部署文档，虽只是一带而过，但方法还是存在的，使用“Office部署工具（Office Deployment Tool）”或“Office 2016管理模板文件（Office 2016 Administrative Template files (ADMX/ADML) and Office Customization Tool）”。 声明本文首发于卡饭论坛（https://bbs.kafan.cn/forum-8-1.html）及本博客，转载请注明作者与出处。 注意 本教程适用于所有C2R模式安装的Office 2016版本，包括订阅Office 365而安装的Office 2016及买断制Office 2016零售版。 本教程方法均来自官方文档，使用工具均为官方工具。 本教程不仅适用于版本降级，也适用于版本升级。 本教程适用于Windows。 升级与降级至任意版本的方法有两种，本文以Office 2016管理模板文件为主，Office部署工具使用方法参见下文参考文献。 一、查询所需版本号访问https://docs.microsoft.com/en-us/OfficeUpdates/update-history-office365-proplus-by-date，查询需要升级或降级的版本号。 以2018年7月17日发布的1806版为例，显示版本号为10228.20134，则完整版本号为16.0.10228.20134。 二、安装Office 2016管理模板文件访问https://www.microsoft.com/en-us/download/details.aspx?id=49030，下载与系统相匹配的Office 2016管理模板文件。 运行下载的文件，得到admin、admx两个文件夹及office2016grouppolicyandoctsettings.xlsx一个文件。 将admx文件夹中所有的.admx文件复制到C:\Windows\PolicyDefinitions文件夹中，将admx/zh-cn文件夹中所有的.adml文件复制到C:\Windows\PolicyDefinitions\zh-CN文件夹中。若需要安装其他语言，只需将相应语言文件夹中的.adml文件复制到C:\Windows\PolicyDefinitions中的语言文件夹中即可。（或只复制office16.admx与office16.adml即可） 运行“gpedit.msc”打开组策略编辑器，依次展开“计算机配置-管理模板-Microsoft Office 2016-更新”，打开“目标版本”，选择“已启用”，“更新版本”中输入需要升级或降级的完整版本，如16.0.10228.20134，确定。 三、升级或降级打开Office的任意一组件，转到“账户-Office更新”，运行“检查更新”，待更新完成后，Office即会变为所需要的版本。 结语升级或降级版本成功后，可关闭自动更新，可选择删除上文安装的组策略。 Office 2016管理模板文件可实现很多功能，可自行在组策略中配置。 参考 Office部署（中国）：https://docs.microsoft.com/zh-cn/DeployOffice/ Office部署（美国）：https://docs.microsoft.com/en-us/DeployOffice/ Office更新（中国）：https://docs.microsoft.com/zh-cn/OfficeUpdates/ Office更新（美国）：https://docs.microsoft.com/en-us/OfficeUpdates/ Office 2016管理模板文件：https://www.microsoft.com/en-us/download/details.aspx?id=49030 更新说明2018.08.20 发布]]></content>
+    <title>PotPlayer、LAV Filters与madVR提升画质</title>
+    <url>/2018/11/26/PotPlayer%E3%80%81LAV%20Filters%E4%B8%8EmadVR%E6%8F%90%E5%8D%87%E7%94%BB%E8%B4%A8/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>PotPlayer一直有使用LAV Filters与madVR提升画质的方法，写一下折腾的过程。</p>
+<p>LAV Filters为解码器，包括LAV Video Decoder（视频解码器）、LAV Audio Decoder（音频解码器）、LAV Splitter或LAV Splitter Source（分离器）。</p>
+<p>madVR为视频渲染器，对显卡要求比较高。</p>
+<p>本文首发于卡饭论坛及本博客，转载请注明出处。</p>
+<a id="more"></a>
+<h1 id="一、PotPlayer"><a href="#一、PotPlayer" class="headerlink" title="一、PotPlayer"></a>一、PotPlayer</h1><h2 id="（一）安装"><a href="#（一）安装" class="headerlink" title="（一）安装"></a>（一）安装</h2><p>常规方法安装即可。</p>
+<h2 id="（二）设置"><a href="#（二）设置" class="headerlink" title="（二）设置"></a>（二）设置</h2><p>安装LAV Filters、madVR之前，需要对PotPlayer进行部分设置。</p>
+<h3 id="1-内置滤镜"><a href="#1-内置滤镜" class="headerlink" title="1.内置滤镜"></a>1.内置滤镜</h3><p><img src="https://user-images.githubusercontent.com/34172455/49001343-6b753800-f197-11e8-981f-aa991b762ab4.jpg" alt="1"></p>
+<h4 id="（1）内置图像处理滤镜设置"><a href="#（1）内置图像处理滤镜设置" class="headerlink" title="（1）内置图像处理滤镜设置"></a>（1）内置图像处理滤镜设置</h4><p>此项设置控制“视频”子选项卡的设置，即若关闭此项设置，则“视频”子选项卡的设置无效。</p>
+<p>安装madVR时，此选项应关闭，否则PotPlyer会将视频先压缩再传递给madVR。</p>
+<h4 id="（2）内置声音处理滤镜设置"><a href="#（2）内置声音处理滤镜设置" class="headerlink" title="（2）内置声音处理滤镜设置"></a>（2）内置声音处理滤镜设置</h4><p>此项设置控制“声音”子选项卡的设置，即若关闭此项设置，则“声音”子选项卡的设置无效。</p>
+<p>此项开启关闭目前并未测试到有任何影响，故开启关闭即可。因关闭后会导致“声音”子选项卡中的设置无效，故关闭后声音可能会变得很小（“规格化”被关闭），故如需使用“规格化”，需开启此设置。</p>
+<p>不使用LAV Audio Decoder的话不需要设置。</p>
+<h3 id="2-皮肤"><a href="#2-皮肤" class="headerlink" title="2.皮肤"></a>2.皮肤</h3><p>安装madVR后，“在画面上输出皮肤”的方式只能选择“不使用”或“使用窗口化图层”，否则会无法显示。</p>
+<h4 id="（1）使用窗口化图层"><a href="#（1）使用窗口化图层" class="headerlink" title="（1）使用窗口化图层"></a>（1）使用窗口化图层</h4><p><img src="https://user-images.githubusercontent.com/34172455/49001345-6c0dce80-f197-11e8-8221-9fc8b1557683.jpg" alt="2"></p>
+<p>选择“使用窗口化图层”后，会导致“最小化时暂停/还原时播放”失效。</p>
+<h4 id="（2）不使用"><a href="#（2）不使用" class="headerlink" title="（2）不使用"></a>（2）不使用</h4><p>选择“不使用”后，可以在“皮肤/配色”中打开“视频下自动隐藏”替代。</p>
+<h1 id="二、LAV-Filters"><a href="#二、LAV-Filters" class="headerlink" title="二、LAV Filters"></a>二、LAV Filters</h1><h2 id="（一）安装-1"><a href="#（一）安装-1" class="headerlink" title="（一）安装"></a>（一）安装</h2><p>1.下载LAV Filters便携版，解压到固定位置，可安装可不安装。</p>
+<p>2.打开“设置-滤镜-源滤镜/分离器-滤镜/解码器管理”，未安装，则打开“添加外部滤镜”，已安装，则打开“添加系统滤镜”，根据需求添加LAV Video Decoder、LAV Audio Decoder、LAV Splitter、LAV Splitter Source滤镜。</p>
+<p><img src="https://user-images.githubusercontent.com/34172455/49001346-6c0dce80-f197-11e8-9fde-b71e586a6ff7.jpg" alt="3"></p>
+<p>添加完成后选择各滤镜支持的格式，然后确定。</p>
+<p>3.分别打开“源滤镜/分离器”、“视频解码器”、“音频解码器”，将滤镜全部选择为LAV。</p>
+<p><img src="https://user-images.githubusercontent.com/34172455/49001348-6ca66500-f197-11e8-8719-31a1a803dc6f.jpg" alt="4"></p>
+<p><img src="https://user-images.githubusercontent.com/34172455/49001351-6ca66500-f197-11e8-971b-9ec0529a1e86.jpg" alt="5"></p>
+<h2 id="（二）设置-1"><a href="#（二）设置-1" class="headerlink" title="（二）设置"></a>（二）设置</h2><p>点开滤镜后的“…”图标即可进入设置，以下列出“硬件解码”的设置，其他设置可自行探索。</p>
+<h3 id="1-硬件解码"><a href="#1-硬件解码" class="headerlink" title="1.硬件解码"></a>1.硬件解码</h3><h4 id="（1）开启与关闭"><a href="#（1）开启与关闭" class="headerlink" title="（1）开启与关闭"></a>（1）开启与关闭</h4><p><img src="https://user-images.githubusercontent.com/34172455/49001342-6adca180-f197-11e8-8500-8f2add01227e.jpg" alt="7"></p>
+<p>选择相应的硬解模式即可。各模式的区别见下。</p>
+<h4 id="（2）模式"><a href="#（2）模式" class="headerlink" title="（2）模式"></a>（2）模式</h4><ul>
+<li><p>None：不开启硬解</p>
+</li>
+<li><p>NVIDA CUVID：NVIDA显卡专用，适用于XP以上系统</p>
+</li>
+<li><p>Intel QuickSync：Intel显卡专用</p>
+</li>
+<li><p>DXVA2(copy-back)：通用，因从GPU解码后转移到CPU，故占用更多的GPU与CPU，但兼容性相对于native较好</p>
+</li>
+<li><p>DXVA2(native)：通用，效率较高，但某些情况会有画质损失</p>
+</li>
+<li><p>D3D11：上述DXVA2使用的是D3D9，而此为D3D11，效率最高，画质跟软解完全相同，适用于Windows 8及以上系统。</p>
+<p>同样分为native与copy-back，native目前只支持madVR渲染器，其他渲染器均使用copy-back。“Hardware Device to use”中选择“Automatic(Native)”，则为native，选择任意显卡则为copy-back。</p>
+</li>
+</ul>
+<h4 id="（3）对比"><a href="#（3）对比" class="headerlink" title="（3）对比"></a>（3）对比</h4><h5 id="1）效率"><a href="#1）效率" class="headerlink" title="1）效率"></a>1）效率</h5><p>D3D11 native &gt;= DXVA2(native) &gt; D3D11 copy-back &gt;= DXVA2(copy-back) </p>
+<h5 id="2）范围"><a href="#2）范围" class="headerlink" title="2）范围"></a>2）范围</h5><p>只有D3D11 native与DXVA2(native)可硬解HEVC 10bit。</p>
+<h4 id="（4）验证"><a href="#（4）验证" class="headerlink" title="（4）验证"></a>（4）验证</h4><h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><p>“Tab”键查看。</p>
+<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h5><p>右键选择“滤镜-LAV Video Decoder”，看“Active Decoder”后代码，含义如下：</p>
+<ul>
+<li>avcodec：未开启硬解</li>
+<li>cuvid：NVIDIA CUVID</li>
+<li>qs：Intel QuickSync</li>
+<li>dxvacb：DXVA2(copy-back)</li>
+<li>dxva2n：DXVA2(native)</li>
+<li>d3d11 native：D3D11</li>
+</ul>
+<h2 id="（三）验证"><a href="#（三）验证" class="headerlink" title="（三）验证"></a>（三）验证</h2><p>使用“Tab”键查看信息或右键“滤镜”查看。</p>
+<h1 id="三、madVR"><a href="#三、madVR" class="headerlink" title="三、madVR"></a>三、madVR</h1><h2 id="（一）安装-2"><a href="#（一）安装-2" class="headerlink" title="（一）安装"></a>（一）安装</h2><p>1.下载madVR便携版，解压到固定位置，安装。</p>
+<p>2.打开“设置-视频”，“视频渲染器”选择“Madshi视频渲染”，确定。</p>
+<p><img src="https://user-images.githubusercontent.com/34172455/49001354-6d3efb80-f197-11e8-9925-139c4e85d6d6.jpg" alt="6"></p>
+<h2 id="（二）设置-2"><a href="#（二）设置-2" class="headerlink" title="（二）设置"></a>（二）设置</h2><p>点开滤镜后的“…”图标即可进入设置。</p>
+<h2 id="（三）验证-1"><a href="#（三）验证-1" class="headerlink" title="（三）验证"></a>（三）验证</h2><p>使用“Tab”键查看信息或右键“滤镜”查看。</p>
+<h1 id="四、其他"><a href="#四、其他" class="headerlink" title="四、其他"></a>四、其他</h1><h2 id="（一）全局滤镜优先权"><a href="#（一）全局滤镜优先权" class="headerlink" title="（一）全局滤镜优先权"></a>（一）全局滤镜优先权</h2><p>LAV Filters、madVR也可在“全局滤镜优先权”中安装，但此种方法更容易导致PotPlayer崩溃，所以不采用。</p>
+<h2 id="（二）为何不使用PotPlayer内置解码器与madVR搭配"><a href="#（二）为何不使用PotPlayer内置解码器与madVR搭配" class="headerlink" title="（二）为何不使用PotPlayer内置解码器与madVR搭配"></a>（二）为何不使用PotPlayer内置解码器与madVR搭配</h2><p>PotPlayer内置解码器与madVR搭配时，部分x264（H.264、AVC）10bit视频画面偏白。</p>
+<h1 id="更新说明"><a href="#更新说明" class="headerlink" title="更新说明"></a>更新说明</h1><h2 id="2018-11-26"><a href="#2018-11-26" class="headerlink" title="2018.11.26"></a>2018.11.26</h2><ul>
+<li>发布</li>
+</ul>
+<h2 id="2019-06-28"><a href="#2019-06-28" class="headerlink" title="2019.06.28"></a>2019.06.28</h2><ul>
+<li>修正排版</li>
+</ul>
+]]></content>
       <categories>
         <category>数码</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】]]></title>
-    <url>%2F2018%2F07%2F24%2FSymantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88%2F</url>
-    <content type="text"><![CDATA[前言Ghost一直是用着最趁手备份工具，由于Ghost本身官方并不提供下载，只集成在其他软件中，且官方下载相对困难。故将绝大部分版本的Ghost提取出来，以供下载。 此过程的难点在于搜集Symantec Ghost Solution Suite、Symantec Ghost Standard Tools与Ghost版本的对应关系及历史版本的官方原版程序的下载，提取起来很简单。 本文首发于卡饭论坛（https://bbs.kafan.cn/thread-2128366-1-1.html）及本博客，转载请注明出处。 说明 本文所提供Symantec Ghost Solution Suite、Symantec Ghost Standard Tools均为官方原版，均下载自Symantec官方服务器，除个别外，均带Symantec数字签名 本文所提供Ghost均为官方原版，均提取自官方Symantec Ghost Solution Suite、Symantec Ghost Standard Tools，除CLI程序（gdisk.exe、ghost.exe）外，GUI程序均带Symantec数字签名 本文所提供Ghost包含gdisk（gdisk.exe、gdisk32.exe、gdisk64.exe）与ghost（ghost.exe、ghost32.exe、ghost64.exe、ghostexp.exe、ghostexp64.exe、ghostsrv.exe等）相关程序 本文所提供Ghost包含8.x、11.x及12.x版本（12.0.0.7x版本前因找不到官方GSS或GST，未提供下载） 因官方不再提供CLI程序，故本文所提供Ghost历史版本中的CLI程序（gdisk.exe、ghost.exe）均为未注册版，功能受限，GUI程序功能完整 更新日志 自11.0.5.2113版本开始，官方开始提供gdisk、ghost的64位程序（gdisk64.exe、ghost64.exe） 自12版本开始，官方不再提供CLI程序（gdisk.exe、ghost.exe） 自12版本开始，官方开始提供ghostexp的64位程序（ghostexp64.exe） 自12.0.0.8050版本开始，官方开始提供ghostexp、ghostsrv简体中文文件（ghostexp_zh.dll、ghostsrv_zh.dll） 自12.0.0.8065版本开始，Ghost开始分卷压缩 自12.0.0.10618版本开始，官方开始提供ghostsrv的64位程序（ghostsrv64.exe） 下载百度网盘：https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag（密码：4aa9） 蓝奏云：https://www.lanzous.com/b377169/（密码：6h6y） 网盘中提供成品Ghost程序，可直接下载使用，也提供了GSS与GST，有兴趣的话可自行提取。 版本对应8.x Ghost 8.3.0.1331（GSS 1.1） 11.x Ghost 11.0.0.1502（GSS 2.0） Ghost 11.0.1.1533（GSS 2.0.1） Ghost 11.0.2.1573（GSS 2.0.2） Ghost 11.5.0.2113（GSS 2.5） Ghost 11.5.1.2266（GSS 2.5.1） 12.x Ghost 12.0.0.8006（GST 3.0） Ghost 12.0.0.8010（GST 3.0 HF2） Ghost 12.0.0.8019（GST 3.0 HF4） Ghost 12.0.0.8023（GST 3.1） Ghost 12.0.0.8027（GST 3.1 MP1） Ghost 12.0.0.8031（GST 3.1 MP2） Ghost 12.0.0.8050（GST 3.1 MP3） Ghost 12.0.0.8051（GST 3.1 MP3 V2） Ghost 12.0.0.8065（GST 3.1 MP5） Ghost 12.0.0.10514（GST 3.2） Ghost 12.0.0.10517（GST 3.1 MP6） Ghost 12.0.0.10520（GST 3.2 RU1） Ghost 12.0.0.10531（GST 3.2 RU2） Ghost 12.0.0.10549（GST 3.2 RU3） Ghost 12.0.0.10561（GST 3.2 RU4） Ghost 12.0.0.10580（GST 3.2 RU6） Ghost 12.0.0.10589（GST 3.2 RU7） Ghost 12.0.0.10618（GST 3.3） Ghost 12.0.0.10630（GST 3.3 RU1） Ghost 12.0.0.10644（GST 3.3 RU2） Ghost 12.0.0.10658（GST 3.3 RU3） 编辑日志 2018.07.24：发布 2018.10.15：更新Ghost 12.0.0.10618 2019.02.18：更新Ghost 12.0.0.10630、调整文章结构 2019.04.30：更新Ghost 12.0.0.10644 2019.08.07：更新Ghost 12.0.0.10658]]></content>
+    <title>Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程</title>
+    <url>/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>最近入门PT，家中宽带上行20M，不快不慢，所以自建了个Seedbox，使用的下载方案是qBittorrent+FlexGet+Auto Remove Torrents，FlexGet使用PT站RSS链接自动下载种子至服务器并使用qBittorrent自动下载，下载完成后根据条件使用Auto Remove Torrents自动删除，以实现无需人工干预，自动刷流量。</p>
+<p>写作本文的初衷是部署过程中发现目前的教程都相对简单，对新手不算友好，部署过程中出现的问题都得不到解答，而软件官方教程为英文，相比中文门槛较高。</p>
+<p>本文内容全部参考两软件的官方教程，删减不必要部分，并亲自验证可行性。未参考任何非官方教程。参考链接见文末。</p>
+<a id="more"></a>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>系统：Ubuntu 16.04  LTS  x64，开启BBR</li>
+<li>用户：root</li>
+<li>WinSCP：5.13.3</li>
+<li>PuTTY：0.70</li>
+<li>qBittorrent-nox：4.1.1</li>
+<li>FlexGet：2.14.6</li>
+<li>Auto Remove Torrents：1.2.4</li>
+</ul>
+<h1 id="一、qBittorrent"><a href="#一、qBittorrent" class="headerlink" title="一、qBittorrent"></a>一、qBittorrent</h1><h2 id="（一）安装"><a href="#（一）安装" class="headerlink" title="（一）安装"></a>（一）安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">add-apt-repository ppa:qbittorrent-team/qbittorrent-stable</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install qbittorrent-nox</span><br></pre></td></tr></table></figure>
+<h2 id="（二）创建服务"><a href="#（二）创建服务" class="headerlink" title="（二）创建服务"></a>（二）创建服务</h2><p>创建服务。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim /etc/systemd/system/qbittorrent.service</span><br></pre></td></tr></table></figure>
+<p>输入以下内容。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=qBittorrent Daemon Service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User=root</span><br><span class="line">ExecStart=/usr/bin/qbittorrent-nox</span><br><span class="line">ExecStop=/usr/bin/killall -w qbittorrent-nox</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>root指的是系统当前用户名，根据自己的实际情况更改。</p>
+<h2 id="（三）运行"><a href="#（三）运行" class="headerlink" title="（三）运行"></a>（三）运行</h2><h3 id="1-启动"><a href="#1-启动" class="headerlink" title="1.启动"></a>1.启动</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start qbittorrent</span><br></pre></td></tr></table></figure>
+<h3 id="2-停止"><a href="#2-停止" class="headerlink" title="2.停止"></a>2.停止</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl stop qbittorrent</span><br></pre></td></tr></table></figure>
+<h3 id="3-开机自启"><a href="#3-开机自启" class="headerlink" title="3.开机自启"></a>3.开机自启</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable qbittorrent</span><br></pre></td></tr></table></figure>
+<h3 id="4-查看运行状态"><a href="#4-查看运行状态" class="headerlink" title="4.查看运行状态"></a>4.查看运行状态</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl status qbittorrent</span><br></pre></td></tr></table></figure>
+<h3 id="5-访问Web-UI"><a href="#5-访问Web-UI" class="headerlink" title="5.访问Web UI"></a>5.访问Web UI</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">默认地址: http://IP地址:8080</span><br><span class="line">默认用户名: admin</span><br><span class="line">默认密码: adminadmin</span><br></pre></td></tr></table></figure>
+<p>IP地址为服务器地址，登录后可在设置中将Web UI设置成简体中文，更改用户名和密码等。</p>
+<h2 id="（四）升级"><a href="#（四）升级" class="headerlink" title="（四）升级"></a>（四）升级</h2><p>升级方法与安装方法一致。</p>
+<h1 id="二、FlexGet"><a href="#二、FlexGet" class="headerlink" title="二、FlexGet"></a>二、FlexGet</h1><h2 id="（一）准备"><a href="#（一）准备" class="headerlink" title="（一）准备"></a>（一）准备</h2><h3 id="1-安装升级Python"><a href="#1-安装升级Python" class="headerlink" title="1.安装升级Python"></a>1.安装升级Python</h3><p>FlexGet支持的Python版本为2.7，3.3到3.5，Auto Remove Torrents只支持3.x，为了方便，FlexGet也使用Python 3.x安装，若版本不正确，可升级Python，若版本正确，无需操作。</p>
+<h4 id="（1）查看版本"><a href="#（1）查看版本" class="headerlink" title="（1）查看版本"></a>（1）查看版本</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python3 -V</span><br></pre></td></tr></table></figure>
+<h4 id="（2）升级"><a href="#（2）升级" class="headerlink" title="（2）升级"></a>（2）升级</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install python3</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装升级pip"><a href="#2-安装升级pip" class="headerlink" title="2.安装升级pip"></a>2.安装升级pip</h3><h4 id="（1）查看版本-1"><a href="#（1）查看版本-1" class="headerlink" title="（1）查看版本"></a>（1）查看版本</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 -V</span><br></pre></td></tr></table></figure>
+<h4 id="（2）安装"><a href="#（2）安装" class="headerlink" title="（2）安装"></a>（2）安装</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install python3-pip</span><br></pre></td></tr></table></figure>
+<h4 id="（3）升级"><a href="#（3）升级" class="headerlink" title="（3）升级"></a>（3）升级</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install -U pip</span><br></pre></td></tr></table></figure>
+<h3 id="3-安装升级setuptools"><a href="#3-安装升级setuptools" class="headerlink" title="3.安装升级setuptools"></a>3.安装升级setuptools</h3><h4 id="（1）安装"><a href="#（1）安装" class="headerlink" title="（1）安装"></a>（1）安装</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install python3-setuptools</span><br></pre></td></tr></table></figure>
+<h4 id="（2）升级-1"><a href="#（2）升级-1" class="headerlink" title="（2）升级"></a>（2）升级</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install -U setuptools</span><br></pre></td></tr></table></figure>
+<h3 id="4-安装升级nano"><a href="#4-安装升级nano" class="headerlink" title="4.安装升级nano"></a>4.安装升级nano</h3><h4 id="（1）查看版本-2"><a href="#（1）查看版本-2" class="headerlink" title="（1）查看版本"></a>（1）查看版本</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano -V</span><br></pre></td></tr></table></figure>
+<h4 id="（2）安装与升级"><a href="#（2）安装与升级" class="headerlink" title="（2）安装与升级"></a>（2）安装与升级</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install nano</span><br></pre></td></tr></table></figure>
+<h2 id="（二）安装"><a href="#（二）安装" class="headerlink" title="（二）安装"></a>（二）安装</h2><h3 id="1-查看FlexGet版本"><a href="#1-查看FlexGet版本" class="headerlink" title="1.查看FlexGet版本"></a>1.查看FlexGet版本</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget -V</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install flexget</span><br></pre></td></tr></table></figure>
+<h2 id="（三）配置"><a href="#（三）配置" class="headerlink" title="（三）配置"></a>（三）配置</h2><h3 id="1-创建配置目录"><a href="#1-创建配置目录" class="headerlink" title="1.创建配置目录"></a>1.创建配置目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /root/.flexget</span><br></pre></td></tr></table></figure>
+<h3 id="2-创建并编辑配置文件"><a href="#2-创建并编辑配置文件" class="headerlink" title="2.创建并编辑配置文件"></a>2.创建并编辑配置文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano /root/.flexget/config.yml</span><br></pre></td></tr></table></figure>
+<h3 id="3-配置与运行"><a href="#3-配置与运行" class="headerlink" title="3.配置与运行"></a>3.配置与运行</h3><p>FlexGet支持众多插件，下文只列出本人用到的，其他插件用法可参见文末插件链接。</p>
+<h4 id="（1）示例"><a href="#（1）示例" class="headerlink" title="（1）示例"></a>（1）示例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tasks:</span><br><span class="line">  test task:</span><br><span class="line">    rss: http://mysite.com/myfeed.rss</span><br><span class="line">    accept_all: no</span><br><span class="line">    regexp:</span><br><span class="line">      accept:</span><br><span class="line">        - good.stuff</span><br><span class="line">      reject:</span><br><span class="line">        - bad.things</span><br><span class="line">      from: title</span><br><span class="line">    content_size:</span><br><span class="line">      min: 12</span><br><span class="line">      max: 1200</span><br><span class="line">      strict: no</span><br><span class="line">    download: /home/me/watchdir/</span><br><span class="line">    qbittorrent:</span><br><span class="line">      port: 8080</span><br><span class="line">      username: admin</span><br><span class="line">      password: adminadmin</span><br><span class="line">      path: /media/disk/downloads/</span><br><span class="line">web_server:</span><br><span class="line">  bind: 0.0.0.0</span><br><span class="line">  port: 50001</span><br><span class="line">  web_ui: yes</span><br><span class="line">  run_v2: yes</span><br></pre></td></tr></table></figure>
+<h4 id="（2）基本配置"><a href="#（2）基本配置" class="headerlink" title="（2）基本配置"></a>（2）基本配置</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tasks:</span><br><span class="line">  test task: #任务名称，可任意起</span><br><span class="line">    rss: http://mysite.com/myfeed.rss #rss地址</span><br><span class="line">    download: /home/me/watchdir/ #rss订阅的下载位置</span><br></pre></td></tr></table></figure>
+<h4 id="（3）accept-all"><a href="#（3）accept-all" class="headerlink" title="（3）accept_all"></a>（3）accept_all</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">accept_all: no #是否接受所有条目，接受为yes，不接受为no</span><br></pre></td></tr></table></figure>
+<h4 id="（4）regexp"><a href="#（4）regexp" class="headerlink" title="（4）regexp"></a>（4）regexp</h4><p>regexp为正则表达式筛选插件。 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regexp:</span><br><span class="line">  accept: #接受内容，多个条件写为多行。无条件可删除此项</span><br><span class="line">    - good.stuff</span><br><span class="line">  reject: #拒绝内容，多个条件写为多行。无条件可删除此项</span><br><span class="line">    - bad.things</span><br><span class="line">  from: title #删选位置，title为标题</span><br></pre></td></tr></table></figure>
+<h4 id="（5）content-size"><a href="#（5）content-size" class="headerlink" title="（5）content_size"></a>（5）content_size</h4><p>content_size为按内容大小进行筛选的插件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">content_size:</span><br><span class="line">  min: 12 #最小值，单位为m。</span><br><span class="line">  max: 1200 #最大值，单位为m。</span><br><span class="line">  strict: no</span><br></pre></td></tr></table></figure>
+<p>此设置为接受12m~1200m大小的内容。</p>
+<h4 id="（6）qbittorrent"><a href="#（6）qbittorrent" class="headerlink" title="（6）qbittorrent"></a>（6）qbittorrent</h4><p>qbittorrent设置插件。 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">qbittorrent:</span><br><span class="line">  port: 8080 #qBittorrent监听端口</span><br><span class="line">  username: admin #qBittorrent用户名</span><br><span class="line">  password: adminadmin #qBittorrent密码</span><br><span class="line">  path: /media/disk/downloads/ #qBittorrent下载地址</span><br></pre></td></tr></table></figure>
+<h4 id="（7）web-server"><a href="#（7）web-server" class="headerlink" title="（7）web_server"></a>（7）web_server</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">web_server:</span><br><span class="line">  bind: 0.0.0.0 #本服务器IP或0.0.0.0</span><br><span class="line">  port: 50001 #监听端口，可任意设置</span><br><span class="line">  web_ui: yes #是否开启Web UI，开启为yes，关闭为no。</span><br><span class="line">  run_v2: yes #是否开启Web UI 2.0界面，开启为yes，关闭为no。</span><br></pre></td></tr></table></figure>
+<h3 id="4-检查配置与手动运行"><a href="#4-检查配置与手动运行" class="headerlink" title="4.检查配置与手动运行"></a>4.检查配置与手动运行</h3><h4 id="（1）检查配置文件是否正确"><a href="#（1）检查配置文件是否正确" class="headerlink" title="（1）检查配置文件是否正确"></a>（1）检查配置文件是否正确</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget check</span><br></pre></td></tr></table></figure>
+<h4 id="（2）模拟手动运行"><a href="#（2）模拟手动运行" class="headerlink" title="（2）模拟手动运行"></a>（2）模拟手动运行</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget –test execute</span><br></pre></td></tr></table></figure>
+<h4 id="（3）手动运行"><a href="#（3）手动运行" class="headerlink" title="（3）手动运行"></a>（3）手动运行</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget execute</span><br></pre></td></tr></table></figure>
+<h4 id="（4）查看任务运行状况"><a href="#（4）查看任务运行状况" class="headerlink" title="（4）查看任务运行状况"></a>（4）查看任务运行状况</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget status</span><br></pre></td></tr></table></figure>
+<h3 id="5-自动运行"><a href="#5-自动运行" class="headerlink" title="5.自动运行"></a>5.自动运行</h3><h4 id="（1）查询FlexGet安装位置"><a href="#（1）查询FlexGet安装位置" class="headerlink" title="（1）查询FlexGet安装位置"></a>（1）查询FlexGet安装位置</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">which flexget</span><br></pre></td></tr></table></figure>
+<p>例如位置为/usr/local/bin/flexget。 </p>
+<h4 id="（2）编辑crontab"><a href="#（2）编辑crontab" class="headerlink" title="（2）编辑crontab"></a>（2）编辑crontab</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<p>使用nano编辑，输入以下内容。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*/2 * * * * /usr/local/bin/flexget --cron execute</span><br></pre></td></tr></table></figure>
+<p>保存退出。其中2是指2分钟运行一次，可任意设置。</p>
+<h3 id="6-配置Web-UI"><a href="#6-配置Web-UI" class="headerlink" title="6.配置Web UI"></a>6.配置Web UI</h3><h4 id="（1）编辑配置文件"><a href="#（1）编辑配置文件" class="headerlink" title="（1）编辑配置文件"></a>（1）编辑配置文件</h4><p>参见上文“配置”。</p>
+<h4 id="（2）设置Web-UI密码"><a href="#（2）设置Web-UI密码" class="headerlink" title="（2）设置Web UI密码"></a>（2）设置Web UI密码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget web passwd &lt;要设置的密码&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="（3）开启守护进程"><a href="#（3）开启守护进程" class="headerlink" title="（3）开启守护进程"></a>（3）开启守护进程</h4><p>访问Web UI，必须开启守护进程。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget daemon start -d</span><br></pre></td></tr></table></figure>
+<h4 id="（4）停止守护进行"><a href="#（4）停止守护进行" class="headerlink" title="（4）停止守护进行"></a>（4）停止守护进行</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget daemon stop</span><br></pre></td></tr></table></figure>
+<h4 id="（5）查看运行状态"><a href="#（5）查看运行状态" class="headerlink" title="（5）查看运行状态"></a>（5）查看运行状态</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget daemon status</span><br></pre></td></tr></table></figure>
+<h4 id="（6）访问Web-UI"><a href="#（6）访问Web-UI" class="headerlink" title="（6）访问Web UI"></a>（6）访问Web UI</h4><p>访问<a href="http://ip:50001即可，用户名为flexget，密码为设置密码。" target="_blank" rel="noopener">http://ip:50001即可，用户名为flexget，密码为设置密码。</a> </p>
+<h4 id="（7）开机自启守护进程"><a href="#（7）开机自启守护进程" class="headerlink" title="（7）开机自启守护进程"></a>（7）开机自启守护进程</h4><p>编辑crontab，输入以下内容。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@reboot /usr/local/bin/flexget daemon start -d</span><br></pre></td></tr></table></figure>
+<h2 id="（四）升级-1"><a href="#（四）升级-1" class="headerlink" title="（四）升级"></a>（四）升级</h2><h3 id="1-查看FlexGet版本-1"><a href="#1-查看FlexGet版本-1" class="headerlink" title="1.查看FlexGet版本"></a>1.查看FlexGet版本</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget -V</span><br></pre></td></tr></table></figure>
+<h3 id="2-通过pip升级"><a href="#2-通过pip升级" class="headerlink" title="2.通过pip升级"></a>2.通过pip升级</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install -U flexget</span><br></pre></td></tr></table></figure>
+<p>若安装出现错误，可升级Python、pip与setuptools尝试解决，升级方法见上。</p>
+<h3 id="3-检查配置错误"><a href="#3-检查配置错误" class="headerlink" title="3.检查配置错误"></a>3.检查配置错误</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget check</span><br></pre></td></tr></table></figure>
+<h2 id="（五）常见问题"><a href="#（五）常见问题" class="headerlink" title="（五）常见问题"></a>（五）常见问题</h2><h3 id="1-日志显示"><a href="#1-日志显示" class="headerlink" title="1.日志显示"></a>1.日志显示</h3><p>FlexGet日志级别包括critical，error，warning，info，verbose，debug，trace。 Web UI默认显示info及以下级别。若需开启其他级别，可使用以下命令。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-L LEVEL</span><br></pre></td></tr></table></figure>
+<p>如<code>-L verbose</code>表示显示verbose及以下级别的日志。</p>
+<p>如需要Web UI显示verbose及以下级别的日志，开启守护进程的命令变为。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flexget -L verbose daemon start -d</span><br></pre></td></tr></table></figure>
+<p>守护进程开启自启的命令变为。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@reboot /usr/local/bin/flexget -L verbose daemon start -d</span><br></pre></td></tr></table></figure>
+<h1 id="三、Auto-Remove-Torrents"><a href="#三、Auto-Remove-Torrents" class="headerlink" title="三、Auto Remove Torrents"></a>三、Auto Remove Torrents</h1><h2 id="（一）准备-1"><a href="#（一）准备-1" class="headerlink" title="（一）准备"></a>（一）准备</h2><p>Auto Remove Torrents需要Python 3，不支持Python 2。需安装Python 3、pip 3，安装方法参见上文FlexGet中的安装方法。</p>
+<h2 id="（二）安装-1"><a href="#（二）安装-1" class="headerlink" title="（二）安装"></a>（二）安装</h2><h3 id="1-查看版本"><a href="#1-查看版本" class="headerlink" title="1.查看版本"></a>1.查看版本</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 show autoremove-torrents</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装-1"><a href="#2-安装-1" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install autoremove-torrents</span><br></pre></td></tr></table></figure>
+<h2 id="（三）配置-1"><a href="#（三）配置-1" class="headerlink" title="（三）配置"></a>（三）配置</h2><h3 id="1-创建编辑配置文件"><a href="#1-创建编辑配置文件" class="headerlink" title="1.创建编辑配置文件"></a>1.创建编辑配置文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /root/autoremove-torrents</span><br><span class="line">vim /root/autoremove-torrents/config.yml</span><br></pre></td></tr></table></figure>
+<p>配置文件因与FlexGet配置文件同名，故不可放在root目录下，否则会被FlexGet识别。</p>
+<h3 id="2-配置内容"><a href="#2-配置内容" class="headerlink" title="2.配置内容"></a>2.配置内容</h3><p>配置文件可以分为4部分，示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一个任务块</span><br><span class="line">my_task: # 第一部分：任务名称</span><br><span class="line">  # 第二部分：登录信息</span><br><span class="line">  client: qtortorrent</span><br><span class="line">  host: http://127.0.0.1:9091</span><br><span class="line">  username: admin</span><br><span class="line">  password: adminadmin</span><br><span class="line">  # 第三部分：策略块（删除条件）</span><br><span class="line">  strategies:</span><br><span class="line">    strategy1: # 第1部分：策略名称</span><br><span class="line">      # 第2部分：过滤器</span><br><span class="line">      categories:</span><br><span class="line">        - IPT</span><br><span class="line">      # 第3部分：删除条件</span><br><span class="line">      ratio: 1</span><br><span class="line">      seeding_time: 1209600</span><br><span class="line">    strategy2:</span><br><span class="line">      all_categories: true</span><br><span class="line">      excluded_categories:</span><br><span class="line">        - IPT</span><br><span class="line">      seeding_time: 259200</span><br><span class="line">    # 这里可以添加更多策略</span><br><span class="line">  # 第四部分：决定是否同时删除数据（可选项）</span><br><span class="line">  delete_data: true</span><br><span class="line"></span><br><span class="line"># 这里可以添加更多任务</span><br></pre></td></tr></table></figure>
+<h4 id="第一部分：任务名称"><a href="#第一部分：任务名称" class="headerlink" title="第一部分：任务名称"></a>第一部分：任务名称</h4><p>任意。</p>
+<h4 id="第二部分：登录信息"><a href="#第二部分：登录信息" class="headerlink" title="第二部分：登录信息"></a>第二部分：登录信息</h4><ul>
+<li>client：客户端类型。目前支持qbittorrent/transmission/μTorrent。</li>
+<li>host：WebUI的访问地址。如<a href="http://127.0.0.1:8080。" target="_blank" rel="noopener">http://127.0.0.1:8080。</a></li>
+<li>username：WebUI的用户名。</li>
+<li>password：WebUI的密码，密码前后需要加英文半角双引号。</li>
+</ul>
+<h4 id="第三部分：策略块"><a href="#第三部分：策略块" class="headerlink" title="第三部分：策略块"></a>第三部分：策略块</h4><h5 id="1）策略名称"><a href="#1）策略名称" class="headerlink" title="1）策略名称"></a>1）策略名称</h5><p>任意。</p>
+<h5 id="2）过滤器"><a href="#2）过滤器" class="headerlink" title="2）过滤器"></a>2）过滤器</h5><p>过滤器用于选择删除条件会对哪些种子有效，而其它种子不受删除条件的影响。</p>
+<ul>
+<li>all_trackers/all_categories：选择所有的Tracker或分类。</li>
+<li>categories：选择这些分类的种子。</li>
+<li>excluded_categories：排除这些分类的种子。</li>
+<li>trackers：选择这些Tracker的种子。</li>
+<li>excluded_trackers：排除这些Tracker的种子。</li>
+<li>每个过滤器的结果都是一个种子的集合。注意如果categories和trackers过滤器同时存在，则脚本会取这两个集合的交集，并减去excluded_categories集合和excluded_trackers集合。</li>
+</ul>
+<h5 id="3）删除条件"><a href="#3）删除条件" class="headerlink" title="3）删除条件"></a>3）删除条件</h5><ul>
+<li>ratio：分享率上限。</li>
+<li>create_time：种子从添加到客户端到现在所经过的时间，以秒为单位。在这里设置一个添加时间的上限，当种子在客户端中存活时间超过此上限后，种子会被直接删除（不管种子现在正处于哪种状态）。</li>
+<li>seeding_time：最长做种时间。</li>
+<li>seed_size：计算上述选择的种子的总大小。如果总大小超过限制，一部分种子会被删除。需要设置以下两个属性：<ul>
+<li>limit：总大小限制，以GiB为单位。</li>
+<li>action：确定哪部分种子将被删除。可以是以下值：<ul>
+<li>remove-old-seeds：尽量删除旧的种子。</li>
+<li>remove-new-seeds：尽量删除新的种子。</li>
+<li>remove-big-seeds：尽量删除体积大的种子。</li>
+<li>remove-small-seeds：尽量删除体积小的种子。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="第四部分：删除数据"><a href="#第四部分：删除数据" class="headerlink" title="第四部分：删除数据"></a>第四部分：删除数据</h4><p>确定是否在删除种子时同时删除数据。如果此字段未指定，则默认值为false。</p>
+<h2 id="（四）运行"><a href="#（四）运行" class="headerlink" title="（四）运行"></a>（四）运行</h2><h3 id="1-模拟运行"><a href="#1-模拟运行" class="headerlink" title="1.模拟运行"></a>1.模拟运行</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">autoremove-torrents --view --conf=/root/autoremove-torrents/config.yml</span><br></pre></td></tr></table></figure>
+<p><code>--conf=/root/autoremove-torrents/config.yml</code>为配置文件路径，若路径为默认，则可不写。下同。</p>
+<h3 id="2-运行"><a href="#2-运行" class="headerlink" title="2.运行"></a>2.运行</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">autoremove-torrents --conf=/root/autoremove-torrents/config.yml</span><br></pre></td></tr></table></figure>
+<h3 id="3-自动运行"><a href="#3-自动运行" class="headerlink" title="3.自动运行"></a>3.自动运行</h3><p>编辑crontab。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<p>使用nano编辑，在出现的界面添加以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*/2 * * * * /usr/local/bin/autoremove-torrents --conf=/root/autoremove-torrents/config.yml</span><br></pre></td></tr></table></figure>
+<p>可根据需求设置自动运行的时间间隔。</p>
+<h2 id="（五）升级"><a href="#（五）升级" class="headerlink" title="（五）升级"></a>（五）升级</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install -U autoremove-torrents</span><br></pre></td></tr></table></figure>
+<h1 id="已知问题"><a href="#已知问题" class="headerlink" title="已知问题"></a>已知问题</h1><p>FlexGet与Auto Remove Torrents同时允许，可能会导致qBittorrent崩溃。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>以上即为部署qBittorrent、FlexGet、Auto Remove Torrents的详细方法。部署完毕后会自动下载PT种子并下载文件及删除。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><h2 id="（一）qBittorrent"><a href="#（一）qBittorrent" class="headerlink" title="（一）qBittorrent"></a>（一）qBittorrent</h2><ul>
+<li>Setting up qBittorrent on Ubuntu server as daemon with Web interface (15.04 and newer)：<a href="https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)" target="_blank" rel="noopener">https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer)</a></li>
+</ul>
+<h2 id="（二）FlexGet"><a href="#（二）FlexGet" class="headerlink" title="（二）FlexGet"></a>（二）FlexGet</h2><ul>
+<li>Install：<a href="https://flexget.com/InstallWizard/Linux" target="_blank" rel="noopener">https://flexget.com/InstallWizard/Linux</a></li>
+<li>Upgrade：<a href="https://flexget.com/Upgrade" target="_blank" rel="noopener">https://flexget.com/Upgrade</a></li>
+<li>Configuration：<a href="https://flexget.com/Configuration" target="_blank" rel="noopener">https://flexget.com/Configuration</a></li>
+<li>Plugins：<a href="https://flexget.com/Plugins" target="_blank" rel="noopener">https://flexget.com/Plugins</a></li>
+<li>accept_all：<a href="https://flexget.com/Plugins/accept_all" target="_blank" rel="noopener">https://flexget.com/Plugins/accept_all</a></li>
+<li>regexp：<a href="https://flexget.com/Plugins/regexp" target="_blank" rel="noopener">https://flexget.com/Plugins/regexp</a></li>
+<li>content_size：<a href="https://flexget.com/Plugins/content_size" target="_blank" rel="noopener">https://flexget.com/Plugins/content_size</a></li>
+<li>qbittorrent：<a href="https://flexget.com/Plugins/qbittorrent" target="_blank" rel="noopener">https://flexget.com/Plugins/qbittorrent</a></li>
+<li>WEB-UI：<a href="https://flexget.com/Web-UI/v2" target="_blank" rel="noopener">https://flexget.com/Web-UI/v2</a></li>
+<li>Scheduling：<a href="https://flexget.com/InstallWizard/Linux/Scheduling" target="_blank" rel="noopener">https://flexget.com/InstallWizard/Linux/Scheduling</a></li>
+<li>CLI：<a href="https://flexget.com/CLI" target="_blank" rel="noopener">https://flexget.com/CLI</a></li>
+<li>daemon CLI：<a href="https://flexget.com/CLI/daemon" target="_blank" rel="noopener">https://flexget.com/CLI/daemon</a></li>
+<li>Daemon：<a href="https://flexget.com/Daemon" target="_blank" rel="noopener">https://flexget.com/Daemon</a></li>
+</ul>
+<h2 id="（三）Auto-Remove-Torrents"><a href="#（三）Auto-Remove-Torrents" class="headerlink" title="（三）Auto Remove Torrents"></a>（三）Auto Remove Torrents</h2><ul>
+<li>README：<a href="https://github.com/jerrymakesjelly/autoremove-torrents/blob/master/README.rst" target="_blank" rel="noopener">https://github.com/jerrymakesjelly/autoremove-torrents/blob/master/README.rst</a></li>
+<li>Wiki：<a href="https://github.com/jerrymakesjelly/autoremove-torrents/wiki" target="_blank" rel="noopener">https://github.com/jerrymakesjelly/autoremove-torrents/wiki</a></li>
+</ul>
+<h1 id="更新说明"><a href="#更新说明" class="headerlink" title="更新说明"></a>更新说明</h1><h2 id="2018-08-20"><a href="#2018-08-20" class="headerlink" title="2018.08.20"></a>2018.08.20</h2><ul>
+<li>qBittorrent安装方式修改为从PPA安装</li>
+<li>优化FlexGet部署流程</li>
+</ul>
+<h2 id="2018-11-26"><a href="#2018-11-26" class="headerlink" title="2018.11.26"></a>2018.11.26</h2><ul>
+<li>添加Auto Remove Torrents教程</li>
+<li>优化部分流程</li>
+</ul>
+]]></content>
       <categories>
         <category>数码</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程]]></title>
-    <url>%2F2018%2F07%2F20%2FSeedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[前言初衷最近入门PT，家中宽带上行20M，不快不慢，所以自建了个Seedbox，使用的下载方案是qBittorrent+FlexGet+Auto Remove Torrents，FlexGet使用PT站RSS链接自动下载种子至服务器并使用qBittorrent自动下载，下载完成后根据条件使用Auto Remove Torrents自动删除，以实现无需人工干预，自动刷流量。 写作本文的初衷是部署过程中发现目前的教程都相对简单，对新手不算友好，部署过程中出现的问题都得不到解答，而软件官方教程为英文，相比中文门槛较高。 本文内容全部参考两软件的官方教程，删减不必要部分，并亲自验证可行性。未参考任何非官方教程。参考链接见文末。 环境 系统：Ubuntu 16.04 LTS x64，开启BBR 用户：root WinSCP：5.13.3 PuTTY：0.70 qBittorrent-nox：4.1.1 FlexGet：2.14.6 Auto Remove Torrents：1.2.4 一、qBittorrent（一）安装123add-apt-repository ppa:qbittorrent-team/qbittorrent-stableapt-get updateapt-get install qbittorrent-nox （二）创建服务创建服务。 1vim /etc/systemd/system/qbittorrent.service 输入以下内容。 1234567891011[Unit]Description=qBittorrent Daemon ServiceAfter=network.target[Service]User=rootExecStart=/usr/bin/qbittorrent-noxExecStop=/usr/bin/killall -w qbittorrent-nox[Install]WantedBy=multi-user.target root指的是系统当前用户名，根据自己的实际情况更改。 （三）运行1.启动1systemctl start qbittorrent 2.停止1systemctl stop qbittorrent 3.开机自启1systemctl enable qbittorrent 4.查看运行状态1systemctl status qbittorrent 5.访问Web UI123默认地址: http://IP地址:8080默认用户名: admin默认密码: adminadmin IP地址为服务器地址，登录后可在设置中将Web UI设置成简体中文，更改用户名和密码等。 （四）升级升级方法与安装方法一致。 二、FlexGet（一）准备1.安装升级PythonFlexGet支持的Python版本为2.7，3.3到3.5，Auto Remove Torrents只支持3.x，为了方便，FlexGet也使用Python 3.x安装，若版本不正确，可升级Python，若版本正确，无需操作。 （1）查看版本1python3 -V （2）升级12apt-get updateapt-get install python3 2.安装升级pip（1）查看版本1pip3 -V （2）安装12apt-get updateapt-get install python3-pip （3）升级1pip3 install -U pip 3.安装升级setuptools（1）安装12apt-get updateapt-get install python3-setuptools （2）升级1pip3 install -U setuptools 4.安装升级nano（1）查看版本1nano -V （2）安装与升级12apt-get updateapt-get install nano （二）安装1.查看FlexGet版本1flexget -V 2.安装1pip3 install flexget （三）配置1.创建配置目录1mkdir /root/.flexget 2.创建并编辑配置文件1nano /root/.flexget/config.yml 3.配置与运行FlexGet支持众多插件，下文只列出本人用到的，其他插件用法可参见文末插件链接。 （1）示例12345678910111213141516171819202122232425tasks: test task: rss: http://mysite.com/myfeed.rss accept_all: no regexp: accept: - good.stuff reject: - bad.things from: title content_size: min: 12 max: 1200 strict: no download: /home/me/watchdir/ qbittorrent: port: 8080 username: admin password: adminadmin path: /media/disk/downloads/web_server: bind: 0.0.0.0 port: 50001 web_ui: yes run_v2: yes （2）基本配置1234tasks: test task: #任务名称，可任意起 rss: http://mysite.com/myfeed.rss #rss地址 download: /home/me/watchdir/ #rss订阅的下载位置 （3）accept_all1accept_all: no #是否接受所有条目，接受为yes，不接受为no （4）regexpregexp为正则表达式筛选插件。 123456regexp: accept: #接受内容，多个条件写为多行。无条件可删除此项 - good.stuff reject: #拒绝内容，多个条件写为多行。无条件可删除此项 - bad.things from: title #删选位置，title为标题 （5）content_sizecontent_size为按内容大小进行筛选的插件。 1234content_size: min: 12 #最小值，单位为m。 max: 1200 #最大值，单位为m。 strict: no 此设置为接受12m~1200m大小的内容。 （6）qbittorrentqbittorrent设置插件。 12345qbittorrent: port: 8080 #qBittorrent监听端口 username: admin #qBittorrent用户名 password: adminadmin #qBittorrent密码 path: /media/disk/downloads/ #qBittorrent下载地址 （7）web_server12345web_server: bind: 0.0.0.0 #本服务器IP或0.0.0.0 port: 50001 #监听端口，可任意设置 web_ui: yes #是否开启Web UI，开启为yes，关闭为no。 run_v2: yes #是否开启Web UI 2.0界面，开启为yes，关闭为no。 4.检查配置与手动运行（1）检查配置文件是否正确1flexget check （2）模拟手动运行1flexget –test execute （3）手动运行1flexget execute （4）查看任务运行状况1flexget status 5.自动运行（1）查询FlexGet安装位置1which flexget 例如位置为/usr/local/bin/flexget。 （2）编辑crontab1crontab -e 使用nano编辑，输入以下内容。 1*/2 * * * * /usr/local/bin/flexget --cron execute 保存退出。其中2是指2分钟运行一次，可任意设置。 6.配置Web UI（1）编辑配置文件参见上文“配置”。 （2）设置Web UI密码1flexget web passwd &lt;要设置的密码&gt; （3）开启守护进程访问Web UI，必须开启守护进程。 1flexget daemon start -d （4）停止守护进行1flexget daemon stop （5）查看运行状态1flexget daemon status （6）访问Web UI访问http://ip:50001即可，用户名为flexget，密码为设置密码。 （7）开机自启守护进程编辑crontab，输入以下内容。 1@reboot /usr/local/bin/flexget daemon start -d （四）升级1.查看FlexGet版本1flexget -V 2.通过pip升级1pip3 install -U flexget 若安装出现错误，可升级Python、pip与setuptools尝试解决，升级方法见上。 3.检查配置错误1flexget check （五）常见问题1.日志显示FlexGet日志级别包括critical，error，warning，info，verbose，debug，trace。 Web UI默认显示info及以下级别。若需开启其他级别，可使用以下命令。 1-L LEVEL 如-L verbose表示显示verbose及以下级别的日志。 如需要Web UI显示verbose及以下级别的日志，开启守护进程的命令变为。 1flexget -L verbose daemon start -d 守护进程开启自启的命令变为。 1@reboot /usr/local/bin/flexget -L verbose daemon start -d 三、Auto Remove Torrents（一）准备Auto Remove Torrents需要Python 3，不支持Python 2。需安装Python 3、pip 3，安装方法参见上文FlexGet中的安装方法。 （二）安装1.查看版本1pip3 show autoremove-torrents 2.安装1pip3 install autoremove-torrents （三）配置1.创建编辑配置文件12mkdir /root/autoremove-torrentsvim /root/autoremove-torrents/config.yml 配置文件因与FlexGet配置文件同名，故不可放在root目录下，否则会被FlexGet识别。 2.配置内容配置文件可以分为4部分，示例如下： 1234567891011121314151617181920212223242526# 一个任务块my_task: # 第一部分：任务名称 # 第二部分：登录信息 client: qtortorrent host: http://127.0.0.1:9091 username: admin password: adminadmin # 第三部分：策略块（删除条件） strategies: strategy1: # 第1部分：策略名称 # 第2部分：过滤器 categories: - IPT # 第3部分：删除条件 ratio: 1 seeding_time: 1209600 strategy2: all_categories: true excluded_categories: - IPT seeding_time: 259200 # 这里可以添加更多策略 # 第四部分：决定是否同时删除数据（可选项） delete_data: true# 这里可以添加更多任务 第一部分：任务名称任意。 第二部分：登录信息 client：客户端类型。目前支持qbittorrent/transmission/μTorrent。 host：WebUI的访问地址。如http://127.0.0.1:8080。 username：WebUI的用户名。 password：WebUI的密码，密码前后需要加英文半角双引号。 第三部分：策略块1）策略名称任意。 2）过滤器过滤器用于选择删除条件会对哪些种子有效，而其它种子不受删除条件的影响。 all_trackers/all_categories：选择所有的Tracker或分类。 categories：选择这些分类的种子。 excluded_categories：排除这些分类的种子。 trackers：选择这些Tracker的种子。 excluded_trackers：排除这些Tracker的种子。 每个过滤器的结果都是一个种子的集合。注意如果categories和trackers过滤器同时存在，则脚本会取这两个集合的交集，并减去excluded_categories集合和excluded_trackers集合。 3）删除条件 ratio：分享率上限。 create_time：种子从添加到客户端到现在所经过的时间，以秒为单位。在这里设置一个添加时间的上限，当种子在客户端中存活时间超过此上限后，种子会被直接删除（不管种子现在正处于哪种状态）。 seeding_time：最长做种时间。 seed_size：计算上述选择的种子的总大小。如果总大小超过限制，一部分种子会被删除。需要设置以下两个属性： limit：总大小限制，以GiB为单位。 action：确定哪部分种子将被删除。可以是以下值： remove-old-seeds：尽量删除旧的种子。 remove-new-seeds：尽量删除新的种子。 remove-big-seeds：尽量删除体积大的种子。 remove-small-seeds：尽量删除体积小的种子。 第四部分：删除数据确定是否在删除种子时同时删除数据。如果此字段未指定，则默认值为false。 （四）运行1.模拟运行1autoremove-torrents --view --conf=/root/autoremove-torrents/config.yml --conf=/root/autoremove-torrents/config.yml为配置文件路径，若路径为默认，则可不写。下同。 2.运行1autoremove-torrents --conf=/root/autoremove-torrents/config.yml 3.自动运行编辑crontab。 1crontab -e 使用nano编辑，在出现的界面添加以下内容： 1*/2 * * * * /usr/local/bin/autoremove-torrents --conf=/root/autoremove-torrents/config.yml 可根据需求设置自动运行的时间间隔。 （五）升级1pip3 install -U autoremove-torrents 已知问题FlexGet与Auto Remove Torrents同时允许，可能会导致qBittorrent崩溃。 结语以上即为部署qBittorrent、FlexGet、Auto Remove Torrents的详细方法。部署完毕后会自动下载PT种子并下载文件及删除。 参考资料（一）qBittorrent Setting up qBittorrent on Ubuntu server as daemon with Web interface (15.04 and newer)：https://github.com/qbittorrent/qBittorrent/wiki/Setting-up-qBittorrent-on-Ubuntu-server-as-daemon-with-Web-interface-(15.04-and-newer) （二）FlexGet Install：https://flexget.com/InstallWizard/Linux Upgrade：https://flexget.com/Upgrade Configuration：https://flexget.com/Configuration Plugins：https://flexget.com/Plugins accept_all：https://flexget.com/Plugins/accept_all regexp：https://flexget.com/Plugins/regexp content_size：https://flexget.com/Plugins/content_size qbittorrent：https://flexget.com/Plugins/qbittorrent WEB-UI：https://flexget.com/Web-UI/v2 Scheduling：https://flexget.com/InstallWizard/Linux/Scheduling CLI：https://flexget.com/CLI daemon CLI：https://flexget.com/CLI/daemon Daemon：https://flexget.com/Daemon （三）Auto Remove Torrents README：https://github.com/jerrymakesjelly/autoremove-torrents/blob/master/README.rst Wiki：https://github.com/jerrymakesjelly/autoremove-torrents/wiki 更新说明2018.08.20 qBittorrent安装方式修改为从PPA安装 优化FlexGet部署流程 2018.11.26 添加Auto Remove Torrents教程 优化部分流程]]></content>
+    <title>Office Click-to-Run升级或降级至任意版本教程</title>
+    <url>/2018/08/21/Office%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>本地安装的Office版本是2016 Retail版，此版本使用的是Click-to-Run安装及更新方式。Office各版本区别及安装方式可参见<a href="https://xerlang.github.io/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/">《Windows与Office各版本及官方授权方式详解》</a>。</p>
+<p>某天发现Word导航窗格宽度调整后，重新打开会恢复到默认宽度，即此项设置无法保存，查找原因时发现除了此前自动更新到了1807版，经过测试为此版本Bug。所以在等待官方修复期间，产生了回退旧版本的需求。</p>
+<a id="more"></a>
+<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><p>阅读上述外链文章会发现，Office 2016有两种安装模式，MSI与Click-to-Run（以下简称C2R）。</p>
+<p>MSI回退旧版本的方法十分简单，去“已安装更新”卸载掉补丁即可。</p>
+<p>C2R相对复杂，无法直接卸载更新，也没有提供各版本的安装文件，搜索也并没有找到相应的解决办法，故查询了Office部署文档，虽只是一带而过，但方法还是存在的，使用“Office部署工具（Office Deployment Tool）”或“Office 2016管理模板文件（Office 2016 Administrative Template files (ADMX/ADML) and Office Customization Tool）”。</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文首发于卡饭论坛（<a href="https://bbs.kafan.cn/forum-8-1.html" target="_blank" rel="noopener">https://bbs.kafan.cn/forum-8-1.html</a>）及本博客，转载请注明作者与出处。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>本教程适用于所有C2R模式安装的Office 2016版本，包括订阅Office 365而安装的Office 2016及买断制Office 2016零售版。</li>
+<li>本教程方法均来自官方文档，使用工具均为官方工具。</li>
+<li>本教程不仅适用于版本降级，也适用于版本升级。</li>
+<li>本教程适用于Windows。</li>
+<li>升级与降级至任意版本的方法有两种，本文以Office 2016管理模板文件为主，Office部署工具使用方法参见下文参考文献。</li>
+</ul>
+<h1 id="一、查询所需版本号"><a href="#一、查询所需版本号" class="headerlink" title="一、查询所需版本号"></a>一、查询所需版本号</h1><p>访问<a href="https://docs.microsoft.com/en-us/OfficeUpdates/update-history-office365-proplus-by-date" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/OfficeUpdates/update-history-office365-proplus-by-date</a>，查询需要升级或降级的版本号。</p>
+<p>以2018年7月17日发布的1806版为例，显示版本号为10228.20134，则完整版本号为16.0.10228.20134。</p>
+<h1 id="二、安装Office-2016管理模板文件"><a href="#二、安装Office-2016管理模板文件" class="headerlink" title="二、安装Office 2016管理模板文件"></a>二、安装Office 2016管理模板文件</h1><p>访问<a href="https://www.microsoft.com/en-us/download/details.aspx?id=49030" target="_blank" rel="noopener">https://www.microsoft.com/en-us/download/details.aspx?id=49030</a>，下载与系统相匹配的Office 2016管理模板文件。</p>
+<p>运行下载的文件，得到admin、admx两个文件夹及office2016grouppolicyandoctsettings.xlsx一个文件。</p>
+<p>将admx文件夹中所有的.admx文件复制到C:\Windows\PolicyDefinitions文件夹中，将admx/zh-cn文件夹中所有的.adml文件复制到C:\Windows\PolicyDefinitions\zh-CN文件夹中。若需要安装其他语言，只需将相应语言文件夹中的.adml文件复制到C:\Windows\PolicyDefinitions中的语言文件夹中即可。（或只复制office16.admx与office16.adml即可）</p>
+<p>运行“gpedit.msc”打开组策略编辑器，依次展开“计算机配置-管理模板-Microsoft Office 2016-更新”，打开“目标版本”，选择“已启用”，“更新版本”中输入需要升级或降级的完整版本，如16.0.10228.20134，确定。</p>
+<p><img src="https://user-images.githubusercontent.com/34172455/44400239-0ea52880-a57d-11e8-94a7-7e6332e2affd.jpg" alt="20180820215649"></p>
+<h1 id="三、升级或降级"><a href="#三、升级或降级" class="headerlink" title="三、升级或降级"></a>三、升级或降级</h1><p>打开Office的任意一组件，转到“账户-Office更新”，运行“检查更新”，待更新完成后，Office即会变为所需要的版本。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>升级或降级版本成功后，可关闭自动更新，可选择删除上文安装的组策略。</p>
+<p>Office 2016管理模板文件可实现很多功能，可自行在组策略中配置。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>Office部署（中国）：<a href="https://docs.microsoft.com/zh-cn/DeployOffice/" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/DeployOffice/</a></li>
+<li>Office部署（美国）：<a href="https://docs.microsoft.com/en-us/DeployOffice/" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/DeployOffice/</a></li>
+<li>Office更新（中国）：<a href="https://docs.microsoft.com/zh-cn/OfficeUpdates/" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/OfficeUpdates/</a></li>
+<li>Office更新（美国）：<a href="https://docs.microsoft.com/en-us/OfficeUpdates/" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/OfficeUpdates/</a></li>
+<li>Office 2016管理模板文件：<a href="https://www.microsoft.com/en-us/download/details.aspx?id=49030" target="_blank" rel="noopener">https://www.microsoft.com/en-us/download/details.aspx?id=49030</a></li>
+</ul>
+<h1 id="更新说明"><a href="#更新说明" class="headerlink" title="更新说明"></a>更新说明</h1><h2 id="2018-08-20"><a href="#2018-08-20" class="headerlink" title="2018.08.20"></a>2018.08.20</h2><ul>
+<li>发布</li>
+</ul>
+]]></content>
       <categories>
         <category>数码</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[5G标准表决会议记录中关于联想投票的部分]]></title>
-    <url>%2F2018%2F05%2F17%2F5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86%2F</url>
-    <content type="text"><![CDATA[前言最近关于联想在5G标准表决会议的投票讨论的沸沸扬扬，各种说法都有，有因为联想的2票弃权或投高通而使华为的标准以1票之差输了的，也有联想的投票对最终结果没有影响的。究其原因，因为绝大部分人没有亲自看5G表决会议的会议记录，只是看到了二手甚至多手资料，这些资料在多次转载的过程中已经失真了。所以如果想知道联想在表决会议中投票的真实情况，最好的办法是看会议记录。3GPP每次会议的会议记录都会公开放出并提供下载，链接在文章末尾。 其中涉及联想投票的5G标准表决会议共有三次：86次、86bis次、87次。下面分别截取三次会议记录中投票的部分。 说明 下文图中青绿色为投票企业，黄色为会议结果，粉红色为联想和摩托。 为方便理解，文中提案联署、提问、投票环节中的企业的选择均以票数表示。 为方便理解，可将LDPC、Polar、Turbo分别理解为高通、华为、LG牵头的方案，下文以L、P、T表示。 本文不涉及任何立场，只陈述事实。 本文为本人原创，转载时请注明作者与出处。 一、86次会议（2016年8月） 本次会议没分数据信道（Data Channel）和控制信道（Control Channel），所有投票方案均为独占。 （一）投票环节 LDPC：高通、三星、中兴、小米、vivo等23票支持。（R1-167999） Polar：华为、CMCC、联通等10票支持。（R1-168040） Turbo：LG支持等6票支持。（R1-168164） 联想、摩托并未出现在会议记录中。 （二）会议结果结果待定，在下次会议中继续讨论。 二、86bis次会议（2016年10月）86bis次会议将标准分为数据信道（Data Channel）和控制信道（Control Channel），并将数据信道分为长码和短码。 （一）提问环节会议提问，数据信道采用哪种方案？其中高通、三星、联想、摩托等16票支持长短码均为L，华为1票支持长短码均为P，LG等6票支持L+T（长码L短码T），中兴、小米、联发科等17票支持L+P（长码L短码P）。 因为长短码均为P方案只有华为1票支持，故不进入下面的投票，所以投票环节只有L、L+T、L+P三种方案。 （二）投票环节本次投票不以赞同记，以反对记。 L：华为、中兴、小米、OPPO、联发科等24票反对。 L+P：高通、三星、联想、摩托等27票反对。 L+T：几乎都反对。 （三）会议结果数据信道长码使用L。短码和控制信道下次会议决定。 三、87次会议（2016年11月）（一）数据信道短码投票 P：华为、联想、摩托等56票赞成，高通、三星等14票反对。 L：高通、三星等31票支持，无反对。 （二）控制信道投票 P：55票赞成。 （三）会议结果 数据信道长码短码均使用L，控制信道使用P。 总结（一）联想的选择在三次会议中，可以作为“投票”的表态中，联想、摩托的选择如下。 86次会议，联想、摩托未投票，大部分国内厂商投给了高通L独占。 86bis次会议，在一次提问与一次投票中，国内厂商抱团投P的情况下，联想、高通两次选择了L。 87次会议，两次投票中均投给了P。 （二）联想的选择对最终结果的影响在三次会议中，联想、摩托的投票均未对最终结果产生决定性的影响。 （三）联想的选择中有问题的地方86bis次会议中，在其他中国厂商（包括大陆与台湾厂商）抱团选择P的情况下，联想、摩托两次选择了L。这也是这次事件发酵的根源。 其他在86bis次与87次会议期间，工信部召集国内厂商开了一次5G标准通气会，可能是联想在87次会议改变选择的原因之一。 参考内容 3GPP WG1 RL1会议记录：http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/ 86次会议记录：http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86/Report/ 86bis次会议记录：http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86b/Report/ 87次会议记录：http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_87/Report/ 本文首发于卡饭论坛。]]></content>
+    <title>5G标准表决会议记录中关于联想投票的部分</title>
+    <url>/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近关于联想在5G标准表决会议的投票讨论的沸沸扬扬，各种说法都有，有因为联想的2票弃权或投高通而使华为的标准以1票之差输了的，也有联想的投票对最终结果没有影响的。究其原因，因为绝大部分人没有亲自看5G表决会议的会议记录，只是看到了二手甚至多手资料，这些资料在多次转载的过程中已经失真了。所以如果想知道联想在表决会议中投票的真实情况，最好的办法是看会议记录。3GPP每次会议的会议记录都会公开放出并提供下载，链接在文章末尾。</p>
+<p>其中涉及联想投票的5G标准表决会议共有三次：86次、86bis次、87次。下面分别截取三次会议记录中投票的部分。</p>
+<a id="more"></a>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
+<li>下文图中青绿色为投票企业，黄色为会议结果，粉红色为联想和摩托。</li>
+<li>为方便理解，文中提案联署、提问、投票环节中的企业的选择均以票数表示。</li>
+<li>为方便理解，可将LDPC、Polar、Turbo分别理解为高通、华为、LG牵头的方案，下文以L、P、T表示。</li>
+<li>本文不涉及任何立场，只陈述事实。</li>
+<li>本文为本人原创，转载时请注明作者与出处。</li>
+</ul>
+<h1 id="一、86次会议（2016年8月）"><a href="#一、86次会议（2016年8月）" class="headerlink" title="一、86次会议（2016年8月）"></a>一、86次会议（2016年8月）</h1><p><img src="https://user-images.githubusercontent.com/34172455/40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg" alt="img"></p>
+<p>本次会议没分数据信道（Data Channel）和控制信道（Control Channel），所有投票方案均为独占。</p>
+<h2 id="（一）投票环节"><a href="#（一）投票环节" class="headerlink" title="（一）投票环节"></a>（一）投票环节</h2><ul>
+<li>LDPC：高通、三星、中兴、小米、vivo等23票支持。（R1-167999）</li>
+<li>Polar：华为、CMCC、联通等10票支持。（R1-168040）</li>
+<li>Turbo：LG支持等6票支持。（R1-168164）</li>
+</ul>
+<p>联想、摩托并未出现在会议记录中。</p>
+<h2 id="（二）会议结果"><a href="#（二）会议结果" class="headerlink" title="（二）会议结果"></a>（二）会议结果</h2><p>结果待定，在下次会议中继续讨论。</p>
+<h1 id="二、86bis次会议（2016年10月）"><a href="#二、86bis次会议（2016年10月）" class="headerlink" title="二、86bis次会议（2016年10月）"></a>二、86bis次会议（2016年10月）</h1><p>86bis次会议将标准分为数据信道（Data Channel）和控制信道（Control Channel），并将数据信道分为长码和短码。</p>
+<p><img src="https://user-images.githubusercontent.com/34172455/40170428-020af474-59fb-11e8-8c67-9dabffec124e.jpg" alt="img"></p>
+<h2 id="（一）提问环节"><a href="#（一）提问环节" class="headerlink" title="（一）提问环节"></a>（一）提问环节</h2><p>会议提问，数据信道采用哪种方案？其中高通、三星、联想、摩托等16票支持长短码均为L，华为1票支持长短码均为P，LG等6票支持L+T（长码L短码T），中兴、小米、联发科等17票支持L+P（长码L短码P）。</p>
+<p>因为长短码均为P方案只有华为1票支持，故不进入下面的投票，所以投票环节只有L、L+T、L+P三种方案。</p>
+<h2 id="（二）投票环节"><a href="#（二）投票环节" class="headerlink" title="（二）投票环节"></a>（二）投票环节</h2><p>本次投票不以赞同记，以反对记。</p>
+<ul>
+<li>L：华为、中兴、小米、OPPO、联发科等24票反对。</li>
+<li>L+P：高通、三星、联想、摩托等27票反对。</li>
+<li>L+T：几乎都反对。</li>
+</ul>
+<h2 id="（三）会议结果"><a href="#（三）会议结果" class="headerlink" title="（三）会议结果"></a>（三）会议结果</h2><p>数据信道长码使用L。短码和控制信道下次会议决定。</p>
+<h1 id="三、87次会议（2016年11月）"><a href="#三、87次会议（2016年11月）" class="headerlink" title="三、87次会议（2016年11月）"></a>三、87次会议（2016年11月）</h1><h2 id="（一）数据信道短码投票"><a href="#（一）数据信道短码投票" class="headerlink" title="（一）数据信道短码投票"></a>（一）数据信道短码投票</h2><p><img src="https://user-images.githubusercontent.com/34172455/40170432-04ea9ad2-59fb-11e8-8729-130d58d4fb76.jpg" alt="img"></p>
+<ul>
+<li>P：华为、联想、摩托等56票赞成，高通、三星等14票反对。</li>
+<li>L：高通、三星等31票支持，无反对。</li>
+</ul>
+<h2 id="（二）控制信道投票"><a href="#（二）控制信道投票" class="headerlink" title="（二）控制信道投票"></a>（二）控制信道投票</h2><p><img src="https://user-images.githubusercontent.com/34172455/40170430-030c0566-59fb-11e8-9b32-5bbe40d18e96.jpg" alt="img"></p>
+<p>P：55票赞成。</p>
+<h2 id="（三）会议结果-1"><a href="#（三）会议结果-1" class="headerlink" title="（三）会议结果"></a>（三）会议结果</h2><p><img src="https://user-images.githubusercontent.com/34172455/40170433-05377c12-59fb-11e8-840c-64450d291298.jpg" alt="img"></p>
+<p>数据信道长码短码均使用L，控制信道使用P。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="（一）联想的选择"><a href="#（一）联想的选择" class="headerlink" title="（一）联想的选择"></a>（一）联想的选择</h2><p>在三次会议中，可以作为“投票”的表态中，联想、摩托的选择如下。</p>
+<ul>
+<li>86次会议，联想、摩托未投票，大部分国内厂商投给了高通L独占。</li>
+<li>86bis次会议，在一次提问与一次投票中，国内厂商抱团投P的情况下，联想、高通两次选择了L。</li>
+<li>87次会议，两次投票中均投给了P。</li>
+</ul>
+<h2 id="（二）联想的选择对最终结果的影响"><a href="#（二）联想的选择对最终结果的影响" class="headerlink" title="（二）联想的选择对最终结果的影响"></a>（二）联想的选择对最终结果的影响</h2><p>在三次会议中，联想、摩托的投票均未对最终结果产生决定性的影响。</p>
+<h2 id="（三）联想的选择中有问题的地方"><a href="#（三）联想的选择中有问题的地方" class="headerlink" title="（三）联想的选择中有问题的地方"></a>（三）联想的选择中有问题的地方</h2><p>86bis次会议中，在其他中国厂商（包括大陆与台湾厂商）抱团选择P的情况下，联想、摩托两次选择了L。这也是这次事件发酵的根源。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>在86bis次与87次会议期间，工信部召集国内厂商开了一次5G标准通气会，可能是联想在87次会议改变选择的原因之一。</p>
+<h1 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h1><ul>
+<li>3GPP WG1 RL1会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/" target="_blank" rel="noopener">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/</a></li>
+<li>86次会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86/Report/" target="_blank" rel="noopener">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86/Report/</a></li>
+<li>86bis次会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86b/Report/" target="_blank" rel="noopener">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86b/Report/</a></li>
+<li>87次会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_87/Report/" target="_blank" rel="noopener">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_87/Report/</a></li>
+</ul>
+<p>本文首发于<a href="https://bbs.kafan.cn/thread-2122960-1-1.html" target="_blank" rel="noopener">卡饭论坛</a>。</p>
+]]></content>
       <categories>
         <category>数码</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Windows与Office各版本及官方授权方式详解]]></title>
-    <url>%2F2018%2F03%2F22%2FWindows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[前言从Win8开始，微软将核心版与专业版集成在同一个镜像中，而单独发布了大客户专业版镜像，所以很多刚折腾系统的童鞋将大客户专业版与专业版混淆在一起了，而且激活方式很多人都不能进行区分，所以在这个帖子里进行区分一下，主要包括Windows各版本与激活的区别、Office各版本与激活的区别，不会提供激活的具体方式与工具。 Win7的版本分布虽然多，但是不像Win8以上系统这么乱，所以从Win8开始进行区分，Office从2013开始区分，之后有新系统新office再进行添加。 因为某些内容通用，所以只写于Windows 8.x与Office 2013中，所以建议无论阅读哪个系统或软件，都请先阅读以下Windows 8.x与Office 2013。 本文最初于2015年1月6日发布于卡饭论坛，2015年12月16日更新Windows 10与Office 2016，2018年3月23日发布于博客时进行部分修改。 文中全部内容均来自个人对网上资料的搜集整理与个人亲身经验，学识浅薄，难免有疏漏之处，敬请见谅。 一、Windows 8.xWindows8.x系统（8、8.1、8.1 Update）的版本与激活方式都完全一致，所以一起说明。 （一）Windows 8.x各版本区别Windows系统大范围的话分为两种系统：零售版与企业版。 对于Windows 8.x系列，除去各国版本与bing版本，较常用的版本有三种，核心版（Core）、专业版（Professiona）、企业版（Enterprise），而微软发布的镜像也有三种，但不是与上述三种版本对应的，包括集成版镜像（Multiple Editions）、大客户专业版镜像（Pro VL）、企业版镜像（Enterprise）。 下面详细来说一下这三个镜像的区别。 Multiple Editions版：集成版镜像，也会被称作标准版，这是零售版安装镜像，镜像中有两个独立镜像（核心版与专业版），安装时，根据安装密钥的不同区分安装的系统的版本，即输入专业版安装密钥即安装专业版，核心版安装密钥即安装核心版系统。可以跨系统版本升级。 这种镜像的文件名一般只有“windows”，如Windows 8.1 Update集成版镜像名为“cn_windows_8.1_with_update_x64_dvd_6051473.ios”。 Pro VL版：大客户专业版安装镜像，这是企业版的一种，与Pro版相比，不能添加WMC，但是安装时不需要输入安装密钥，但安装完成后依旧需要进行激活，其他与pro版完全相同。不可以跨系统版本升级。 这种镜像的文件名中一般带有“pro vl”的字样，如Windows 8.1 Update大客户专业版镜像名为“cn_windows_8.1_pro_vl_with_update_x86_dvd_6050910.iso”。 Enterprise版，即企业版，功能最为齐全，无法添加WMC，不可以跨系统版本升级。 这种镜像的文件名中带有“Enterprise”字样，如Windows 8.1 Update企业版镜像名为“cn_windows_8.1_enterprise_with_update_x64_dvd_6050374.iso”。 下面以大家常用的MSDN itell you网站来说明一下怎么区分各版本镜像。 自上往下分别是企业版镜像（Enterprise）、大客户专业版镜像（Pro VL）、集成版镜像（multiple editions）。 （二）Windows 8.x各版本激活方式区别Windows8之后，微软官方的激活方式只有两种方式：密钥激活与KMS激活，而如果细分的话，密钥激活又 包括Retail密钥激活与MAK密钥激活，而电话激活是基于密钥激活的，所以在此不做讨论。 Retail密钥：零售密钥，个人用户购买的就是这种密钥，一人一号，跨版本升级后激活有效。 MAK密钥：企业密钥，是给企业或者大客户出售的一种密钥，一个密钥可以激活多台机器，跨版本升级后激活无效。 KMS激活：这是微软为了防止企业盗版而给出的一种激活方式，只能激活180天，过期后需重新激活，跨版本升级后激活无效。 以上激活方式不分版本。 Multiple editions版激活方式：Retail、MAK、KMS。 ProVL版激活方式：Retail、MAK、KMS。 Enterprise版激活方式：MAK、KMS。 所以大家可以发现，Windows 8.x的零售版与VL版的激活方式没有任何区别。 二、Office 2013（一）Office 2013各版本区别Office2013版本从大的方面来说分为零售版与企业版（或大客户版）。 零售版：即个人用户购买的版本，激活方式上与Windows不同。 这种版本的镜像名称一般只含有“office”字样，如Office Pro Plus镜像名为“cn_office_professional_plus_2013_x86_dvd_1134005.iso”。 企业版（或大客户版）：即VL版（也成VOL版），是企业用户购买的版本，镜像不在MSDN上进行提供。 这种版本的镜像名称中含有“SWDVD5”字样，如Office Pro Plus VL版镜像名为“SW_DVD5_Office_Professional_Plus_2013_W32_ChnSimp_MLF_X18-55126.ISO”非常容易区分。 （二）Office 2013各版本激活方式的区别也是只有Retail、MAK、KMS激活方式。 零售版：只能用Retail密钥进行激活，不能使用MAK与KMS（导入VOL的许可证后可以使用这两种方式激活）。 大客户版：与零售版激活方式正相反，可以使用MAK与KMS激活，但是不能使用Retail密钥进行激活（导入Retail的许可证后可以使用Retail密钥激活）。 三、Windows 10Windows10的版本与激活方式与Windows 8.x区别不算太大。 （一）Windows10各版本及区别Windows10版本比较多，除去移动版（Mobile）、物联版和各国语言版之外，还有以下几个版本：家庭版（Home）、专业版（Professional）、企业版（Enterprise）、教育版（Education），其中企业版还包括企业版长期使用分支（LTSB）。具体区别可以在微软官网查看。 相比于Windows 8.x，微软去除了大客户专业版（Pro VL）。 与Windows 8.x一样，Windows 10家庭版与专业版也集成在一个镜像（Multiple Editions）中。这几个镜像的区别及如何区分可以参见Windows 8.x。 （二）Windows 10各版本激活方式Windows10激活方式依旧延续了Windows 8.x，密钥（Retail密钥、MAK密钥）与KMS激活。与Windows8.x不同的是，虽然同为MAK密钥，但是各版本的MAK密钥之间也不通用。 MultipleEditions：Retail、Pro-MAK、KMS。 Enterprise：Ent-MAK、KMS。 LTSB：LTSB-MAK、KMS。 附录官方各版本功能区别 四、Office 2016Office2016与2013的版本与激活方式没有较大的区别。唯一的区别是Office 2016加入的新的安装方式。 （一）Office 2016版本区别Office 2016版本从大的方面来说分为零售版与企业版（或大客户版），区分方法参见Office 2013。这里讲一下安装方式的不同。 零售版：Office 2016零售版开始使用新的安装方式——Click to Run，这种安装方式是微软为了Office 365更新而开发的，之前也在Office 365上进行了使用，但是从来没有在Office上使用，这次在Office 2016上进行了使用。这就导致了以下两个问题 （1）在正常安装方式下，无法选择安装组件。 （2）在正常安装方式下，无法选在安装路径。 当然这两个问题可以使用第三方工具和修改注册表进行解决。还有一个比较大的问题要在下面说。 大客户版：大客户版依旧使用着之前的安装方式——MSI安装，可以选择安装组件与安装路径。 这里说一下上面提到的那个比较大的问题。 众所周知，虽然Office、Project、Visio单独出售、单独安装，但是这三个软件会调用一部分公用文件。因为Office 2016的零售版与大客户版的安装方式不同，所以这三个软件的2016版必须使用相同的安装方式，否则会导致无法安装。即三个软件都得是C2R模式或者MSI模式才能正常安装，不能混搭。 为了方面大家选择安装版本，防止出现问题，特将各版本的安装方式列下。 C2R：Office 365、Office 2016 Retail、Visio 2016 Retail、Project 2016 Retail。 MSI：Office 2013及之前所有版本、Project 2013及之前所有版本、Visio 2013及之前所有版本、Office 2016 VOL、Visio 2016 VOL、Project 2016 VOL。 （二）Office2016激活方式区别依旧是使用Retail密钥、MAK密钥与KMS激活。 零售版：只能用Retail密钥进行激活，不能使用MAK与KMS（导入VOL的许可证后可以使用这两种方式激活）。 大客户版：与零售版激活方式正相反，可以使用MAK与KMS激活，但是不能使用Retail密钥进行激活（导入Retail的许可证后可以使用Retail密钥激活）。]]></content>
+    <title>Windows与Office各版本及官方授权方式详解</title>
+    <url>/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>从Win8开始，微软将核心版与专业版集成在同一个镜像中，而单独发布了大客户专业版镜像，所以很多刚折腾系统的童鞋将大客户专业版与专业版混淆在一起了，而且激活方式很多人都不能进行区分，所以在这个帖子里进行区分一下，主要包括Windows各版本与激活的区别、Office各版本与激活的区别，不会提供激活的具体方式与工具。</p>
+<a id="more"></a>
+<p>Win7的版本分布虽然多，但是不像Win8以上系统这么乱，所以从Win8开始进行区分，Office从2013开始区分，之后有新系统新office再进行添加。</p>
+<p>因为某些内容通用，所以只写于Windows 8.x与Office 2013中，所以建议无论阅读哪个系统或软件，都请先阅读以下Windows 8.x与Office 2013。</p>
+<p>本文最初于2015年1月6日发布于卡饭论坛，2015年12月16日更新Windows 10与Office 2016，2018年3月23日发布于博客时进行部分修改。</p>
+<p>文中全部内容均来自个人对网上资料的搜集整理与个人亲身经验，学识浅薄，难免有疏漏之处，敬请见谅。</p>
+<h1 id="一、Windows-8-x"><a href="#一、Windows-8-x" class="headerlink" title="一、Windows 8.x"></a>一、Windows 8.x</h1><p>Windows8.x系统（8、8.1、8.1 Update）的版本与激活方式都完全一致，所以一起说明。</p>
+<h2 id="（一）Windows-8-x各版本区别"><a href="#（一）Windows-8-x各版本区别" class="headerlink" title="（一）Windows 8.x各版本区别"></a>（一）Windows 8.x各版本区别</h2><p>Windows系统大范围的话分为两种系统：零售版与企业版。</p>
+<p>对于Windows 8.x系列，除去各国版本与bing版本，较常用的版本有三种，核心版（Core）、专业版（Professiona）、企业版（Enterprise），而微软发布的镜像也有三种，但不是与上述三种版本对应的，包括集成版镜像（Multiple Editions）、大客户专业版镜像（Pro VL）、企业版镜像（Enterprise）。</p>
+<p>下面详细来说一下这三个镜像的区别。</p>
+<ol>
+<li><p>Multiple Editions版：集成版镜像，也会被称作标准版，这是零售版安装镜像，镜像中有两个独立镜像（核心版与专业版），安装时，根据安装密钥的不同区分安装的系统的版本，即输入专业版安装密钥即安装专业版，核心版安装密钥即安装核心版系统。可以跨系统版本升级。</p>
+<p>这种镜像的文件名一般只有“windows”，如Windows 8.1 Update集成版镜像名为“cn_windows_8.1_with_update_x64_dvd_6051473.ios”。</p>
+</li>
+<li><p>Pro VL版：大客户专业版安装镜像，这是企业版的一种，与Pro版相比，不能添加WMC，但是安装时不需要输入安装密钥，但安装完成后依旧需要进行激活，其他与pro版完全相同。不可以跨系统版本升级。</p>
+<p>这种镜像的文件名中一般带有“pro vl”的字样，如Windows 8.1 Update大客户专业版镜像名为“cn_windows_8.1_pro_vl_with_update_x86_dvd_6050910.iso”。</p>
+</li>
+<li><p>Enterprise版，即企业版，功能最为齐全，无法添加WMC，不可以跨系统版本升级。</p>
+<p>这种镜像的文件名中带有“Enterprise”字样，如Windows 8.1 Update企业版镜像名为“cn_windows_8.1_enterprise_with_update_x64_dvd_6050374.iso”。</p>
+</li>
+</ol>
+<p>下面以大家常用的MSDN itell you网站来说明一下怎么区分各版本镜像。</p>
+<p><img src="https://user-images.githubusercontent.com/34172455/37807578-3040012c-2e81-11e8-82da-e7ea2006508a.jpg" alt="img"></p>
+<p>自上往下分别是企业版镜像（Enterprise）、大客户专业版镜像（Pro VL）、集成版镜像（multiple editions）。</p>
+<h2 id="（二）Windows-8-x各版本激活方式区别"><a href="#（二）Windows-8-x各版本激活方式区别" class="headerlink" title="（二）Windows 8.x各版本激活方式区别"></a>（二）Windows 8.x各版本激活方式区别</h2><p>Windows8之后，微软官方的激活方式只有两种方式：密钥激活与KMS激活，而如果细分的话，密钥激活又 包括Retail密钥激活与MAK密钥激活，而电话激活是基于密钥激活的，所以在此不做讨论。</p>
+<ol>
+<li>Retail密钥：零售密钥，个人用户购买的就是这种密钥，一人一号，跨版本升级后激活有效。</li>
+<li>MAK密钥：企业密钥，是给企业或者大客户出售的一种密钥，一个密钥可以激活多台机器，跨版本升级后激活无效。</li>
+<li>KMS激活：这是微软为了防止企业盗版而给出的一种激活方式，只能激活180天，过期后需重新激活，跨版本升级后激活无效。</li>
+</ol>
+<p>以上激活方式不分版本。</p>
+<ol>
+<li>Multiple editions版激活方式：Retail、MAK、KMS。</li>
+<li>ProVL版激活方式：Retail、MAK、KMS。</li>
+<li>Enterprise版激活方式：MAK、KMS。</li>
+</ol>
+<p>所以大家可以发现，Windows 8.x的零售版与VL版的激活方式没有任何区别。</p>
+<h1 id="二、Office-2013"><a href="#二、Office-2013" class="headerlink" title="二、Office 2013"></a>二、Office 2013</h1><h2 id="（一）Office-2013各版本区别"><a href="#（一）Office-2013各版本区别" class="headerlink" title="（一）Office 2013各版本区别"></a>（一）Office 2013各版本区别</h2><p>Office2013版本从大的方面来说分为零售版与企业版（或大客户版）。</p>
+<ol>
+<li><p>零售版：即个人用户购买的版本，激活方式上与Windows不同。</p>
+<p>这种版本的镜像名称一般只含有“office”字样，如Office Pro Plus镜像名为“cn_office_professional_plus_2013_x86_dvd_1134005.iso”。</p>
+</li>
+<li><p>企业版（或大客户版）：即VL版（也成VOL版），是企业用户购买的版本，镜像不在MSDN上进行提供。</p>
+<p>这种版本的镜像名称中含有“SW<em>DVD5</em>”字样，如Office Pro Plus VL版镜像名为“SW_DVD5_Office_Professional_Plus_2013_W32_ChnSimp_MLF_X18-55126.ISO”非常容易区分。</p>
+</li>
+</ol>
+<h2 id="（二）Office-2013各版本激活方式的区别"><a href="#（二）Office-2013各版本激活方式的区别" class="headerlink" title="（二）Office 2013各版本激活方式的区别"></a>（二）Office 2013各版本激活方式的区别</h2><p>也是只有Retail、MAK、KMS激活方式。</p>
+<ol>
+<li>零售版：只能用Retail密钥进行激活，不能使用MAK与KMS（导入VOL的许可证后可以使用这两种方式激活）。</li>
+<li>大客户版：与零售版激活方式正相反，可以使用MAK与KMS激活，但是不能使用Retail密钥进行激活（导入Retail的许可证后可以使用Retail密钥激活）。</li>
+</ol>
+<h1 id="三、Windows-10"><a href="#三、Windows-10" class="headerlink" title="三、Windows 10"></a>三、Windows 10</h1><p>Windows10的版本与激活方式与Windows 8.x区别不算太大。</p>
+<h2 id="（一）Windows10各版本及区别"><a href="#（一）Windows10各版本及区别" class="headerlink" title="（一）Windows10各版本及区别"></a>（一）Windows10各版本及区别</h2><p>Windows10版本比较多，除去移动版（Mobile）、物联版和各国语言版之外，还有以下几个版本：家庭版（Home）、专业版（Professional）、企业版（Enterprise）、教育版（Education），其中企业版还包括企业版长期使用分支（LTSB）。具体区别可以在微软官网查看。</p>
+<p>相比于Windows 8.x，微软去除了大客户专业版（Pro VL）。</p>
+<p>与Windows 8.x一样，Windows 10家庭版与专业版也集成在一个镜像（Multiple Editions）中。这几个镜像的区别及如何区分可以参见Windows 8.x。</p>
+<h2 id="（二）Windows-10各版本激活方式"><a href="#（二）Windows-10各版本激活方式" class="headerlink" title="（二）Windows 10各版本激活方式"></a>（二）Windows 10各版本激活方式</h2><p>Windows10激活方式依旧延续了Windows 8.x，密钥（Retail密钥、MAK密钥）与KMS激活。与Windows8.x不同的是，虽然同为MAK密钥，但是各版本的MAK密钥之间也不通用。</p>
+<ol>
+<li>MultipleEditions：Retail、Pro-MAK、KMS。</li>
+<li>Enterprise：Ent-MAK、KMS。</li>
+<li>LTSB：LTSB-MAK、KMS。</li>
+</ol>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="官方各版本功能区别"><a href="#官方各版本功能区别" class="headerlink" title="官方各版本功能区别"></a>官方各版本功能区别</h3><p><img src="https://user-images.githubusercontent.com/34172455/37807672-9cd82db4-2e81-11e8-8f40-83e0c6502c6a.jpg" alt="img"></p>
+<p><img src="https://user-images.githubusercontent.com/34172455/37807674-9d0d2104-2e81-11e8-9733-404d192e4a02.jpg" alt="img"></p>
+<h1 id="四、Office-2016"><a href="#四、Office-2016" class="headerlink" title="四、Office 2016"></a>四、Office 2016</h1><p>Office2016与2013的版本与激活方式没有较大的区别。唯一的区别是Office 2016加入的新的安装方式。</p>
+<h2 id="（一）Office-2016版本区别"><a href="#（一）Office-2016版本区别" class="headerlink" title="（一）Office 2016版本区别"></a>（一）Office 2016版本区别</h2><p>Office 2016版本从大的方面来说分为零售版与企业版（或大客户版），区分方法参见Office 2013。这里讲一下安装方式的不同。</p>
+<ol>
+<li><p>零售版：Office 2016零售版开始使用新的安装方式——Click to Run，这种安装方式是微软为了Office 365更新而开发的，之前也在Office 365上进行了使用，但是从来没有在Office上使用，这次在Office 2016上进行了使用。这就导致了以下两个问题</p>
+<p>（1）在正常安装方式下，无法选择安装组件。</p>
+<p>（2）在正常安装方式下，无法选在安装路径。</p>
+<p>当然这两个问题可以使用第三方工具和修改注册表进行解决。还有一个比较大的问题要在下面说。</p>
+</li>
+<li><p>大客户版：大客户版依旧使用着之前的安装方式——MSI安装，可以选择安装组件与安装路径。</p>
+</li>
+</ol>
+<p>这里说一下上面提到的那个比较大的问题。</p>
+<p>众所周知，虽然Office、Project、Visio单独出售、单独安装，但是这三个软件会调用一部分公用文件。因为Office 2016的零售版与大客户版的安装方式不同，所以这三个软件的2016版必须使用相同的安装方式，否则会导致无法安装。即三个软件都得是C2R模式或者MSI模式才能正常安装，不能混搭。</p>
+<p>为了方面大家选择安装版本，防止出现问题，特将各版本的安装方式列下。</p>
+<ol>
+<li>C2R：Office 365、Office 2016 Retail、Visio 2016 Retail、Project 2016 Retail。</li>
+<li>MSI：Office 2013及之前所有版本、Project 2013及之前所有版本、Visio 2013及之前所有版本、Office 2016 VOL、Visio 2016 VOL、Project 2016 VOL。</li>
+</ol>
+<h2 id="（二）Office2016激活方式区别"><a href="#（二）Office2016激活方式区别" class="headerlink" title="（二）Office2016激活方式区别"></a>（二）Office2016激活方式区别</h2><p>依旧是使用Retail密钥、MAK密钥与KMS激活。</p>
+<ol>
+<li>零售版：只能用Retail密钥进行激活，不能使用MAK与KMS（导入VOL的许可证后可以使用这两种方式激活）。</li>
+<li>大客户版：与零售版激活方式正相反，可以使用MAK与KMS激活，但是不能使用Retail密钥进行激活（导入Retail的许可证后可以使用Retail密钥激活）。</li>
+</ol>
+]]></content>
       <categories>
         <category>数码</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[区分影视资源（电影、电视剧）质量好坏的办法]]></title>
-    <url>%2F2017%2F12%2F26%2F%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[前言在国内，因为种种原因，大家看电影、电视剧等影视作品（特别是国外的作品）的时候，都喜欢下载下来看，一是因为很久很久之前，网速不行，在线看视频卡，到现在养成的习惯没法改，二是有些资源不在视频网站上上架或者上架很晚（国内美剧审查），所以…… 提到下载，大家最关注的就是清晰度，网上一个资源的盗版有的是，好的会写清晰度片源啦，懒得就直接写“高清”、“超清”等等，导致枪版都敢自称为“超清”，不忍直视。想像一下，名字写的高清无码，下下来才发现全是马赛克是什么感觉。 所以，写点东西来讨论一下怎么区分资源质量的好坏。 一、根据资源名称区分资源名称是个好东西，但是很多资源发布者为了方面，直接就写个超清，根本无法分辨这个资源质量的好坏，但是稍微正规的网站、字幕组发布的资源名称都不会这么简单，其中包含着很多有用的信息。 以我收藏的一个资源为例。 忽略这些歪歪扭扭的数。一般稍正规的字幕组发布的资源都会包含这些信息，只是顺序可能不同，没什么影响。 资源名就不说了，只说有用的。 年份：影片上映的年份。 版本：导演剪辑版啦、加长版啦等等。 分辨率：比较常见的就是1080p和720p。 片源：这个要说的比较多，片源包括BluRay（蓝光）、WEB-DL、HDTV、TS等等。详细的后面说。 视频编码 音频编码 音轨 一般资源名称就包括这些内容，更为详细的信息会包括在随资源一起的nfo文件中。 其实从解释上来看，3和4决定着资源质量的好坏，所以详细来说说这个。 片源包括很多种：BluRay、HDDVDRip、WEB-DL、HDRip(HDTV)、HR-HDTV、DVDRip、TC、TS、CAM等等，这里说几个常见的，其他的可以自行百度。 BluRay：蓝光，这是目前资源质量最好的片源，来源就是厂商发布的蓝光碟。其中又可以分为原盘、转制等等，也是收藏的首选。 WEB-DL：顾名思义，从网页上下载的资源，来源是各大正规视频网站播放后转制的。相比于蓝光，清晰度略逊一筹，可是资源大小却很有优势。而且WEB-DL出现的时间也会早蓝光一到两个月，是尝鲜的首选。 HDTV：电视片源转制的，很早之前网络不发达，电影上映之后会放到电视上播，转录后就是HDTV，现在电影一般没有HDTV了，但是电视剧很多的，好的HDTV资源的清晰度比WEB-DL差不了多少。 TS：枪版，来源是影院盗录，画质相当不好，发黑、晃动。 所以，从以上来看，大家下载资源的时候，最好是下载信息齐全的资源，质量有保证，所以，抛弃所谓的“超清”、“高清”吧，写着“超清”、“高清”的可能是枪版，而且质量（清晰度、字幕质量等等）肯定没有正规网站或字幕组发布的好。 二、根据资源大小区分但是，很多情况下，同时蓝光版，但是资源大小区别很大，从几G到几十G不等，这又是为什么呢？ 因为蓝光版又分蓝光原盘、转制版等等，大小不一定，但是也有一定的规律，可以进行参考。 以2小时的资源为例： 原盘大小在30G以上。 转制1080p蓝光在10G以上，再压制会在4-8G之间。 转制720p蓝光在5G以上，再压制会在3-5G之间。 WEB-DL在2-3G之间。 枪版大小不定。 如果一个资源号称蓝光，但只有1G左右，连下都不用下，假的。 三、根据发布时间区分资源根据片源的不同，发布时间会有不同，根据时间，可以加以区分。 蓝光：好莱坞电影，在影院下映后一般三个月左右会发售蓝光碟；国内电影发不发售蓝光碟都是个问题。 WEB-DL：好莱坞电影，影院下映后一个月左右会上架国外视频网站，上架国内视频网站的时间不一定；国内电影影院下映后一到两个月会上架国内视频网站。 所以，好莱坞电影，影院下映之后一个月左右出WEB-DL资源，三个月左右出蓝光资源。资源出来后，字幕组翻译压制快得两三天慢的十来天就行了。国内电影，下映后一到两个月会出WEB-DL资源，蓝光时间不定。 所以，在这些时间之前出来的资源，不是泄漏的话，那绝对是枪版，没别的。（这里的泄漏是个宽泛的概念，之后详细解释）。所以，今天一个帖子里说的现在《大圣归来》有高清、超清了，我不用下载就敢说，那些都是枪版，绝无例外。 四、根据字幕组选择根据以上三个办法，不必下载，就可以大致判断一个资源质量的好坏了。当然，对国外电影来说，还有一种办法，那就是根据字幕组或资源组，优秀的字幕组或资源组发布的资源有品质保证。 附录（一）资源泄露经过上边讲的，高质量资源的发布时间一般是一定的，但是有些特殊情况下，资源在影片还未上映或上映之初就已经流出，并且明显不是枪版，那就涉及到资源泄漏。 资源泄露一般包括以下几种情况： 厂商被黑，资源泄露。比如《敢死队3》、《金刚狼2》，因为厂商被黑，导致资源在上映之初流出。 各大市场上映时间错开，导致资源流出。比如一部电影在内地上映的时间比北美上映晚两个月，那么影片北美上映之后一个月左右上架视频网站，资源就会流到内地，那么内地观众在影片上映之前就会看到高质量资源。虽然一般发行方都会尽力避免这种情况出现，但是也有，比如最近的韩版资源，在内地上映之前，韩版资源就会流出。比如《小黄人大眼萌》，内地上映之前韩版资源早已流出。 影院泄露。这里指的不是盗录的枪版，而是影院内外勾结拿到高质量资源。这种情况以前我没听说过，今年第一次听说，就是《港囧》。 总结以上是我这么多年寻找资源的一些心得，下载盗版资源有的时候是不得已，因为有些资源国内根本没有正版。不过还是希望大家多多支持正版。我的原则是喜欢的，能上映的上映时去影院支持，有资源了下载下来收藏。 收藏一般是国外电影收藏蓝光，国内有蓝光收藏蓝光，没有就WEB-DL。一概不看枪版，对眼对影片都是一种不尊重。 内容难免有疏漏错误之处，请大家指正。]]></content>
+    <title>区分影视资源（电影、电视剧）质量好坏的办法</title>
+    <url>/2017/12/26/%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在国内，因为种种原因，大家看电影、电视剧等影视作品（特别是国外的作品）的时候，都喜欢下载下来看，一是因为很久很久之前，网速不行，在线看视频卡，到现在养成的习惯没法改，二是有些资源不在视频网站上上架或者上架很晚（国内美剧审查），所以……</p>
+<a id="more"></a>
+<p>提到下载，大家最关注的就是清晰度，网上一个资源的盗版有的是，好的会写清晰度片源啦，懒得就直接写“高清”、“超清”等等，导致枪版都敢自称为“超清”，不忍直视。想像一下，名字写的高清无码，下下来才发现全是马赛克是什么感觉。</p>
+<p>所以，写点东西来讨论一下怎么区分资源质量的好坏。</p>
+<h1 id="一、根据资源名称区分"><a href="#一、根据资源名称区分" class="headerlink" title="一、根据资源名称区分"></a>一、根据资源名称区分</h1><p>资源名称是个好东西，但是很多资源发布者为了方面，直接就写个超清，根本无法分辨这个资源质量的好坏，但是稍微正规的网站、字幕组发布的资源名称都不会这么简单，其中包含着很多有用的信息。</p>
+<p>以我收藏的一个资源为例。</p>
+<p><img src="https://user-images.githubusercontent.com/34172455/34350212-c4e643a6-ea50-11e7-8f29-4a58da03fca3.png" alt=""></p>
+<p>忽略这些歪歪扭扭的数。一般稍正规的字幕组发布的资源都会包含这些信息，只是顺序可能不同，没什么影响。</p>
+<p>资源名就不说了，只说有用的。</p>
+<ol>
+<li>年份：影片上映的年份。</li>
+<li>版本：导演剪辑版啦、加长版啦等等。</li>
+<li>分辨率：比较常见的就是1080p和720p。</li>
+<li>片源：这个要说的比较多，片源包括BluRay（蓝光）、WEB-DL、HDTV、TS等等。详细的后面说。</li>
+<li>视频编码</li>
+<li>音频编码</li>
+<li>音轨</li>
+</ol>
+<p>一般资源名称就包括这些内容，更为详细的信息会包括在随资源一起的nfo文件中。</p>
+<p>其实从解释上来看，3和4决定着资源质量的好坏，所以详细来说说这个。</p>
+<p>片源包括很多种：BluRay、HDDVDRip、WEB-DL、HDRip(HDTV)、HR-HDTV、DVDRip、TC、TS、CAM等等，这里说几个常见的，其他的可以自行百度。</p>
+<ol>
+<li>BluRay：蓝光，这是目前资源质量最好的片源，来源就是厂商发布的蓝光碟。其中又可以分为原盘、转制等等，也是收藏的首选。</li>
+<li>WEB-DL：顾名思义，从网页上下载的资源，来源是各大正规视频网站播放后转制的。相比于蓝光，清晰度略逊一筹，可是资源大小却很有优势。而且WEB-DL出现的时间也会早蓝光一到两个月，是尝鲜的首选。</li>
+<li>HDTV：电视片源转制的，很早之前网络不发达，电影上映之后会放到电视上播，转录后就是HDTV，现在电影一般没有HDTV了，但是电视剧很多的，好的HDTV资源的清晰度比WEB-DL差不了多少。</li>
+<li>TS：枪版，来源是影院盗录，画质相当不好，发黑、晃动。</li>
+</ol>
+<p>所以，从以上来看，大家下载资源的时候，最好是下载信息齐全的资源，质量有保证，所以，抛弃所谓的“超清”、“高清”吧，写着“超清”、“高清”的可能是枪版，而且质量（清晰度、字幕质量等等）肯定没有正规网站或字幕组发布的好。</p>
+<h1 id="二、根据资源大小区分"><a href="#二、根据资源大小区分" class="headerlink" title="二、根据资源大小区分"></a>二、根据资源大小区分</h1><p>但是，很多情况下，同时蓝光版，但是资源大小区别很大，从几G到几十G不等，这又是为什么呢？</p>
+<p>因为蓝光版又分蓝光原盘、转制版等等，大小不一定，但是也有一定的规律，可以进行参考。</p>
+<p>以2小时的资源为例：</p>
+<ul>
+<li>原盘大小在30G以上。</li>
+<li>转制1080p蓝光在10G以上，再压制会在4-8G之间。</li>
+<li>转制720p蓝光在5G以上，再压制会在3-5G之间。</li>
+<li>WEB-DL在2-3G之间。</li>
+<li>枪版大小不定。</li>
+</ul>
+<p>如果一个资源号称蓝光，但只有1G左右，连下都不用下，假的。</p>
+<h1 id="三、根据发布时间区分"><a href="#三、根据发布时间区分" class="headerlink" title="三、根据发布时间区分"></a>三、根据发布时间区分</h1><p>资源根据片源的不同，发布时间会有不同，根据时间，可以加以区分。</p>
+<ol>
+<li>蓝光：好莱坞电影，在影院下映后一般三个月左右会发售蓝光碟；国内电影发不发售蓝光碟都是个问题。</li>
+<li>WEB-DL：好莱坞电影，影院下映后一个月左右会上架国外视频网站，上架国内视频网站的时间不一定；国内电影影院下映后一到两个月会上架国内视频网站。</li>
+</ol>
+<p>所以，好莱坞电影，影院下映之后一个月左右出WEB-DL资源，三个月左右出蓝光资源。资源出来后，字幕组翻译压制快得两三天慢的十来天就行了。国内电影，下映后一到两个月会出WEB-DL资源，蓝光时间不定。</p>
+<p>所以，在这些时间之前出来的资源，不是泄漏的话，那绝对是枪版，没别的。（这里的泄漏是个宽泛的概念，之后详细解释）。所以，今天一个帖子里说的现在《大圣归来》有高清、超清了，我不用下载就敢说，那些都是枪版，绝无例外。</p>
+<h1 id="四、根据字幕组选择"><a href="#四、根据字幕组选择" class="headerlink" title="四、根据字幕组选择"></a>四、根据字幕组选择</h1><p>根据以上三个办法，不必下载，就可以大致判断一个资源质量的好坏了。当然，对国外电影来说，还有一种办法，那就是根据字幕组或资源组，优秀的字幕组或资源组发布的资源有品质保证。</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="（一）资源泄露"><a href="#（一）资源泄露" class="headerlink" title="（一）资源泄露"></a>（一）资源泄露</h2><p>经过上边讲的，高质量资源的发布时间一般是一定的，但是有些特殊情况下，资源在影片还未上映或上映之初就已经流出，并且明显不是枪版，那就涉及到资源泄漏。</p>
+<p>资源泄露一般包括以下几种情况：</p>
+<ol>
+<li>厂商被黑，资源泄露。比如《敢死队3》、《金刚狼2》，因为厂商被黑，导致资源在上映之初流出。</li>
+<li>各大市场上映时间错开，导致资源流出。比如一部电影在内地上映的时间比北美上映晚两个月，那么影片北美上映之后一个月左右上架视频网站，资源就会流到内地，那么内地观众在影片上映之前就会看到高质量资源。虽然一般发行方都会尽力避免这种情况出现，但是也有，比如最近的韩版资源，在内地上映之前，韩版资源就会流出。比如《小黄人大眼萌》，内地上映之前韩版资源早已流出。</li>
+<li>影院泄露。这里指的不是盗录的枪版，而是影院内外勾结拿到高质量资源。这种情况以前我没听说过，今年第一次听说，就是《港囧》。</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以上是我这么多年寻找资源的一些心得，下载盗版资源有的时候是不得已，因为有些资源国内根本没有正版。不过还是希望大家多多支持正版。我的原则是喜欢的，能上映的上映时去影院支持，有资源了下载下来收藏。</p>
+<p>收藏一般是国外电影收藏蓝光，国内有蓝光收藏蓝光，没有就WEB-DL。一概不看枪版，对眼对影片都是一种不尊重。</p>
+<p>内容难免有疏漏错误之处，请大家指正。</p>
+]]></content>
       <categories>
         <category>影视</category>
       </categories>
