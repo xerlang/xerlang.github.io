@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
@@ -20,9 +20,10 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('https://xerlang.github.io').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.5.0',
+    version: '7.7.0',
     exturl: false,
     sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
     copycode: {"enable":false,"show_result":false,"style":null},
@@ -32,6 +33,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: true,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -41,27 +43,23 @@
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
   <meta name="description" content="说明起因本地安装的Office版本是2016 Retail版，此版本使用的是Click-to-Run安装及更新方式。Office各版本区别及安装方式可参见《Windows与Office各版本及官方授权方式详解》。 某天发现Word导航窗格宽度调整后，重新打开会恢复到默认宽度，即此项设置无法保存，查找原因时发现除了此前自动更新到了1807版，经过测试为此版本Bug。所以在等待官方修复期间，产生了回退">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Office Click-to-Run升级或降级至任意版本教程">
-<meta property="og:url" content="https:&#x2F;&#x2F;xerlang.github.io&#x2F;2018&#x2F;08&#x2F;21&#x2F;Office%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B&#x2F;index.html">
+<meta property="og:url" content="https://xerlang.github.io/2018/08/21/Office%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="小学堂">
 <meta property="og:description" content="说明起因本地安装的Office版本是2016 Retail版，此版本使用的是Click-to-Run安装及更新方式。Office各版本区别及安装方式可参见《Windows与Office各版本及官方授权方式详解》。 某天发现Word导航窗格宽度调整后，重新打开会恢复到默认宽度，即此项设置无法保存，查找原因时发现除了此前自动更新到了1807版，经过测试为此版本Bug。所以在等待官方修复期间，产生了回退">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;44400239-0ea52880-a57d-11e8-94a7-7e6332e2affd.jpg">
-<meta property="og:updated_time" content="2018-08-21T12:20:43.111Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/44400239-0ea52880-a57d-11e8-94a7-7e6332e2affd.jpg">
+<meta property="article:published_time" content="2018-08-21T12:11:41.000Z">
+<meta property="article:modified_time" content="2018-08-21T12:20:43.111Z">
+<meta property="article:author" content="不怕太阳晒的小儿郎">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;44400239-0ea52880-a57d-11e8-94a7-7e6332e2affd.jpg">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/34172455/44400239-0ea52880-a57d-11e8-94a7-7e6332e2affd.jpg">
 
 <link rel="canonical" href="https://xerlang.github.io/2018/08/21/Office%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/">
 
@@ -71,9 +69,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
@@ -316,10 +312,10 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xerlang.github.io/2018/08/21/Office%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/" title="Office Click-to-Run升级或降级至任意版本教程">https://xerlang.github.io/2018/08/21/Office%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/</a>
+    <a href="https://xerlang.github.io/2018/08/21/Office%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/" title="Office Click-to-Run升级或降级至任意版本教程">https://xerlang.github.io/2018/08/21/Office Click-to-Run升级或降级至任意版本教程/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 </div>
@@ -329,21 +325,18 @@
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2018/07/24/Symantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88/" rel="next" title="Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】">
-                  <i class="fa fa-chevron-left"></i> Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】
-                </a>
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2018/11/26/PotPlayer%E3%80%81LAV%20Filters%E4%B8%8EmadVR%E6%8F%90%E5%8D%87%E7%94%BB%E8%B4%A8/" rel="prev" title="PotPlayer、LAV Filters与madVR提升画质">
-                  PotPlayer、LAV Filters与madVR提升画质 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/07/24/Symantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88/" rel="prev" title="Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】">
+      <i class="fa fa-chevron-left"></i> Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/11/26/PotPlayer%E3%80%81LAV%20Filters%E4%B8%8EmadVR%E6%8F%90%E5%8D%87%E7%94%BB%E8%B4%A8/" rel="next" title="PotPlayer、LAV Filters与madVR提升画质">
+      PotPlayer、LAV Filters与madVR提升画质 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -356,6 +349,28 @@
 
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
@@ -420,7 +435,7 @@
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -453,16 +468,16 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">不怕太阳晒的小儿郎</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
   </div>
 
         
@@ -474,11 +489,6 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
@@ -490,9 +500,17 @@
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -501,7 +519,8 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
 
 
 

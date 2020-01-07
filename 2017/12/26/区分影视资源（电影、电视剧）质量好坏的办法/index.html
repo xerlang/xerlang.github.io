@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
@@ -20,9 +20,10 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('https://xerlang.github.io').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.5.0',
+    version: '7.7.0',
     exturl: false,
     sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
     copycode: {"enable":false,"show_result":false,"style":null},
@@ -32,6 +33,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: true,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -41,27 +43,23 @@
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
   <meta name="description" content="前言在国内，因为种种原因，大家看电影、电视剧等影视作品（特别是国外的作品）的时候，都喜欢下载下来看，一是因为很久很久之前，网速不行，在线看视频卡，到现在养成的习惯没法改，二是有些资源不在视频网站上上架或者上架很晚（国内美剧审查），所以……">
 <meta property="og:type" content="article">
 <meta property="og:title" content="区分影视资源（电影、电视剧）质量好坏的办法">
-<meta property="og:url" content="https:&#x2F;&#x2F;xerlang.github.io&#x2F;2017&#x2F;12&#x2F;26&#x2F;%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95&#x2F;index.html">
+<meta property="og:url" content="https://xerlang.github.io/2017/12/26/%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95/index.html">
 <meta property="og:site_name" content="小学堂">
 <meta property="og:description" content="前言在国内，因为种种原因，大家看电影、电视剧等影视作品（特别是国外的作品）的时候，都喜欢下载下来看，一是因为很久很久之前，网速不行，在线看视频卡，到现在养成的习惯没法改，二是有些资源不在视频网站上上架或者上架很晚（国内美剧审查），所以……">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;34350212-c4e643a6-ea50-11e7-8f29-4a58da03fca3.png">
-<meta property="og:updated_time" content="2018-03-23T01:30:49.306Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/34350212-c4e643a6-ea50-11e7-8f29-4a58da03fca3.png">
+<meta property="article:published_time" content="2017-12-26T07:17:50.000Z">
+<meta property="article:modified_time" content="2018-03-23T01:30:49.306Z">
+<meta property="article:author" content="不怕太阳晒的小儿郎">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;34350212-c4e643a6-ea50-11e7-8f29-4a58da03fca3.png">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/34172455/34350212-c4e643a6-ea50-11e7-8f29-4a58da03fca3.png">
 
 <link rel="canonical" href="https://xerlang.github.io/2017/12/26/%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95/">
 
@@ -71,9 +69,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
@@ -345,10 +341,10 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xerlang.github.io/2017/12/26/%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95/" title="区分影视资源（电影、电视剧）质量好坏的办法">https://xerlang.github.io/2017/12/26/%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95/</a>
+    <a href="https://xerlang.github.io/2017/12/26/%E5%8C%BA%E5%88%86%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%88%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E5%89%A7%EF%BC%89%E8%B4%A8%E9%87%8F%E5%A5%BD%E5%9D%8F%E7%9A%84%E5%8A%9E%E6%B3%95/" title="区分影视资源（电影、电视剧）质量好坏的办法">https://xerlang.github.io/2017/12/26/区分影视资源（电影、电视剧）质量好坏的办法/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 </div>
@@ -358,18 +354,15 @@
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/" rel="prev" title="Windows与Office各版本及官方授权方式详解">
-                  Windows与Office各版本及官方授权方式详解 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/" rel="next" title="Windows与Office各版本及官方授权方式详解">
+      Windows与Office各版本及官方授权方式详解 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -382,6 +375,28 @@
 
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
@@ -446,7 +461,7 @@
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -479,16 +494,16 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">不怕太阳晒的小儿郎</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
   </div>
 
         
@@ -500,11 +515,6 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
@@ -516,9 +526,17 @@
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -527,7 +545,8 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
 
 
 

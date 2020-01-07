@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
@@ -20,9 +20,10 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('https://xerlang.github.io').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.5.0',
+    version: '7.7.0',
     exturl: false,
     sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
     copycode: {"enable":false,"show_result":false,"style":null},
@@ -32,6 +33,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: true,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -41,31 +43,27 @@
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
   <meta name="description" content="前言最近关于联想在5G标准表决会议的投票讨论的沸沸扬扬，各种说法都有，有因为联想的2票弃权或投高通而使华为的标准以1票之差输了的，也有联想的投票对最终结果没有影响的。究其原因，因为绝大部分人没有亲自看5G表决会议的会议记录，只是看到了二手甚至多手资料，这些资料在多次转载的过程中已经失真了。所以如果想知道联想在表决会议中投票的真实情况，最好的办法是看会议记录。3GPP每次会议的会议记录都会公开放出并">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5G标准表决会议记录中关于联想投票的部分">
-<meta property="og:url" content="https:&#x2F;&#x2F;xerlang.github.io&#x2F;2018&#x2F;05&#x2F;17&#x2F;5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86&#x2F;index.html">
+<meta property="og:url" content="https://xerlang.github.io/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/index.html">
 <meta property="og:site_name" content="小学堂">
 <meta property="og:description" content="前言最近关于联想在5G标准表决会议的投票讨论的沸沸扬扬，各种说法都有，有因为联想的2票弃权或投高通而使华为的标准以1票之差输了的，也有联想的投票对最终结果没有影响的。究其原因，因为绝大部分人没有亲自看5G表决会议的会议记录，只是看到了二手甚至多手资料，这些资料在多次转载的过程中已经失真了。所以如果想知道联想在表决会议中投票的真实情况，最好的办法是看会议记录。3GPP每次会议的会议记录都会公开放出并">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170428-020af474-59fb-11e8-8c67-9dabffec124e.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170432-04ea9ad2-59fb-11e8-8729-130d58d4fb76.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170430-030c0566-59fb-11e8-9b32-5bbe40d18e96.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170433-05377c12-59fb-11e8-840c-64450d291298.jpg">
-<meta property="og:updated_time" content="2018-05-18T09:05:21.280Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg">
+<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170428-020af474-59fb-11e8-8c67-9dabffec124e.jpg">
+<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170432-04ea9ad2-59fb-11e8-8729-130d58d4fb76.jpg">
+<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170430-030c0566-59fb-11e8-9b32-5bbe40d18e96.jpg">
+<meta property="og:image" content="https://user-images.githubusercontent.com/34172455/40170433-05377c12-59fb-11e8-840c-64450d291298.jpg">
+<meta property="article:published_time" content="2018-05-17T09:32:58.000Z">
+<meta property="article:modified_time" content="2018-05-18T09:05:21.280Z">
+<meta property="article:author" content="不怕太阳晒的小儿郎">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;34172455&#x2F;40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/34172455/40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg">
 
 <link rel="canonical" href="https://xerlang.github.io/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/">
 
@@ -75,9 +73,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
@@ -347,10 +343,10 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xerlang.github.io/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/" title="5G标准表决会议记录中关于联想投票的部分">https://xerlang.github.io/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/</a>
+    <a href="https://xerlang.github.io/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/" title="5G标准表决会议记录中关于联想投票的部分">https://xerlang.github.io/2018/05/17/5G标准表决会议记录中关于联想投票的部分/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 </div>
@@ -360,21 +356,18 @@
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/" rel="next" title="Windows与Office各版本及官方授权方式详解">
-                  <i class="fa fa-chevron-left"></i> Windows与Office各版本及官方授权方式详解
-                </a>
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/" rel="prev" title="Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程">
-                  Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/" rel="prev" title="Windows与Office各版本及官方授权方式详解">
+      <i class="fa fa-chevron-left"></i> Windows与Office各版本及官方授权方式详解
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/" rel="next" title="Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程">
+      Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -387,6 +380,28 @@
 
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
@@ -451,7 +466,7 @@
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -484,16 +499,16 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">不怕太阳晒的小儿郎</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
   </div>
 
         
@@ -505,11 +520,6 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
@@ -521,9 +531,17 @@
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -532,7 +550,8 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
 
 
 

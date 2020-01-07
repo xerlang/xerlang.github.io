@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
@@ -20,9 +20,10 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('https://xerlang.github.io').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.5.0',
+    version: '7.7.0',
     exturl: false,
     sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
     copycode: {"enable":false,"show_result":false,"style":null},
@@ -32,6 +33,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: true,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -41,24 +43,20 @@
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
   <meta name="description" content="前言初衷最近入门PT，家中宽带上行20M，不快不慢，所以自建了个Seedbox，使用的下载方案是qBittorrent+FlexGet+Auto Remove Torrents，FlexGet使用PT站RSS链接自动下载种子至服务器并使用qBittorrent自动下载，下载完成后根据条件使用Auto Remove Torrents自动删除，以实现无需人工干预，自动刷流量。 写作本文的初衷是部署过程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程">
-<meta property="og:url" content="https:&#x2F;&#x2F;xerlang.github.io&#x2F;2018&#x2F;07&#x2F;20&#x2F;Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B&#x2F;index.html">
+<meta property="og:url" content="https://xerlang.github.io/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="小学堂">
 <meta property="og:description" content="前言初衷最近入门PT，家中宽带上行20M，不快不慢，所以自建了个Seedbox，使用的下载方案是qBittorrent+FlexGet+Auto Remove Torrents，FlexGet使用PT站RSS链接自动下载种子至服务器并使用qBittorrent自动下载，下载完成后根据条件使用Auto Remove Torrents自动删除，以实现无需人工干预，自动刷流量。 写作本文的初衷是部署过程">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T07:23:45.785Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-07-20T15:50:03.000Z">
+<meta property="article:modified_time" content="2020-01-07T05:13:12.740Z">
+<meta property="article:author" content="不怕太阳晒的小儿郎">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://xerlang.github.io/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/">
@@ -69,9 +67,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
@@ -246,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-11-26 15:23:45" itemprop="dateModified" datetime="2018-11-26T15:23:45+08:00">2018-11-26</time>
+                <time title="修改时间：2020-01-07 13:13:12" itemprop="dateModified" datetime="2020-01-07T13:13:12+08:00">2020-01-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,17 +280,17 @@
 <li>FlexGet：2.14.6</li>
 <li>Auto Remove Torrents：1.2.4</li>
 </ul>
-<h1 id="一、qBittorrent"><a href="#一、qBittorrent" class="headerlink" title="一、qBittorrent"></a>一、qBittorrent</h1><h2 id="（一）安装"><a href="#（一）安装" class="headerlink" title="（一）安装"></a>（一）安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add-apt-repository ppa:qbittorrent-team/qbittorrent-stable</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install qbittorrent-nox</span><br></pre></td></tr></table></figure>
+<h1 id="一、qBittorrent"><a href="#一、qBittorrent" class="headerlink" title="一、qBittorrent"></a>一、qBittorrent</h1><h2 id="（一）安装"><a href="#（一）安装" class="headerlink" title="（一）安装"></a>（一）安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add-apt-repository ppa:qbittorrent-team&#x2F;qbittorrent-stable</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install qbittorrent-nox</span><br></pre></td></tr></table></figure>
 <h2 id="（二）创建服务"><a href="#（二）创建服务" class="headerlink" title="（二）创建服务"></a>（二）创建服务</h2><p>创建服务。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/systemd/system/qbittorrent.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;qbittorrent.service</span><br></pre></td></tr></table></figure>
 <p>输入以下内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=qBittorrent Daemon Service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User=root</span><br><span class="line">ExecStart=/usr/bin/qbittorrent-nox</span><br><span class="line">ExecStop=/usr/bin/killall -w qbittorrent-nox</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;qBittorrent Daemon Service</span><br><span class="line">After&#x3D;network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User&#x3D;root</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;qbittorrent-nox</span><br><span class="line">ExecStop&#x3D;&#x2F;usr&#x2F;bin&#x2F;killall -w qbittorrent-nox</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
 <p>root指的是系统当前用户名，根据自己的实际情况更改。</p>
 <h2 id="（三）运行"><a href="#（三）运行" class="headerlink" title="（三）运行"></a>（三）运行</h2><h3 id="1-启动"><a href="#1-启动" class="headerlink" title="1.启动"></a>1.启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start qbittorrent</span><br></pre></td></tr></table></figure>
 <h3 id="2-停止"><a href="#2-停止" class="headerlink" title="2.停止"></a>2.停止</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop qbittorrent</span><br></pre></td></tr></table></figure>
 <h3 id="3-开机自启"><a href="#3-开机自启" class="headerlink" title="3.开机自启"></a>3.开机自启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable qbittorrent</span><br></pre></td></tr></table></figure>
 <h3 id="4-查看运行状态"><a href="#4-查看运行状态" class="headerlink" title="4.查看运行状态"></a>4.查看运行状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status qbittorrent</span><br></pre></td></tr></table></figure>
-<h3 id="5-访问Web-UI"><a href="#5-访问Web-UI" class="headerlink" title="5.访问Web UI"></a>5.访问Web UI</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">默认地址: http://IP地址:8080</span><br><span class="line">默认用户名: admin</span><br><span class="line">默认密码: adminadmin</span><br></pre></td></tr></table></figure>
+<h3 id="5-访问Web-UI"><a href="#5-访问Web-UI" class="headerlink" title="5.访问Web UI"></a>5.访问Web UI</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">默认地址: http:&#x2F;&#x2F;IP地址:8080</span><br><span class="line">默认用户名: admin</span><br><span class="line">默认密码: adminadmin</span><br></pre></td></tr></table></figure>
 <p>IP地址为服务器地址，登录后可在设置中将Web UI设置成简体中文，更改用户名和密码等。</p>
 <h2 id="（四）升级"><a href="#（四）升级" class="headerlink" title="（四）升级"></a>（四）升级</h2><p>升级方法与安装方法一致。</p>
 <h1 id="二、FlexGet"><a href="#二、FlexGet" class="headerlink" title="二、FlexGet"></a>二、FlexGet</h1><h2 id="（一）准备"><a href="#（一）准备" class="headerlink" title="（一）准备"></a>（一）准备</h2><h3 id="1-安装升级Python"><a href="#1-安装升级Python" class="headerlink" title="1.安装升级Python"></a>1.安装升级Python</h3><p>FlexGet支持的Python版本为2.7，3.3到3.5，Auto Remove Torrents只支持3.x，为了方便，FlexGet也使用Python 3.x安装，若版本不正确，可升级Python，若版本正确，无需操作。</p>
@@ -309,11 +305,11 @@
 <h4 id="（2）安装与升级"><a href="#（2）安装与升级" class="headerlink" title="（2）安装与升级"></a>（2）安装与升级</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install nano</span><br></pre></td></tr></table></figure>
 <h2 id="（二）安装"><a href="#（二）安装" class="headerlink" title="（二）安装"></a>（二）安装</h2><h3 id="1-查看FlexGet版本"><a href="#1-查看FlexGet版本" class="headerlink" title="1.查看FlexGet版本"></a>1.查看FlexGet版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flexget -V</span><br></pre></td></tr></table></figure>
 <h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install flexget</span><br></pre></td></tr></table></figure>
-<h2 id="（三）配置"><a href="#（三）配置" class="headerlink" title="（三）配置"></a>（三）配置</h2><h3 id="1-创建配置目录"><a href="#1-创建配置目录" class="headerlink" title="1.创建配置目录"></a>1.创建配置目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /root/.flexget</span><br></pre></td></tr></table></figure>
-<h3 id="2-创建并编辑配置文件"><a href="#2-创建并编辑配置文件" class="headerlink" title="2.创建并编辑配置文件"></a>2.创建并编辑配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /root/.flexget/config.yml</span><br></pre></td></tr></table></figure>
+<h2 id="（三）配置"><a href="#（三）配置" class="headerlink" title="（三）配置"></a>（三）配置</h2><h3 id="1-创建配置目录"><a href="#1-创建配置目录" class="headerlink" title="1.创建配置目录"></a>1.创建配置目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;root&#x2F;.flexget</span><br></pre></td></tr></table></figure>
+<h3 id="2-创建并编辑配置文件"><a href="#2-创建并编辑配置文件" class="headerlink" title="2.创建并编辑配置文件"></a>2.创建并编辑配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano &#x2F;root&#x2F;.flexget&#x2F;config.yml</span><br></pre></td></tr></table></figure>
 <h3 id="3-配置与运行"><a href="#3-配置与运行" class="headerlink" title="3.配置与运行"></a>3.配置与运行</h3><p>FlexGet支持众多插件，下文只列出本人用到的，其他插件用法可参见文末插件链接。</p>
-<h4 id="（1）示例"><a href="#（1）示例" class="headerlink" title="（1）示例"></a>（1）示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">tasks:</span><br><span class="line">  test task:</span><br><span class="line">    rss: http://mysite.com/myfeed.rss</span><br><span class="line">    accept_all: no</span><br><span class="line">    regexp:</span><br><span class="line">      accept:</span><br><span class="line">        - good.stuff</span><br><span class="line">      reject:</span><br><span class="line">        - bad.things</span><br><span class="line">      from: title</span><br><span class="line">    content_size:</span><br><span class="line">      min: 12</span><br><span class="line">      max: 1200</span><br><span class="line">      strict: no</span><br><span class="line">    download: /home/me/watchdir/</span><br><span class="line">    qbittorrent:</span><br><span class="line">      port: 8080</span><br><span class="line">      username: admin</span><br><span class="line">      password: adminadmin</span><br><span class="line">      path: /media/disk/downloads/</span><br><span class="line">web_server:</span><br><span class="line">  bind: 0.0.0.0</span><br><span class="line">  port: 50001</span><br><span class="line">  web_ui: yes</span><br><span class="line">  run_v2: yes</span><br></pre></td></tr></table></figure>
-<h4 id="（2）基本配置"><a href="#（2）基本配置" class="headerlink" title="（2）基本配置"></a>（2）基本配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tasks:</span><br><span class="line">  test task: #任务名称，可任意起</span><br><span class="line">    rss: http://mysite.com/myfeed.rss #rss地址</span><br><span class="line">    download: /home/me/watchdir/ #rss订阅的下载位置</span><br></pre></td></tr></table></figure>
+<h4 id="（1）示例"><a href="#（1）示例" class="headerlink" title="（1）示例"></a>（1）示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">tasks:</span><br><span class="line">  test task:</span><br><span class="line">    rss: http:&#x2F;&#x2F;mysite.com&#x2F;myfeed.rss</span><br><span class="line">    accept_all: no</span><br><span class="line">    regexp:</span><br><span class="line">      accept:</span><br><span class="line">        - good.stuff</span><br><span class="line">      reject:</span><br><span class="line">        - bad.things</span><br><span class="line">      from: title</span><br><span class="line">    content_size:</span><br><span class="line">      min: 12</span><br><span class="line">      max: 1200</span><br><span class="line">      strict: no</span><br><span class="line">    download: &#x2F;home&#x2F;me&#x2F;watchdir&#x2F;</span><br><span class="line">    qbittorrent:</span><br><span class="line">      port: 8080</span><br><span class="line">      username: admin</span><br><span class="line">      password: adminadmin</span><br><span class="line">      path: &#x2F;media&#x2F;disk&#x2F;downloads&#x2F;</span><br><span class="line">web_server:</span><br><span class="line">  bind: 0.0.0.0</span><br><span class="line">  port: 50001</span><br><span class="line">  web_ui: yes</span><br><span class="line">  run_v2: yes</span><br></pre></td></tr></table></figure>
+<h4 id="（2）基本配置"><a href="#（2）基本配置" class="headerlink" title="（2）基本配置"></a>（2）基本配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tasks:</span><br><span class="line">  test task: #任务名称，可任意起</span><br><span class="line">    rss: http:&#x2F;&#x2F;mysite.com&#x2F;myfeed.rss #rss地址</span><br><span class="line">    download: &#x2F;home&#x2F;me&#x2F;watchdir&#x2F; #rss订阅的下载位置</span><br></pre></td></tr></table></figure>
 <h4 id="（3）accept-all"><a href="#（3）accept-all" class="headerlink" title="（3）accept_all"></a>（3）accept_all</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">accept_all: no #是否接受所有条目，接受为yes，不接受为no</span><br></pre></td></tr></table></figure>
 <h4 id="（4）regexp"><a href="#（4）regexp" class="headerlink" title="（4）regexp"></a>（4）regexp</h4><p>regexp为正则表达式筛选插件。 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">regexp:</span><br><span class="line">  accept: #接受内容，多个条件写为多行。无条件可删除此项</span><br><span class="line">    - good.stuff</span><br><span class="line">  reject: #拒绝内容，多个条件写为多行。无条件可删除此项</span><br><span class="line">    - bad.things</span><br><span class="line">  from: title #删选位置，title为标题</span><br></pre></td></tr></table></figure>
@@ -321,7 +317,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">content_size:</span><br><span class="line">  min: 12 #最小值，单位为m。</span><br><span class="line">  max: 1200 #最大值，单位为m。</span><br><span class="line">  strict: no</span><br></pre></td></tr></table></figure>
 <p>此设置为接受12m~1200m大小的内容。</p>
 <h4 id="（6）qbittorrent"><a href="#（6）qbittorrent" class="headerlink" title="（6）qbittorrent"></a>（6）qbittorrent</h4><p>qbittorrent设置插件。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">qbittorrent:</span><br><span class="line">  port: 8080 #qBittorrent监听端口</span><br><span class="line">  username: admin #qBittorrent用户名</span><br><span class="line">  password: adminadmin #qBittorrent密码</span><br><span class="line">  path: /media/disk/downloads/ #qBittorrent下载地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">qbittorrent:</span><br><span class="line">  port: 8080 #qBittorrent监听端口</span><br><span class="line">  username: admin #qBittorrent用户名</span><br><span class="line">  password: adminadmin #qBittorrent密码</span><br><span class="line">  path: &#x2F;media&#x2F;disk&#x2F;downloads&#x2F; #qBittorrent下载地址</span><br></pre></td></tr></table></figure>
 <h4 id="（7）web-server"><a href="#（7）web-server" class="headerlink" title="（7）web_server"></a>（7）web_server</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">web_server:</span><br><span class="line">  bind: 0.0.0.0 #本服务器IP或0.0.0.0</span><br><span class="line">  port: 50001 #监听端口，可任意设置</span><br><span class="line">  web_ui: yes #是否开启Web UI，开启为yes，关闭为no。</span><br><span class="line">  run_v2: yes #是否开启Web UI 2.0界面，开启为yes，关闭为no。</span><br></pre></td></tr></table></figure>
 <h3 id="4-检查配置与手动运行"><a href="#4-检查配置与手动运行" class="headerlink" title="4.检查配置与手动运行"></a>4.检查配置与手动运行</h3><h4 id="（1）检查配置文件是否正确"><a href="#（1）检查配置文件是否正确" class="headerlink" title="（1）检查配置文件是否正确"></a>（1）检查配置文件是否正确</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flexget check</span><br></pre></td></tr></table></figure>
 <h4 id="（2）模拟手动运行"><a href="#（2）模拟手动运行" class="headerlink" title="（2）模拟手动运行"></a>（2）模拟手动运行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flexget –test execute</span><br></pre></td></tr></table></figure>
@@ -331,7 +327,7 @@
 <p>例如位置为/usr/local/bin/flexget。 </p>
 <h4 id="（2）编辑crontab"><a href="#（2）编辑crontab" class="headerlink" title="（2）编辑crontab"></a>（2）编辑crontab</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
 <p>使用nano编辑，输入以下内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/2 * * * * /usr/local/bin/flexget --cron execute</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#x2F;2 * * * * &#x2F;usr&#x2F;local&#x2F;bin&#x2F;flexget --cron execute</span><br></pre></td></tr></table></figure>
 <p>保存退出。其中2是指2分钟运行一次，可任意设置。</p>
 <h3 id="6-配置Web-UI"><a href="#6-配置Web-UI" class="headerlink" title="6.配置Web UI"></a>6.配置Web UI</h3><h4 id="（1）编辑配置文件"><a href="#（1）编辑配置文件" class="headerlink" title="（1）编辑配置文件"></a>（1）编辑配置文件</h4><p>参见上文“配置”。</p>
 <h4 id="（2）设置Web-UI密码"><a href="#（2）设置Web-UI密码" class="headerlink" title="（2）设置Web UI密码"></a>（2）设置Web UI密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flexget web passwd &lt;要设置的密码&gt;</span><br></pre></td></tr></table></figure>
@@ -339,9 +335,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flexget daemon start -d</span><br></pre></td></tr></table></figure>
 <h4 id="（4）停止守护进行"><a href="#（4）停止守护进行" class="headerlink" title="（4）停止守护进行"></a>（4）停止守护进行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flexget daemon stop</span><br></pre></td></tr></table></figure>
 <h4 id="（5）查看运行状态"><a href="#（5）查看运行状态" class="headerlink" title="（5）查看运行状态"></a>（5）查看运行状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flexget daemon status</span><br></pre></td></tr></table></figure>
-<h4 id="（6）访问Web-UI"><a href="#（6）访问Web-UI" class="headerlink" title="（6）访问Web UI"></a>（6）访问Web UI</h4><p>访问<a href="http://ip:50001即可，用户名为flexget，密码为设置密码。" target="_blank" rel="noopener">http://ip:50001即可，用户名为flexget，密码为设置密码。</a> </p>
+<h4 id="（6）访问Web-UI"><a href="#（6）访问Web-UI" class="headerlink" title="（6）访问Web UI"></a>（6）访问Web UI</h4><p>访问<a href="http://ip:50001" target="_blank" rel="noopener">http://ip:50001</a>即可，用户名为flexget，密码为设置密码。 </p>
 <h4 id="（7）开机自启守护进程"><a href="#（7）开机自启守护进程" class="headerlink" title="（7）开机自启守护进程"></a>（7）开机自启守护进程</h4><p>编辑crontab，输入以下内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@reboot /usr/local/bin/flexget daemon start -d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@reboot &#x2F;usr&#x2F;local&#x2F;bin&#x2F;flexget daemon start -d</span><br></pre></td></tr></table></figure>
 <h2 id="（四）升级-1"><a href="#（四）升级-1" class="headerlink" title="（四）升级"></a>（四）升级</h2><h3 id="1-查看FlexGet版本-1"><a href="#1-查看FlexGet版本-1" class="headerlink" title="1.查看FlexGet版本"></a>1.查看FlexGet版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flexget -V</span><br></pre></td></tr></table></figure>
 <h3 id="2-通过pip升级"><a href="#2-通过pip升级" class="headerlink" title="2.通过pip升级"></a>2.通过pip升级</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -U flexget</span><br></pre></td></tr></table></figure>
 <p>若安装出现错误，可升级Python、pip与setuptools尝试解决，升级方法见上。</p>
@@ -352,18 +348,18 @@
 <p>如需要Web UI显示verbose及以下级别的日志，开启守护进程的命令变为。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flexget -L verbose daemon start -d</span><br></pre></td></tr></table></figure>
 <p>守护进程开启自启的命令变为。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@reboot /usr/local/bin/flexget -L verbose daemon start -d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@reboot &#x2F;usr&#x2F;local&#x2F;bin&#x2F;flexget -L verbose daemon start -d</span><br></pre></td></tr></table></figure>
 <h1 id="三、Auto-Remove-Torrents"><a href="#三、Auto-Remove-Torrents" class="headerlink" title="三、Auto Remove Torrents"></a>三、Auto Remove Torrents</h1><h2 id="（一）准备-1"><a href="#（一）准备-1" class="headerlink" title="（一）准备"></a>（一）准备</h2><p>Auto Remove Torrents需要Python 3，不支持Python 2。需安装Python 3、pip 3，安装方法参见上文FlexGet中的安装方法。</p>
 <h2 id="（二）安装-1"><a href="#（二）安装-1" class="headerlink" title="（二）安装"></a>（二）安装</h2><h3 id="1-查看版本"><a href="#1-查看版本" class="headerlink" title="1.查看版本"></a>1.查看版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 show autoremove-torrents</span><br></pre></td></tr></table></figure>
 <h3 id="2-安装-1"><a href="#2-安装-1" class="headerlink" title="2.安装"></a>2.安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install autoremove-torrents</span><br></pre></td></tr></table></figure>
-<h2 id="（三）配置-1"><a href="#（三）配置-1" class="headerlink" title="（三）配置"></a>（三）配置</h2><h3 id="1-创建编辑配置文件"><a href="#1-创建编辑配置文件" class="headerlink" title="1.创建编辑配置文件"></a>1.创建编辑配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /root/autoremove-torrents</span><br><span class="line">vim /root/autoremove-torrents/config.yml</span><br></pre></td></tr></table></figure>
+<h2 id="（三）配置-1"><a href="#（三）配置-1" class="headerlink" title="（三）配置"></a>（三）配置</h2><h3 id="1-创建编辑配置文件"><a href="#1-创建编辑配置文件" class="headerlink" title="1.创建编辑配置文件"></a>1.创建编辑配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;root&#x2F;autoremove-torrents</span><br><span class="line">vim &#x2F;root&#x2F;autoremove-torrents&#x2F;config.yml</span><br></pre></td></tr></table></figure>
 <p>配置文件因与FlexGet配置文件同名，故不可放在root目录下，否则会被FlexGet识别。</p>
 <h3 id="2-配置内容"><a href="#2-配置内容" class="headerlink" title="2.配置内容"></a>2.配置内容</h3><p>配置文件可以分为4部分，示例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># 一个任务块</span><br><span class="line">my_task: # 第一部分：任务名称</span><br><span class="line">  # 第二部分：登录信息</span><br><span class="line">  client: qtortorrent</span><br><span class="line">  host: http://127.0.0.1:9091</span><br><span class="line">  username: admin</span><br><span class="line">  password: adminadmin</span><br><span class="line">  # 第三部分：策略块（删除条件）</span><br><span class="line">  strategies:</span><br><span class="line">    strategy1: # 第1部分：策略名称</span><br><span class="line">      # 第2部分：过滤器</span><br><span class="line">      categories:</span><br><span class="line">        - IPT</span><br><span class="line">      # 第3部分：删除条件</span><br><span class="line">      ratio: 1</span><br><span class="line">      seeding_time: 1209600</span><br><span class="line">    strategy2:</span><br><span class="line">      all_categories: true</span><br><span class="line">      excluded_categories:</span><br><span class="line">        - IPT</span><br><span class="line">      seeding_time: 259200</span><br><span class="line">    # 这里可以添加更多策略</span><br><span class="line">  # 第四部分：决定是否同时删除数据（可选项）</span><br><span class="line">  delete_data: true</span><br><span class="line"></span><br><span class="line"># 这里可以添加更多任务</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># 一个任务块</span><br><span class="line">my_task: # 第一部分：任务名称</span><br><span class="line">  # 第二部分：登录信息</span><br><span class="line">  client: qtortorrent</span><br><span class="line">  host: http:&#x2F;&#x2F;127.0.0.1:9091</span><br><span class="line">  username: admin</span><br><span class="line">  password: adminadmin</span><br><span class="line">  # 第三部分：策略块（删除条件）</span><br><span class="line">  strategies:</span><br><span class="line">    strategy1: # 第1部分：策略名称</span><br><span class="line">      # 第2部分：过滤器</span><br><span class="line">      categories:</span><br><span class="line">        - IPT</span><br><span class="line">      # 第3部分：删除条件</span><br><span class="line">      ratio: 1</span><br><span class="line">      seeding_time: 1209600</span><br><span class="line">    strategy2:</span><br><span class="line">      all_categories: true</span><br><span class="line">      excluded_categories:</span><br><span class="line">        - IPT</span><br><span class="line">      seeding_time: 259200</span><br><span class="line">    # 这里可以添加更多策略</span><br><span class="line">  # 第四部分：决定是否同时删除数据（可选项）</span><br><span class="line">  delete_data: true</span><br><span class="line"></span><br><span class="line"># 这里可以添加更多任务</span><br></pre></td></tr></table></figure>
 <h4 id="第一部分：任务名称"><a href="#第一部分：任务名称" class="headerlink" title="第一部分：任务名称"></a>第一部分：任务名称</h4><p>任意。</p>
 <h4 id="第二部分：登录信息"><a href="#第二部分：登录信息" class="headerlink" title="第二部分：登录信息"></a>第二部分：登录信息</h4><ul>
 <li>client：客户端类型。目前支持qbittorrent/transmission/μTorrent。</li>
-<li>host：WebUI的访问地址。如<a href="http://127.0.0.1:8080。" target="_blank" rel="noopener">http://127.0.0.1:8080。</a></li>
+<li>host：WebUI的访问地址。如<a href="http://127.0.0.1:8080" target="_blank" rel="noopener">http://127.0.0.1:8080</a>。</li>
 <li>username：WebUI的用户名。</li>
 <li>password：WebUI的密码，密码前后需要加英文半角双引号。</li>
 </ul>
@@ -394,13 +390,13 @@
 </li>
 </ul>
 <h4 id="第四部分：删除数据"><a href="#第四部分：删除数据" class="headerlink" title="第四部分：删除数据"></a>第四部分：删除数据</h4><p>确定是否在删除种子时同时删除数据。如果此字段未指定，则默认值为false。</p>
-<h2 id="（四）运行"><a href="#（四）运行" class="headerlink" title="（四）运行"></a>（四）运行</h2><h3 id="1-模拟运行"><a href="#1-模拟运行" class="headerlink" title="1.模拟运行"></a>1.模拟运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoremove-torrents --view --conf=/root/autoremove-torrents/config.yml</span><br></pre></td></tr></table></figure>
+<h2 id="（四）运行"><a href="#（四）运行" class="headerlink" title="（四）运行"></a>（四）运行</h2><h3 id="1-模拟运行"><a href="#1-模拟运行" class="headerlink" title="1.模拟运行"></a>1.模拟运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoremove-torrents --view --conf&#x3D;&#x2F;root&#x2F;autoremove-torrents&#x2F;config.yml</span><br></pre></td></tr></table></figure>
 <p><code>--conf=/root/autoremove-torrents/config.yml</code>为配置文件路径，若路径为默认，则可不写。下同。</p>
-<h3 id="2-运行"><a href="#2-运行" class="headerlink" title="2.运行"></a>2.运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoremove-torrents --conf=/root/autoremove-torrents/config.yml</span><br></pre></td></tr></table></figure>
+<h3 id="2-运行"><a href="#2-运行" class="headerlink" title="2.运行"></a>2.运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoremove-torrents --conf&#x3D;&#x2F;root&#x2F;autoremove-torrents&#x2F;config.yml</span><br></pre></td></tr></table></figure>
 <h3 id="3-自动运行"><a href="#3-自动运行" class="headerlink" title="3.自动运行"></a>3.自动运行</h3><p>编辑crontab。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
 <p>使用nano编辑，在出现的界面添加以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/2 * * * * /usr/local/bin/autoremove-torrents --conf=/root/autoremove-torrents/config.yml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#x2F;2 * * * * &#x2F;usr&#x2F;local&#x2F;bin&#x2F;autoremove-torrents --conf&#x3D;&#x2F;root&#x2F;autoremove-torrents&#x2F;config.yml</span><br></pre></td></tr></table></figure>
 <p>可根据需求设置自动运行的时间间隔。</p>
 <h2 id="（五）升级"><a href="#（五）升级" class="headerlink" title="（五）升级"></a>（五）升级</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -U autoremove-torrents</span><br></pre></td></tr></table></figure>
 <h1 id="已知问题"><a href="#已知问题" class="headerlink" title="已知问题"></a>已知问题</h1><p>FlexGet与Auto Remove Torrents同时允许，可能会导致qBittorrent崩溃。</p>
@@ -450,10 +446,10 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xerlang.github.io/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/" title="Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程">https://xerlang.github.io/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/</a>
+    <a href="https://xerlang.github.io/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/" title="Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程">https://xerlang.github.io/2018/07/20/Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 </div>
@@ -463,21 +459,18 @@
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/" rel="next" title="5G标准表决会议记录中关于联想投票的部分">
-                  <i class="fa fa-chevron-left"></i> 5G标准表决会议记录中关于联想投票的部分
-                </a>
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2018/07/24/Symantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88/" rel="prev" title="Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】">
-                  Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/" rel="prev" title="5G标准表决会议记录中关于联想投票的部分">
+      <i class="fa fa-chevron-left"></i> 5G标准表决会议记录中关于联想投票的部分
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/07/24/Symantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88/" rel="next" title="Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】">
+      Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -490,6 +483,28 @@
 
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
@@ -554,7 +569,7 @@
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -587,16 +602,16 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">不怕太阳晒的小儿郎</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
   </div>
 
         
@@ -608,11 +623,6 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
@@ -624,9 +634,17 @@
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -635,7 +653,8 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
 
 
 
