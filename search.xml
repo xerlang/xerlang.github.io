@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10695】</title>
+    <url>/2018/07/24/Symantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Ghost一直是用着最趁手备份工具，由于Ghost本身官方并不提供下载，只集成在其他软件中，且官方下载相对困难。故将绝大部分版本的Ghost提取出来，以供下载。</p>
+<p>此过程的难点在于搜集Symantec Ghost Solution Suite、Symantec Ghost Standard Tools与Ghost版本的对应关系及历史版本的官方原版程序的下载，提取起来很简单。</p>
+<p>本文首发于卡饭论坛（<a href="https://bbs.kafan.cn/thread-2128366-1-1.html" target="_blank" rel="noopener">https://bbs.kafan.cn/thread-2128366-1-1.html</a>）及本博客，转载请注明出处。</p>
+<a id="more"></a>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
+<li>本文所提供Symantec Ghost Solution Suite、Symantec Ghost Standard Tools均为官方原版，均下载自Symantec官方服务器，除个别外，均带Symantec数字签名</li>
+<li>本文所提供Ghost均为官方原版，均提取自官方Symantec Ghost Solution Suite、Symantec Ghost Standard Tools，除CLI程序（gdisk.exe、ghost.exe）外，GUI程序均带Symantec数字签名</li>
+<li>本文所提供Ghost包含gdisk（gdisk.exe、gdisk32.exe、gdisk64.exe）与ghost（ghost.exe、ghost32.exe、ghost64.exe、ghostexp.exe、ghostexp64.exe、ghostsrv.exe等）相关程序</li>
+<li>本文所提供Ghost包含8.x、11.x及12.x版本（12.0.0.7x版本前因找不到官方GSS或GST，未提供下载）</li>
+<li>因官方不再提供CLI程序，故本文所提供Ghost历史版本中的CLI程序（gdisk.exe、ghost.exe）均为未注册版，功能受限，GUI程序功能完整</li>
+</ul>
+<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><ul>
+<li>自11.0.5.2113版本开始，官方开始提供gdisk、ghost的64位程序（gdisk64.exe、ghost64.exe）</li>
+<li>自12版本开始，官方不再提供CLI程序（gdisk.exe、ghost.exe）</li>
+<li>自12版本开始，官方开始提供ghostexp的64位程序（ghostexp64.exe）</li>
+<li>自12.0.0.8050版本开始，官方开始提供ghostexp、ghostsrv简体中文文件（ghostexp_zh.dll、ghostsrv_zh.dll）</li>
+<li>自12.0.0.8065版本开始，Ghost开始分卷压缩</li>
+<li>自12.0.0.10618版本开始，官方开始提供ghostsrv的64位程序（ghostsrv64.exe）</li>
+</ul>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>百度网盘：<a href="https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag" target="_blank" rel="noopener">https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag</a>（密码：4aa9）</p>
+<p>蓝奏云：<a href="https://www.lanzous.com/b377169/" target="_blank" rel="noopener">https://www.lanzous.com/b377169/</a>（密码：6h6y）</p>
+<p>网盘中提供成品Ghost程序，可直接下载使用，也提供了GSS与GST，有兴趣的话可自行提取。</p>
+<h1 id="版本对应"><a href="#版本对应" class="headerlink" title="版本对应"></a>版本对应</h1><h2 id="8-x"><a href="#8-x" class="headerlink" title="8.x"></a>8.x</h2><ul>
+<li>Ghost 8.3.0.1331（GSS 1.1）</li>
+</ul>
+<h2 id="11-x"><a href="#11-x" class="headerlink" title="11.x"></a>11.x</h2><ul>
+<li>Ghost 11.0.0.1502（GSS 2.0）</li>
+<li>Ghost 11.0.1.1533（GSS 2.0.1）</li>
+<li>Ghost 11.0.2.1573（GSS 2.0.2）</li>
+<li>Ghost 11.5.0.2113（GSS 2.5）</li>
+<li>Ghost 11.5.1.2266（GSS 2.5.1）</li>
+</ul>
+<h2 id="12-x"><a href="#12-x" class="headerlink" title="12.x"></a>12.x</h2><ul>
+<li>Ghost 12.0.0.8006（GST 3.0）</li>
+<li>Ghost 12.0.0.8010（GST 3.0 HF2）</li>
+<li>Ghost 12.0.0.8019（GST 3.0 HF4）</li>
+<li>Ghost 12.0.0.8023（GST 3.1）</li>
+<li>Ghost 12.0.0.8027（GST 3.1 MP1）</li>
+<li>Ghost 12.0.0.8031（GST 3.1 MP2）</li>
+<li>Ghost 12.0.0.8050（GST 3.1 MP3）</li>
+<li>Ghost 12.0.0.8051（GST 3.1 MP3 V2）</li>
+<li>Ghost 12.0.0.8065（GST 3.1 MP5）</li>
+<li>Ghost 12.0.0.10514（GST 3.2）</li>
+<li>Ghost 12.0.0.10517（GST 3.1 MP6）</li>
+<li>Ghost 12.0.0.10520（GST 3.2 RU1）</li>
+<li>Ghost 12.0.0.10531（GST 3.2 RU2）</li>
+<li>Ghost 12.0.0.10549（GST 3.2 RU3）</li>
+<li>Ghost 12.0.0.10561（GST 3.2 RU4）</li>
+<li>Ghost 12.0.0.10580（GST 3.2 RU6）</li>
+<li>Ghost 12.0.0.10589（GST 3.2 RU7）</li>
+<li>Ghost 12.0.0.10618（GST 3.3）</li>
+<li>Ghost 12.0.0.10630（GST 3.3 RU1）</li>
+<li>Ghost 12.0.0.10644（GST 3.3 RU2）</li>
+<li>Ghost 12.0.0.10658（GST 3.3 RU3）</li>
+<li>Ghost 12.0.0.10695（GDS 8.5 RU3）</li>
+</ul>
+<h1 id="编辑日志"><a href="#编辑日志" class="headerlink" title="编辑日志"></a>编辑日志</h1><ul>
+<li>2018.07.24：发布</li>
+<li>2018.10.15：更新Ghost 12.0.0.10618</li>
+<li>2019.02.18：更新Ghost 12.0.0.10630、调整文章结构</li>
+<li>2019.04.30：更新Ghost 12.0.0.10644</li>
+<li>2019.08.07：更新Ghost 12.0.0.10658</li>
+<li>2020.03.14：更新Ghost 12.0.0.10695</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数码</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程</title>
     <url>/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>最近入门PT，家中宽带上行20M，不快不慢，所以自建了个Seedbox，使用的下载方案是qBittorrent+FlexGet+Auto Remove Torrents，FlexGet使用PT站RSS链接自动下载种子至服务器并使用qBittorrent自动下载，下载完成后根据条件使用Auto Remove Torrents自动删除，以实现无需人工干预，自动刷流量。</p>
@@ -169,76 +241,6 @@
 </ul>
 <h2 id="2020-01-07"><a href="#2020-01-07" class="headerlink" title="2020.01.07"></a>2020.01.07</h2><ul>
 <li>修正排版错误</li>
-</ul>
-]]></content>
-      <categories>
-        <category>数码</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10658】</title>
-    <url>/2018/07/24/Symantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Ghost一直是用着最趁手备份工具，由于Ghost本身官方并不提供下载，只集成在其他软件中，且官方下载相对困难。故将绝大部分版本的Ghost提取出来，以供下载。</p>
-<p>此过程的难点在于搜集Symantec Ghost Solution Suite、Symantec Ghost Standard Tools与Ghost版本的对应关系及历史版本的官方原版程序的下载，提取起来很简单。</p>
-<p>本文首发于卡饭论坛（<a href="https://bbs.kafan.cn/thread-2128366-1-1.html" target="_blank" rel="noopener">https://bbs.kafan.cn/thread-2128366-1-1.html</a>）及本博客，转载请注明出处。</p>
-<a id="more"></a>
-<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
-<li>本文所提供Symantec Ghost Solution Suite、Symantec Ghost Standard Tools均为官方原版，均下载自Symantec官方服务器，除个别外，均带Symantec数字签名</li>
-<li>本文所提供Ghost均为官方原版，均提取自官方Symantec Ghost Solution Suite、Symantec Ghost Standard Tools，除CLI程序（gdisk.exe、ghost.exe）外，GUI程序均带Symantec数字签名</li>
-<li>本文所提供Ghost包含gdisk（gdisk.exe、gdisk32.exe、gdisk64.exe）与ghost（ghost.exe、ghost32.exe、ghost64.exe、ghostexp.exe、ghostexp64.exe、ghostsrv.exe等）相关程序</li>
-<li>本文所提供Ghost包含8.x、11.x及12.x版本（12.0.0.7x版本前因找不到官方GSS或GST，未提供下载）</li>
-<li>因官方不再提供CLI程序，故本文所提供Ghost历史版本中的CLI程序（gdisk.exe、ghost.exe）均为未注册版，功能受限，GUI程序功能完整</li>
-</ul>
-<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><ul>
-<li>自11.0.5.2113版本开始，官方开始提供gdisk、ghost的64位程序（gdisk64.exe、ghost64.exe）</li>
-<li>自12版本开始，官方不再提供CLI程序（gdisk.exe、ghost.exe）</li>
-<li>自12版本开始，官方开始提供ghostexp的64位程序（ghostexp64.exe）</li>
-<li>自12.0.0.8050版本开始，官方开始提供ghostexp、ghostsrv简体中文文件（ghostexp_zh.dll、ghostsrv_zh.dll）</li>
-<li>自12.0.0.8065版本开始，Ghost开始分卷压缩</li>
-<li>自12.0.0.10618版本开始，官方开始提供ghostsrv的64位程序（ghostsrv64.exe）</li>
-</ul>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>百度网盘：<a href="https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag" target="_blank" rel="noopener">https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag</a>（密码：4aa9）</p>
-<p>蓝奏云：<a href="https://www.lanzous.com/b377169/" target="_blank" rel="noopener">https://www.lanzous.com/b377169/</a>（密码：6h6y）</p>
-<p>网盘中提供成品Ghost程序，可直接下载使用，也提供了GSS与GST，有兴趣的话可自行提取。</p>
-<h1 id="版本对应"><a href="#版本对应" class="headerlink" title="版本对应"></a>版本对应</h1><h2 id="8-x"><a href="#8-x" class="headerlink" title="8.x"></a>8.x</h2><ul>
-<li>Ghost 8.3.0.1331（GSS 1.1）</li>
-</ul>
-<h2 id="11-x"><a href="#11-x" class="headerlink" title="11.x"></a>11.x</h2><ul>
-<li>Ghost 11.0.0.1502（GSS 2.0）</li>
-<li>Ghost 11.0.1.1533（GSS 2.0.1）</li>
-<li>Ghost 11.0.2.1573（GSS 2.0.2）</li>
-<li>Ghost 11.5.0.2113（GSS 2.5）</li>
-<li>Ghost 11.5.1.2266（GSS 2.5.1）</li>
-</ul>
-<h2 id="12-x"><a href="#12-x" class="headerlink" title="12.x"></a>12.x</h2><ul>
-<li>Ghost 12.0.0.8006（GST 3.0）</li>
-<li>Ghost 12.0.0.8010（GST 3.0 HF2）</li>
-<li>Ghost 12.0.0.8019（GST 3.0 HF4）</li>
-<li>Ghost 12.0.0.8023（GST 3.1）</li>
-<li>Ghost 12.0.0.8027（GST 3.1 MP1）</li>
-<li>Ghost 12.0.0.8031（GST 3.1 MP2）</li>
-<li>Ghost 12.0.0.8050（GST 3.1 MP3）</li>
-<li>Ghost 12.0.0.8051（GST 3.1 MP3 V2）</li>
-<li>Ghost 12.0.0.8065（GST 3.1 MP5）</li>
-<li>Ghost 12.0.0.10514（GST 3.2）</li>
-<li>Ghost 12.0.0.10517（GST 3.1 MP6）</li>
-<li>Ghost 12.0.0.10520（GST 3.2 RU1）</li>
-<li>Ghost 12.0.0.10531（GST 3.2 RU2）</li>
-<li>Ghost 12.0.0.10549（GST 3.2 RU3）</li>
-<li>Ghost 12.0.0.10561（GST 3.2 RU4）</li>
-<li>Ghost 12.0.0.10580（GST 3.2 RU6）</li>
-<li>Ghost 12.0.0.10589（GST 3.2 RU7）</li>
-<li>Ghost 12.0.0.10618（GST 3.3）</li>
-<li>Ghost 12.0.0.10630（GST 3.3 RU1）</li>
-<li>Ghost 12.0.0.10644（GST 3.3 RU2）</li>
-<li>Ghost 12.0.0.10658（GST 3.3 RU3）</li>
-</ul>
-<h1 id="编辑日志"><a href="#编辑日志" class="headerlink" title="编辑日志"></a>编辑日志</h1><ul>
-<li>2018.07.24：发布</li>
-<li>2018.10.15：更新Ghost 12.0.0.10618</li>
-<li>2019.02.18：更新Ghost 12.0.0.10630、调整文章结构</li>
-<li>2019.04.30：更新Ghost 12.0.0.10644</li>
-<li>2019.08.07：更新Ghost 12.0.0.10658</li>
 </ul>
 ]]></content>
       <categories>
