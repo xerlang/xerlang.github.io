@@ -401,16 +401,23 @@
     <title>Symantec Ghost 历史版本 官方原版 【更新至12.0.0.10695】</title>
     <url>/2018/07/24/Symantec%20Ghost%20%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%20%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Ghost一直是用着最趁手备份工具，由于Ghost本身官方并不提供下载，只集成在其他软件中，且官方下载相对困难。故将绝大部分版本的Ghost提取出来，以供下载。</p>
-<p>此过程的难点在于搜集Symantec Ghost Solution Suite、Symantec Ghost Standard Tools与Ghost版本的对应关系及历史版本的官方原版程序的下载，提取起来很简单。</p>
+<p>此过程的难点在于搜集Symantec Ghost Solution Suite、Symantec Ghost Standard Tools、Symantec Deployment Solution与Ghost版本的对应关系及历史版本的官方原版程序的下载，提取起来很简单。</p>
 <p>本文首发于卡饭论坛（<a href="https://bbs.kafan.cn/thread-2128366-1-1.html">https://bbs.kafan.cn/thread-2128366-1-1.html</a>）及本博客，转载请注明出处。</p>
 <a id="more"></a>
 <h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
-<li>本文所提供Symantec Ghost Solution Suite、Symantec Ghost Standard Tools均为官方原版，均下载自Symantec官方服务器，除个别外，均带Symantec数字签名</li>
-<li>本文所提供Ghost均为官方原版，均提取自官方Symantec Ghost Solution Suite、Symantec Ghost Standard Tools，除CLI程序（gdisk.exe、ghost.exe）外，GUI程序均带Symantec数字签名</li>
-<li>本文所提供Ghost包含gdisk（gdisk.exe、gdisk32.exe、gdisk64.exe）与ghost（ghost.exe、ghost32.exe、ghost64.exe、ghostexp.exe、ghostexp64.exe、ghostsrv.exe等）相关程序</li>
-<li>本文所提供Ghost包含8.x、11.x及12.x版本（12.0.0.7x版本前因找不到官方GSS或GST，未提供下载）</li>
-<li>因官方不再提供CLI程序，故本文所提供Ghost历史版本中的CLI程序（gdisk.exe、ghost.exe）均为未注册版，功能受限，GUI程序功能完整</li>
+<li><p>本文所提供的Symantec Ghost Solution Suite、Symantec Ghost Standard Tools、Symantec Deployment Solution均为官方原版，均下载自Symantec官方服务器，除个别外，均带Symantec数字签名</p>
+</li>
+<li><p>本文所提供的Ghost均为官方原版，均提取自官方Symantec Ghost Solution Suite、Symantec Ghost Standard Tools、Symantec Deployment Solution，除CLI程序（gdisk.exe、ghost.exe）外，GUI程序均带Symantec数字签名</p>
+</li>
+<li><p>本文所提供的Ghost包含gdisk（gdisk.exe、gdisk32.exe、gdisk64.exe）与ghost（ghost.exe、ghost32.exe、ghost64.exe、ghostexp.exe、ghostexp64.exe、ghostsrv.exe等）相关程序</p>
+</li>
+<li><p>本文所提供的Ghost包含8.x、11.x及12.x版本（12.0.0.7x版本前因找不到官方GSS、GST或GDS，未提供下载）</p>
+</li>
+<li><p>因官方不再提供CLI程序，故本文所提供Ghost历史版本中的CLI程序（gdisk.exe、ghost.exe）均为未注册版，功能受限，GUI程序功能完整</p>
+</li>
 </ul>
+<h1 id="新版说明"><a href="#新版说明" class="headerlink" title="新版说明"></a>新版说明</h1><p>Symantec Ghost 12.0.0.11197提取自Symantec Deployment Solution 8.5 RU4。</p>
+<p>文件体积变大。</p>
 <h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><ul>
 <li>自11.0.5.2113版本开始，官方开始提供gdisk、ghost的64位程序（gdisk64.exe、ghost64.exe）</li>
 <li>自12版本开始，官方不再提供CLI程序（gdisk.exe、ghost.exe）</li>
@@ -419,9 +426,9 @@
 <li>自12.0.0.8065版本开始，Ghost开始分卷压缩</li>
 <li>自12.0.0.10618版本开始，官方开始提供ghostsrv的64位程序（ghostsrv64.exe）</li>
 </ul>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>百度网盘：<a href="https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag">https://pan.baidu.com/s/1AJGh7q9bi1daTyrEBg7lag</a>（密码：4aa9）</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>百度网盘：<a href="https://pan.baidu.com/s/1rG3N3W0mEqoSgzDUgYsPUQ">https://pan.baidu.com/s/1rG3N3W0mEqoSgzDUgYsPUQ</a>（密码：da9c）</p>
 <p>蓝奏云：<a href="https://lanzous.com/b006np5oj">https://lanzous.com/b006np5oj</a>（密码：6h6y）</p>
-<p>网盘中提供成品Ghost程序，可直接下载使用，也提供了GSS与GST，有兴趣的话可自行提取。</p>
+<p>网盘中提供成品Ghost程序，可直接下载使用，也提供了GSS、GST与GDS，有兴趣的话可自行提取。</p>
 <h1 id="版本对应"><a href="#版本对应" class="headerlink" title="版本对应"></a>版本对应</h1><h2 id="8-x"><a href="#8-x" class="headerlink" title="8.x"></a>8.x</h2><ul>
 <li>Ghost 8.3.0.1331（GSS 1.1）</li>
 </ul>
@@ -455,6 +462,7 @@
 <li>Ghost 12.0.0.10644（GST 3.3 RU2）</li>
 <li>Ghost 12.0.0.10658（GST 3.3 RU3）</li>
 <li>Ghost 12.0.0.10695（GDS 8.5 RU3）</li>
+<li>Ghost 12.0.0.11197（GDS 8.5 RU4）</li>
 </ul>
 <h1 id="编辑日志"><a href="#编辑日志" class="headerlink" title="编辑日志"></a>编辑日志</h1><ul>
 <li>2018.07.24：发布</li>
@@ -464,6 +472,8 @@
 <li>2019.08.07：更新Ghost 12.0.0.10658</li>
 <li>2020.03.14：更新Ghost 12.0.0.10695</li>
 <li>2020.04.18：更新蓝奏云地址</li>
+<li>2020.06.02：更新百度网盘地址</li>
+<li>2020.07.19：更新Ghost 12.0.0.11197、添加新版说明</li>
 </ul>
 ]]></content>
       <categories>
