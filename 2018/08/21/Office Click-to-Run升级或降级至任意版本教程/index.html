@@ -347,6 +347,7 @@
         <h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>本地安装的Office版本是2016 Retail版，此版本使用的是Click-to-Run安装及更新方式。Office各版本区别及安装方式可参见<a href="https://xerlang.github.io/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/">《Windows与Office各版本及官方授权方式详解》</a>。</p>
 <p>某天发现Word导航窗格宽度调整后，重新打开会恢复到默认宽度，即此项设置无法保存，查找原因时发现除了此前自动更新到了1807版，经过测试为此版本Bug。所以在等待官方修复期间，产生了回退旧版本的需求。</p>
 <a id="more"></a>
+
 <h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><p>阅读上述外链文章会发现，Office 2016有两种安装模式，MSI与Click-to-Run（以下简称C2R）。</p>
 <p>MSI回退旧版本的方法十分简单，去“已安装更新”卸载掉补丁即可。</p>
 <p>C2R相对复杂，无法直接卸载更新，也没有提供各版本的安装文件，搜索也并没有找到相应的解决办法，故查询了Office部署文档，虽只是一带而过，但方法还是存在的，使用“Office部署工具（Office Deployment Tool）”或“Office 2016管理模板文件（Office 2016 Administrative Template files (ADMX/ADML) and Office Customization Tool）”。</p>
