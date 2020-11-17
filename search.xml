@@ -162,70 +162,6 @@
       </categories>
   </entry>
   <entry>
-    <title>5G标准表决会议记录中关于联想投票的部分</title>
-    <url>/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近关于联想在5G标准表决会议的投票讨论的沸沸扬扬，各种说法都有，有因为联想的2票弃权或投高通而使华为的标准以1票之差输了的，也有联想的投票对最终结果没有影响的。究其原因，因为绝大部分人没有亲自看5G表决会议的会议记录，只是看到了二手甚至多手资料，这些资料在多次转载的过程中已经失真了。所以如果想知道联想在表决会议中投票的真实情况，最好的办法是看会议记录。3GPP每次会议的会议记录都会公开放出并提供下载，链接在文章末尾。</p>
-<p>其中涉及联想投票的5G标准表决会议共有三次：86次、86bis次、87次。下面分别截取三次会议记录中投票的部分。</p>
-<a id="more"></a>
-
-<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
-<li>下文图中青绿色为投票企业，黄色为会议结果，粉红色为联想和摩托。</li>
-<li>为方便理解，文中提案联署、提问、投票环节中的企业的选择均以票数表示。</li>
-<li>为方便理解，可将LDPC、Polar、Turbo分别理解为高通、华为、LG牵头的方案，下文以L、P、T表示。</li>
-<li>本文不涉及任何立场，只陈述事实。</li>
-<li>本文为本人原创，转载时请注明作者与出处。</li>
-</ul>
-<h1 id="一、86次会议（2016年8月）"><a href="#一、86次会议（2016年8月）" class="headerlink" title="一、86次会议（2016年8月）"></a>一、86次会议（2016年8月）</h1><p><img src="https://user-images.githubusercontent.com/34172455/40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg" alt="img"></p>
-<p>本次会议没分数据信道（Data Channel）和控制信道（Control Channel），所有投票方案均为独占。</p>
-<h2 id="（一）投票环节"><a href="#（一）投票环节" class="headerlink" title="（一）投票环节"></a>（一）投票环节</h2><ul>
-<li>LDPC：高通、三星、中兴、小米、vivo等23票支持。（R1-167999）</li>
-<li>Polar：华为、CMCC、联通等10票支持。（R1-168040）</li>
-<li>Turbo：LG支持等6票支持。（R1-168164）</li>
-</ul>
-<p>联想、摩托并未出现在会议记录中。</p>
-<h2 id="（二）会议结果"><a href="#（二）会议结果" class="headerlink" title="（二）会议结果"></a>（二）会议结果</h2><p>结果待定，在下次会议中继续讨论。</p>
-<h1 id="二、86bis次会议（2016年10月）"><a href="#二、86bis次会议（2016年10月）" class="headerlink" title="二、86bis次会议（2016年10月）"></a>二、86bis次会议（2016年10月）</h1><p>86bis次会议将标准分为数据信道（Data Channel）和控制信道（Control Channel），并将数据信道分为长码和短码。</p>
-<p><img src="https://user-images.githubusercontent.com/34172455/40170428-020af474-59fb-11e8-8c67-9dabffec124e.jpg" alt="img"></p>
-<h2 id="（一）提问环节"><a href="#（一）提问环节" class="headerlink" title="（一）提问环节"></a>（一）提问环节</h2><p>会议提问，数据信道采用哪种方案？其中高通、三星、联想、摩托等16票支持长短码均为L，华为1票支持长短码均为P，LG等6票支持L+T（长码L短码T），中兴、小米、联发科等17票支持L+P（长码L短码P）。</p>
-<p>因为长短码均为P方案只有华为1票支持，故不进入下面的投票，所以投票环节只有L、L+T、L+P三种方案。</p>
-<h2 id="（二）投票环节"><a href="#（二）投票环节" class="headerlink" title="（二）投票环节"></a>（二）投票环节</h2><p>本次投票不以赞同记，以反对记。</p>
-<ul>
-<li>L：华为、中兴、小米、OPPO、联发科等24票反对。</li>
-<li>L+P：高通、三星、联想、摩托等27票反对。</li>
-<li>L+T：几乎都反对。</li>
-</ul>
-<h2 id="（三）会议结果"><a href="#（三）会议结果" class="headerlink" title="（三）会议结果"></a>（三）会议结果</h2><p>数据信道长码使用L。短码和控制信道下次会议决定。</p>
-<h1 id="三、87次会议（2016年11月）"><a href="#三、87次会议（2016年11月）" class="headerlink" title="三、87次会议（2016年11月）"></a>三、87次会议（2016年11月）</h1><h2 id="（一）数据信道短码投票"><a href="#（一）数据信道短码投票" class="headerlink" title="（一）数据信道短码投票"></a>（一）数据信道短码投票</h2><p><img src="https://user-images.githubusercontent.com/34172455/40170432-04ea9ad2-59fb-11e8-8729-130d58d4fb76.jpg" alt="img"></p>
-<ul>
-<li>P：华为、联想、摩托等56票赞成，高通、三星等14票反对。</li>
-<li>L：高通、三星等31票支持，无反对。</li>
-</ul>
-<h2 id="（二）控制信道投票"><a href="#（二）控制信道投票" class="headerlink" title="（二）控制信道投票"></a>（二）控制信道投票</h2><p><img src="https://user-images.githubusercontent.com/34172455/40170430-030c0566-59fb-11e8-9b32-5bbe40d18e96.jpg" alt="img"></p>
-<p>P：55票赞成。</p>
-<h2 id="（三）会议结果-1"><a href="#（三）会议结果-1" class="headerlink" title="（三）会议结果"></a>（三）会议结果</h2><p><img src="https://user-images.githubusercontent.com/34172455/40170433-05377c12-59fb-11e8-840c-64450d291298.jpg" alt="img"></p>
-<p>数据信道长码短码均使用L，控制信道使用P。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="（一）联想的选择"><a href="#（一）联想的选择" class="headerlink" title="（一）联想的选择"></a>（一）联想的选择</h2><p>在三次会议中，可以作为“投票”的表态中，联想、摩托的选择如下。</p>
-<ul>
-<li>86次会议，联想、摩托未投票，大部分国内厂商投给了高通L独占。</li>
-<li>86bis次会议，在一次提问与一次投票中，国内厂商抱团投P的情况下，联想、高通两次选择了L。</li>
-<li>87次会议，两次投票中均投给了P。</li>
-</ul>
-<h2 id="（二）联想的选择对最终结果的影响"><a href="#（二）联想的选择对最终结果的影响" class="headerlink" title="（二）联想的选择对最终结果的影响"></a>（二）联想的选择对最终结果的影响</h2><p>在三次会议中，联想、摩托的投票均未对最终结果产生决定性的影响。</p>
-<h2 id="（三）联想的选择中有问题的地方"><a href="#（三）联想的选择中有问题的地方" class="headerlink" title="（三）联想的选择中有问题的地方"></a>（三）联想的选择中有问题的地方</h2><p>86bis次会议中，在其他中国厂商（包括大陆与台湾厂商）抱团选择P的情况下，联想、摩托两次选择了L。这也是这次事件发酵的根源。</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>在86bis次与87次会议期间，工信部召集国内厂商开了一次5G标准通气会，可能是联想在87次会议改变选择的原因之一。</p>
-<h1 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h1><ul>
-<li>3GPP WG1 RL1会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/</a></li>
-<li>86次会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86/Report/">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86/Report/</a></li>
-<li>86bis次会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86b/Report/">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86b/Report/</a></li>
-<li>87次会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_87/Report/">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_87/Report/</a></li>
-</ul>
-<p>本文首发于<a href="https://bbs.kafan.cn/thread-2122960-1-1.html">卡饭论坛</a>。</p>
-]]></content>
-      <categories>
-        <category>数码</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Seedbox部署qBittorrent、FlexGet与Auto Remove Torrents实现资源自动下载及删除教程</title>
     <url>/2018/07/20/Seedbox%E9%83%A8%E7%BD%B2qBittorrent%E3%80%81FlexGet%E4%B8%8EAuto%20Remove%20Torrents%E5%AE%9E%E7%8E%B0%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%A0%E9%99%A4%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>最近入门PT，家中宽带上行20M，不快不慢，所以自建了个Seedbox，使用的下载方案是qBittorrent+FlexGet+Auto Remove Torrents，FlexGet使用PT站RSS链接自动下载种子至服务器并使用qBittorrent自动下载，下载完成后根据条件使用Auto Remove Torrents自动删除，以实现无需人工干预，自动刷流量。</p>
@@ -451,6 +387,70 @@
 <h2 id="2020-01-07"><a href="#2020-01-07" class="headerlink" title="2020.01.07"></a>2020.01.07</h2><ul>
 <li>修正排版错误</li>
 </ul>
+]]></content>
+      <categories>
+        <category>数码</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>5G标准表决会议记录中关于联想投票的部分</title>
+    <url>/2018/05/17/5G%E6%A0%87%E5%87%86%E8%A1%A8%E5%86%B3%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%81%94%E6%83%B3%E6%8A%95%E7%A5%A8%E7%9A%84%E9%83%A8%E5%88%86/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近关于联想在5G标准表决会议的投票讨论的沸沸扬扬，各种说法都有，有因为联想的2票弃权或投高通而使华为的标准以1票之差输了的，也有联想的投票对最终结果没有影响的。究其原因，因为绝大部分人没有亲自看5G表决会议的会议记录，只是看到了二手甚至多手资料，这些资料在多次转载的过程中已经失真了。所以如果想知道联想在表决会议中投票的真实情况，最好的办法是看会议记录。3GPP每次会议的会议记录都会公开放出并提供下载，链接在文章末尾。</p>
+<p>其中涉及联想投票的5G标准表决会议共有三次：86次、86bis次、87次。下面分别截取三次会议记录中投票的部分。</p>
+<a id="more"></a>
+
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
+<li>下文图中青绿色为投票企业，黄色为会议结果，粉红色为联想和摩托。</li>
+<li>为方便理解，文中提案联署、提问、投票环节中的企业的选择均以票数表示。</li>
+<li>为方便理解，可将LDPC、Polar、Turbo分别理解为高通、华为、LG牵头的方案，下文以L、P、T表示。</li>
+<li>本文不涉及任何立场，只陈述事实。</li>
+<li>本文为本人原创，转载时请注明作者与出处。</li>
+</ul>
+<h1 id="一、86次会议（2016年8月）"><a href="#一、86次会议（2016年8月）" class="headerlink" title="一、86次会议（2016年8月）"></a>一、86次会议（2016年8月）</h1><p><img src="https://user-images.githubusercontent.com/34172455/40170426-014b9214-59fb-11e8-83a2-f1ed7c3b2332.jpg" alt="img"></p>
+<p>本次会议没分数据信道（Data Channel）和控制信道（Control Channel），所有投票方案均为独占。</p>
+<h2 id="（一）投票环节"><a href="#（一）投票环节" class="headerlink" title="（一）投票环节"></a>（一）投票环节</h2><ul>
+<li>LDPC：高通、三星、中兴、小米、vivo等23票支持。（R1-167999）</li>
+<li>Polar：华为、CMCC、联通等10票支持。（R1-168040）</li>
+<li>Turbo：LG支持等6票支持。（R1-168164）</li>
+</ul>
+<p>联想、摩托并未出现在会议记录中。</p>
+<h2 id="（二）会议结果"><a href="#（二）会议结果" class="headerlink" title="（二）会议结果"></a>（二）会议结果</h2><p>结果待定，在下次会议中继续讨论。</p>
+<h1 id="二、86bis次会议（2016年10月）"><a href="#二、86bis次会议（2016年10月）" class="headerlink" title="二、86bis次会议（2016年10月）"></a>二、86bis次会议（2016年10月）</h1><p>86bis次会议将标准分为数据信道（Data Channel）和控制信道（Control Channel），并将数据信道分为长码和短码。</p>
+<p><img src="https://user-images.githubusercontent.com/34172455/40170428-020af474-59fb-11e8-8c67-9dabffec124e.jpg" alt="img"></p>
+<h2 id="（一）提问环节"><a href="#（一）提问环节" class="headerlink" title="（一）提问环节"></a>（一）提问环节</h2><p>会议提问，数据信道采用哪种方案？其中高通、三星、联想、摩托等16票支持长短码均为L，华为1票支持长短码均为P，LG等6票支持L+T（长码L短码T），中兴、小米、联发科等17票支持L+P（长码L短码P）。</p>
+<p>因为长短码均为P方案只有华为1票支持，故不进入下面的投票，所以投票环节只有L、L+T、L+P三种方案。</p>
+<h2 id="（二）投票环节"><a href="#（二）投票环节" class="headerlink" title="（二）投票环节"></a>（二）投票环节</h2><p>本次投票不以赞同记，以反对记。</p>
+<ul>
+<li>L：华为、中兴、小米、OPPO、联发科等24票反对。</li>
+<li>L+P：高通、三星、联想、摩托等27票反对。</li>
+<li>L+T：几乎都反对。</li>
+</ul>
+<h2 id="（三）会议结果"><a href="#（三）会议结果" class="headerlink" title="（三）会议结果"></a>（三）会议结果</h2><p>数据信道长码使用L。短码和控制信道下次会议决定。</p>
+<h1 id="三、87次会议（2016年11月）"><a href="#三、87次会议（2016年11月）" class="headerlink" title="三、87次会议（2016年11月）"></a>三、87次会议（2016年11月）</h1><h2 id="（一）数据信道短码投票"><a href="#（一）数据信道短码投票" class="headerlink" title="（一）数据信道短码投票"></a>（一）数据信道短码投票</h2><p><img src="https://user-images.githubusercontent.com/34172455/40170432-04ea9ad2-59fb-11e8-8729-130d58d4fb76.jpg" alt="img"></p>
+<ul>
+<li>P：华为、联想、摩托等56票赞成，高通、三星等14票反对。</li>
+<li>L：高通、三星等31票支持，无反对。</li>
+</ul>
+<h2 id="（二）控制信道投票"><a href="#（二）控制信道投票" class="headerlink" title="（二）控制信道投票"></a>（二）控制信道投票</h2><p><img src="https://user-images.githubusercontent.com/34172455/40170430-030c0566-59fb-11e8-9b32-5bbe40d18e96.jpg" alt="img"></p>
+<p>P：55票赞成。</p>
+<h2 id="（三）会议结果-1"><a href="#（三）会议结果-1" class="headerlink" title="（三）会议结果"></a>（三）会议结果</h2><p><img src="https://user-images.githubusercontent.com/34172455/40170433-05377c12-59fb-11e8-840c-64450d291298.jpg" alt="img"></p>
+<p>数据信道长码短码均使用L，控制信道使用P。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="（一）联想的选择"><a href="#（一）联想的选择" class="headerlink" title="（一）联想的选择"></a>（一）联想的选择</h2><p>在三次会议中，可以作为“投票”的表态中，联想、摩托的选择如下。</p>
+<ul>
+<li>86次会议，联想、摩托未投票，大部分国内厂商投给了高通L独占。</li>
+<li>86bis次会议，在一次提问与一次投票中，国内厂商抱团投P的情况下，联想、高通两次选择了L。</li>
+<li>87次会议，两次投票中均投给了P。</li>
+</ul>
+<h2 id="（二）联想的选择对最终结果的影响"><a href="#（二）联想的选择对最终结果的影响" class="headerlink" title="（二）联想的选择对最终结果的影响"></a>（二）联想的选择对最终结果的影响</h2><p>在三次会议中，联想、摩托的投票均未对最终结果产生决定性的影响。</p>
+<h2 id="（三）联想的选择中有问题的地方"><a href="#（三）联想的选择中有问题的地方" class="headerlink" title="（三）联想的选择中有问题的地方"></a>（三）联想的选择中有问题的地方</h2><p>86bis次会议中，在其他中国厂商（包括大陆与台湾厂商）抱团选择P的情况下，联想、摩托两次选择了L。这也是这次事件发酵的根源。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>在86bis次与87次会议期间，工信部召集国内厂商开了一次5G标准通气会，可能是联想在87次会议改变选择的原因之一。</p>
+<h1 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h1><ul>
+<li>3GPP WG1 RL1会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/</a></li>
+<li>86次会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86/Report/">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86/Report/</a></li>
+<li>86bis次会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86b/Report/">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_86b/Report/</a></li>
+<li>87次会议记录：<a href="http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_87/Report/">http://www.3gpp.org/ftp/tsg_ran/WG1_RL1/TSGR1_87/Report/</a></li>
+</ul>
+<p>本文首发于<a href="https://bbs.kafan.cn/thread-2122960-1-1.html">卡饭论坛</a>。</p>
 ]]></content>
       <categories>
         <category>数码</category>
