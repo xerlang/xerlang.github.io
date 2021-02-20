@@ -487,6 +487,49 @@
       </categories>
   </entry>
   <entry>
+    <title>Office Click-to-Run升级或降级至任意版本教程</title>
+    <url>/2018/08/21/Office%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>本地安装的Office版本是2016 Retail版，此版本使用的是Click-to-Run安装及更新方式。Office各版本区别及安装方式可参见<a href="https://xerlang.github.io/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/">《Windows与Office各版本及官方授权方式详解》</a>。</p>
+<p>某天发现Word导航窗格宽度调整后，重新打开会恢复到默认宽度，即此项设置无法保存，查找原因时发现除了此前自动更新到了1807版，经过测试为此版本Bug。所以在等待官方修复期间，产生了回退旧版本的需求。</p>
+<a id="more"></a>
+
+<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><p>阅读上述外链文章会发现，Office 2016有两种安装模式，MSI与Click-to-Run（以下简称C2R）。</p>
+<p>MSI回退旧版本的方法十分简单，去“已安装更新”卸载掉补丁即可。</p>
+<p>C2R相对复杂，无法直接卸载更新，也没有提供各版本的安装文件，搜索也并没有找到相应的解决办法，故查询了Office部署文档，虽只是一带而过，但方法还是存在的，使用“Office部署工具（Office Deployment Tool）”或“Office 2016管理模板文件（Office 2016 Administrative Template files (ADMX/ADML) and Office Customization Tool）”。</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文首发于卡饭论坛（<a href="https://bbs.kafan.cn/forum-8-1.html">https://bbs.kafan.cn/forum-8-1.html</a>）及本博客，转载请注明作者与出处。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>本教程适用于所有C2R模式安装的Office 2016版本，包括订阅Office 365而安装的Office 2016及买断制Office 2016零售版。</li>
+<li>本教程方法均来自官方文档，使用工具均为官方工具。</li>
+<li>本教程不仅适用于版本降级，也适用于版本升级。</li>
+<li>本教程适用于Windows。</li>
+<li>升级与降级至任意版本的方法有两种，本文以Office 2016管理模板文件为主，Office部署工具使用方法参见下文参考文献。</li>
+</ul>
+<h1 id="一、查询所需版本号"><a href="#一、查询所需版本号" class="headerlink" title="一、查询所需版本号"></a>一、查询所需版本号</h1><p>访问<a href="https://docs.microsoft.com/en-us/OfficeUpdates/update-history-office365-proplus-by-date">https://docs.microsoft.com/en-us/OfficeUpdates/update-history-office365-proplus-by-date</a>，查询需要升级或降级的版本号。</p>
+<p>以2018年7月17日发布的1806版为例，显示版本号为10228.20134，则完整版本号为16.0.10228.20134。</p>
+<h1 id="二、安装Office-2016管理模板文件"><a href="#二、安装Office-2016管理模板文件" class="headerlink" title="二、安装Office 2016管理模板文件"></a>二、安装Office 2016管理模板文件</h1><p>访问<a href="https://www.microsoft.com/en-us/download/details.aspx?id=49030">https://www.microsoft.com/en-us/download/details.aspx?id=49030</a>，下载与系统相匹配的Office 2016管理模板文件。</p>
+<p>运行下载的文件，得到admin、admx两个文件夹及office2016grouppolicyandoctsettings.xlsx一个文件。</p>
+<p>将admx文件夹中所有的.admx文件复制到C:\Windows\PolicyDefinitions文件夹中，将admx/zh-cn文件夹中所有的.adml文件复制到C:\Windows\PolicyDefinitions\zh-CN文件夹中。若需要安装其他语言，只需将相应语言文件夹中的.adml文件复制到C:\Windows\PolicyDefinitions中的语言文件夹中即可。（或只复制office16.admx与office16.adml即可）</p>
+<p>运行“gpedit.msc”打开组策略编辑器，依次展开“计算机配置-管理模板-Microsoft Office 2016-更新”，打开“目标版本”，选择“已启用”，“更新版本”中输入需要升级或降级的完整版本，如16.0.10228.20134，确定。</p>
+<p><img src="https://user-images.githubusercontent.com/34172455/44400239-0ea52880-a57d-11e8-94a7-7e6332e2affd.jpg" alt="20180820215649"></p>
+<h1 id="三、升级或降级"><a href="#三、升级或降级" class="headerlink" title="三、升级或降级"></a>三、升级或降级</h1><p>打开Office的任意一组件，转到“账户-Office更新”，运行“检查更新”，待更新完成后，Office即会变为所需要的版本。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>升级或降级版本成功后，可关闭自动更新，可选择删除上文安装的组策略。</p>
+<p>Office 2016管理模板文件可实现很多功能，可自行在组策略中配置。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>Office部署（中国）：<a href="https://docs.microsoft.com/zh-cn/DeployOffice/">https://docs.microsoft.com/zh-cn/DeployOffice/</a></li>
+<li>Office部署（美国）：<a href="https://docs.microsoft.com/en-us/DeployOffice/">https://docs.microsoft.com/en-us/DeployOffice/</a></li>
+<li>Office更新（中国）：<a href="https://docs.microsoft.com/zh-cn/OfficeUpdates/">https://docs.microsoft.com/zh-cn/OfficeUpdates/</a></li>
+<li>Office更新（美国）：<a href="https://docs.microsoft.com/en-us/OfficeUpdates/">https://docs.microsoft.com/en-us/OfficeUpdates/</a></li>
+<li>Office 2016管理模板文件：<a href="https://www.microsoft.com/en-us/download/details.aspx?id=49030">https://www.microsoft.com/en-us/download/details.aspx?id=49030</a></li>
+</ul>
+<h1 id="更新说明"><a href="#更新说明" class="headerlink" title="更新说明"></a>更新说明</h1><h2 id="2018-08-20"><a href="#2018-08-20" class="headerlink" title="2018.08.20"></a>2018.08.20</h2><ul>
+<li>发布</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数码</category>
+      </categories>
+  </entry>
+  <entry>
     <title>PotPlayer、LAV Filters与madVR提升画质</title>
     <url>/2018/11/26/PotPlayer%E3%80%81LAV%20Filters%E4%B8%8EmadVR%E6%8F%90%E5%8D%87%E7%94%BB%E8%B4%A8/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>PotPlayer一直有使用LAV Filters与madVR提升画质的方法，写一下折腾的过程。</p>
@@ -557,49 +600,6 @@
 </ul>
 <h2 id="2019-06-28"><a href="#2019-06-28" class="headerlink" title="2019.06.28"></a>2019.06.28</h2><ul>
 <li>修正排版</li>
-</ul>
-]]></content>
-      <categories>
-        <category>数码</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Office Click-to-Run升级或降级至任意版本教程</title>
-    <url>/2018/08/21/Office%20Click-to-Run%E5%8D%87%E7%BA%A7%E6%88%96%E9%99%8D%E7%BA%A7%E8%87%B3%E4%BB%BB%E6%84%8F%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>本地安装的Office版本是2016 Retail版，此版本使用的是Click-to-Run安装及更新方式。Office各版本区别及安装方式可参见<a href="https://xerlang.github.io/2018/03/22/Windows%E4%B8%8EOffice%E5%90%84%E7%89%88%E6%9C%AC%E5%8F%8A%E5%AE%98%E6%96%B9%E6%8E%88%E6%9D%83%E6%96%B9%E5%BC%8F%E8%AF%A6%E8%A7%A3/">《Windows与Office各版本及官方授权方式详解》</a>。</p>
-<p>某天发现Word导航窗格宽度调整后，重新打开会恢复到默认宽度，即此项设置无法保存，查找原因时发现除了此前自动更新到了1807版，经过测试为此版本Bug。所以在等待官方修复期间，产生了回退旧版本的需求。</p>
-<a id="more"></a>
-
-<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><p>阅读上述外链文章会发现，Office 2016有两种安装模式，MSI与Click-to-Run（以下简称C2R）。</p>
-<p>MSI回退旧版本的方法十分简单，去“已安装更新”卸载掉补丁即可。</p>
-<p>C2R相对复杂，无法直接卸载更新，也没有提供各版本的安装文件，搜索也并没有找到相应的解决办法，故查询了Office部署文档，虽只是一带而过，但方法还是存在的，使用“Office部署工具（Office Deployment Tool）”或“Office 2016管理模板文件（Office 2016 Administrative Template files (ADMX/ADML) and Office Customization Tool）”。</p>
-<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文首发于卡饭论坛（<a href="https://bbs.kafan.cn/forum-8-1.html">https://bbs.kafan.cn/forum-8-1.html</a>）及本博客，转载请注明作者与出处。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>本教程适用于所有C2R模式安装的Office 2016版本，包括订阅Office 365而安装的Office 2016及买断制Office 2016零售版。</li>
-<li>本教程方法均来自官方文档，使用工具均为官方工具。</li>
-<li>本教程不仅适用于版本降级，也适用于版本升级。</li>
-<li>本教程适用于Windows。</li>
-<li>升级与降级至任意版本的方法有两种，本文以Office 2016管理模板文件为主，Office部署工具使用方法参见下文参考文献。</li>
-</ul>
-<h1 id="一、查询所需版本号"><a href="#一、查询所需版本号" class="headerlink" title="一、查询所需版本号"></a>一、查询所需版本号</h1><p>访问<a href="https://docs.microsoft.com/en-us/OfficeUpdates/update-history-office365-proplus-by-date">https://docs.microsoft.com/en-us/OfficeUpdates/update-history-office365-proplus-by-date</a>，查询需要升级或降级的版本号。</p>
-<p>以2018年7月17日发布的1806版为例，显示版本号为10228.20134，则完整版本号为16.0.10228.20134。</p>
-<h1 id="二、安装Office-2016管理模板文件"><a href="#二、安装Office-2016管理模板文件" class="headerlink" title="二、安装Office 2016管理模板文件"></a>二、安装Office 2016管理模板文件</h1><p>访问<a href="https://www.microsoft.com/en-us/download/details.aspx?id=49030">https://www.microsoft.com/en-us/download/details.aspx?id=49030</a>，下载与系统相匹配的Office 2016管理模板文件。</p>
-<p>运行下载的文件，得到admin、admx两个文件夹及office2016grouppolicyandoctsettings.xlsx一个文件。</p>
-<p>将admx文件夹中所有的.admx文件复制到C:\Windows\PolicyDefinitions文件夹中，将admx/zh-cn文件夹中所有的.adml文件复制到C:\Windows\PolicyDefinitions\zh-CN文件夹中。若需要安装其他语言，只需将相应语言文件夹中的.adml文件复制到C:\Windows\PolicyDefinitions中的语言文件夹中即可。（或只复制office16.admx与office16.adml即可）</p>
-<p>运行“gpedit.msc”打开组策略编辑器，依次展开“计算机配置-管理模板-Microsoft Office 2016-更新”，打开“目标版本”，选择“已启用”，“更新版本”中输入需要升级或降级的完整版本，如16.0.10228.20134，确定。</p>
-<p><img src="https://user-images.githubusercontent.com/34172455/44400239-0ea52880-a57d-11e8-94a7-7e6332e2affd.jpg" alt="20180820215649"></p>
-<h1 id="三、升级或降级"><a href="#三、升级或降级" class="headerlink" title="三、升级或降级"></a>三、升级或降级</h1><p>打开Office的任意一组件，转到“账户-Office更新”，运行“检查更新”，待更新完成后，Office即会变为所需要的版本。</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>升级或降级版本成功后，可关闭自动更新，可选择删除上文安装的组策略。</p>
-<p>Office 2016管理模板文件可实现很多功能，可自行在组策略中配置。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li>Office部署（中国）：<a href="https://docs.microsoft.com/zh-cn/DeployOffice/">https://docs.microsoft.com/zh-cn/DeployOffice/</a></li>
-<li>Office部署（美国）：<a href="https://docs.microsoft.com/en-us/DeployOffice/">https://docs.microsoft.com/en-us/DeployOffice/</a></li>
-<li>Office更新（中国）：<a href="https://docs.microsoft.com/zh-cn/OfficeUpdates/">https://docs.microsoft.com/zh-cn/OfficeUpdates/</a></li>
-<li>Office更新（美国）：<a href="https://docs.microsoft.com/en-us/OfficeUpdates/">https://docs.microsoft.com/en-us/OfficeUpdates/</a></li>
-<li>Office 2016管理模板文件：<a href="https://www.microsoft.com/en-us/download/details.aspx?id=49030">https://www.microsoft.com/en-us/download/details.aspx?id=49030</a></li>
-</ul>
-<h1 id="更新说明"><a href="#更新说明" class="headerlink" title="更新说明"></a>更新说明</h1><h2 id="2018-08-20"><a href="#2018-08-20" class="headerlink" title="2018.08.20"></a>2018.08.20</h2><ul>
-<li>发布</li>
 </ul>
 ]]></content>
       <categories>
